@@ -155,10 +155,11 @@ ConstructorDeclarations ::= (ConstructorDeclarationsC) ConstructorDeclarations C
 							
 ConstructorDecl ::= (ConstructorDecl) IDENT LPAREN FormsParametars RPAREN VarDeclarations LBRACE Statements RBRACE;
 						
-MethodDeclarations	::= (MethodDeclarationsC) MethodDeclarations MethodDecl
+MethodDeclarations	::= (MethodDeclarationsC)  MethodDecl MethodDeclarations
 						|
 						(NoMethodDeclarations)
 						;
+MethodDecl ::= (MethodDecl) TypeOrVoid IDENT LPAREN FormsParametars RPAREN VarDeclarations LBRACE Statements RBRACE;
 
 
 
@@ -173,7 +174,6 @@ Statements ::= (StatementsC) Statements Statement
 				;
 
 	  
-MethodDecl ::= (MethodDecl) TypeOrVoid ConstructorDecl;
 
 
 
@@ -331,17 +331,18 @@ Factor ::=  (DesignatorFactor) Designator
 			(DesignatorFactorExpr) LPAREN Expr RPAREN
 			;
 				  
-Designator ::= (Designator) IDENT IdentExprList;		  
+Designator ::= 	(DesignatorDot) Designator DOT IDENT
+				|
+				(DesignatorExpr) Designator LBRACKET Expr RBRACKET 
+				|
+				(DesignatorIdent) IDENT
+				|
+				(DesignatorThis) THIS
+				;		  
 			  
 	
 
-		  
-IdentExprList ::=   (IdentExprListIdent) IdentExprList DOT IDENT 
-					|		  
-			  		(IdentExprListExpr) IdentExprList LBRACKET Expr RBRACKET 
-			  		|
-			  		(NoIdentExprList)
-			  		;
+
 			  
 			  
 Assignop ::= (Assignop) EQUAL;		  

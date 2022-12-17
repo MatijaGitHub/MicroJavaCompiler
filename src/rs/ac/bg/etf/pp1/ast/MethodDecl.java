@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 2:19:31
+// 17/11/2022 15:59:0
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,13 +10,19 @@ public class MethodDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private TypeOrVoid TypeOrVoid;
-    private ConstructorDecl ConstructorDecl;
+    private FormsParametars FormsParametars;
+    private VarDeclarations VarDeclarations;
+    private Statements Statements;
 
-    public MethodDecl (TypeOrVoid TypeOrVoid, ConstructorDecl ConstructorDecl) {
+    public MethodDecl (TypeOrVoid TypeOrVoid, FormsParametars FormsParametars, VarDeclarations VarDeclarations, Statements Statements) {
         this.TypeOrVoid=TypeOrVoid;
         if(TypeOrVoid!=null) TypeOrVoid.setParent(this);
-        this.ConstructorDecl=ConstructorDecl;
-        if(ConstructorDecl!=null) ConstructorDecl.setParent(this);
+        this.FormsParametars=FormsParametars;
+        if(FormsParametars!=null) FormsParametars.setParent(this);
+        this.VarDeclarations=VarDeclarations;
+        if(VarDeclarations!=null) VarDeclarations.setParent(this);
+        this.Statements=Statements;
+        if(Statements!=null) Statements.setParent(this);
     }
 
     public TypeOrVoid getTypeOrVoid() {
@@ -27,12 +33,28 @@ public class MethodDecl implements SyntaxNode {
         this.TypeOrVoid=TypeOrVoid;
     }
 
-    public ConstructorDecl getConstructorDecl() {
-        return ConstructorDecl;
+    public FormsParametars getFormsParametars() {
+        return FormsParametars;
     }
 
-    public void setConstructorDecl(ConstructorDecl ConstructorDecl) {
-        this.ConstructorDecl=ConstructorDecl;
+    public void setFormsParametars(FormsParametars FormsParametars) {
+        this.FormsParametars=FormsParametars;
+    }
+
+    public VarDeclarations getVarDeclarations() {
+        return VarDeclarations;
+    }
+
+    public void setVarDeclarations(VarDeclarations VarDeclarations) {
+        this.VarDeclarations=VarDeclarations;
+    }
+
+    public Statements getStatements() {
+        return Statements;
+    }
+
+    public void setStatements(Statements Statements) {
+        this.Statements=Statements;
     }
 
     public SyntaxNode getParent() {
@@ -57,18 +79,24 @@ public class MethodDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(TypeOrVoid!=null) TypeOrVoid.accept(visitor);
-        if(ConstructorDecl!=null) ConstructorDecl.accept(visitor);
+        if(FormsParametars!=null) FormsParametars.accept(visitor);
+        if(VarDeclarations!=null) VarDeclarations.accept(visitor);
+        if(Statements!=null) Statements.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(TypeOrVoid!=null) TypeOrVoid.traverseTopDown(visitor);
-        if(ConstructorDecl!=null) ConstructorDecl.traverseTopDown(visitor);
+        if(FormsParametars!=null) FormsParametars.traverseTopDown(visitor);
+        if(VarDeclarations!=null) VarDeclarations.traverseTopDown(visitor);
+        if(Statements!=null) Statements.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(TypeOrVoid!=null) TypeOrVoid.traverseBottomUp(visitor);
-        if(ConstructorDecl!=null) ConstructorDecl.traverseBottomUp(visitor);
+        if(FormsParametars!=null) FormsParametars.traverseBottomUp(visitor);
+        if(VarDeclarations!=null) VarDeclarations.traverseBottomUp(visitor);
+        if(Statements!=null) Statements.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -83,8 +111,20 @@ public class MethodDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ConstructorDecl!=null)
-            buffer.append(ConstructorDecl.toString("  "+tab));
+        if(FormsParametars!=null)
+            buffer.append(FormsParametars.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(VarDeclarations!=null)
+            buffer.append(VarDeclarations.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Statements!=null)
+            buffer.append(Statements.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

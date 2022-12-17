@@ -198,10 +198,11 @@ ConstructorDeclarations ::= (ConstructorDeclarationsC) ConstructorDeclarations:C
 							
 ConstructorDecl ::= (ConstructorDecl) IDENT LPAREN FormsParametars:F1 RPAREN VarDeclarations:V2 LBRACE Statements:S3 RBRACE {: RESULT=new ConstructorDecl(F1, V2, S3); RESULT.setLine(F1left); :};
 						
-MethodDeclarations	::= (MethodDeclarationsC) MethodDeclarations:M1 MethodDecl:M2 {: RESULT=new MethodDeclarationsC(M1, M2); RESULT.setLine(M1left); :}
+MethodDeclarations	::= (MethodDeclarationsC)  MethodDecl:M1 MethodDeclarations:M2 {: RESULT=new MethodDeclarationsC(M1, M2); RESULT.setLine(M1left); :}
 						|
 						(NoMethodDeclarations) {: RESULT=new NoMethodDeclarations(); :}
 						;
+MethodDecl ::= (MethodDecl) TypeOrVoid:T1 IDENT LPAREN FormsParametars:F2 RPAREN VarDeclarations:V3 LBRACE Statements:S4 RBRACE {: RESULT=new MethodDecl(T1, F2, V3, S4); RESULT.setLine(T1left); :};
 
 
 
@@ -216,7 +217,6 @@ Statements ::= (StatementsC) Statements:S1 Statement:S2 {: RESULT=new Statements
 				;
 
 	  
-MethodDecl ::= (MethodDecl) TypeOrVoid:T1 ConstructorDecl:C2 {: RESULT=new MethodDecl(T1, C2); RESULT.setLine(T1left); :};
 
 
 
@@ -374,15 +374,18 @@ Factor ::=  (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1);
 			(DesignatorFactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new DesignatorFactorExpr(E1); RESULT.setLine(E1left); :}
 			;
 				  
-Designator ::= (Designator) IDENT IdentExprList:I1 {: RESULT=new Designator(I1); RESULT.setLine(I1left); :};		  
+Designator ::= 	(DesignatorDot) Designator:D1 DOT IDENT {: RESULT=new DesignatorDot(D1); RESULT.setLine(D1left); :}
+				|
+				(DesignatorExpr) Designator:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorExpr(D1, E2); RESULT.setLine(D1left); :} 
+				|
+				(DesignatorIdent) IDENT {: RESULT=new DesignatorIdent(); :}
+				|
+				(DesignatorThis) THIS {: RESULT=new DesignatorThis(); :}
+				;		  
 			  
-			  
-IdentExprList ::=   (IdentExprListIdent) IdentExprList:I1 DOT IDENT {: RESULT=new IdentExprListIdent(I1); RESULT.setLine(I1left); :} 
-					|		  
-			  		(IdentExprListExpr) IdentExprList:I1 LBRACKET Expr:E2 RBRACKET {: RESULT=new IdentExprListExpr(I1, E2); RESULT.setLine(I1left); :} 
-			  		|
-			  		(NoIdentExprList) {: RESULT=new NoIdentExprList(); :}
-			  		;
+	
+
+
 			  
 			  
 Assignop ::= (Assignop) EQUAL {: RESULT=new Assignop(); :};		  

@@ -1,28 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 2:19:31
+// 17/11/2022 15:59:0
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MethodDeclarationsC extends MethodDeclarations {
 
-    private MethodDeclarations MethodDeclarations;
     private MethodDecl MethodDecl;
+    private MethodDeclarations MethodDeclarations;
 
-    public MethodDeclarationsC (MethodDeclarations MethodDeclarations, MethodDecl MethodDecl) {
-        this.MethodDeclarations=MethodDeclarations;
-        if(MethodDeclarations!=null) MethodDeclarations.setParent(this);
+    public MethodDeclarationsC (MethodDecl MethodDecl, MethodDeclarations MethodDeclarations) {
         this.MethodDecl=MethodDecl;
         if(MethodDecl!=null) MethodDecl.setParent(this);
-    }
-
-    public MethodDeclarations getMethodDeclarations() {
-        return MethodDeclarations;
-    }
-
-    public void setMethodDeclarations(MethodDeclarations MethodDeclarations) {
         this.MethodDeclarations=MethodDeclarations;
+        if(MethodDeclarations!=null) MethodDeclarations.setParent(this);
     }
 
     public MethodDecl getMethodDecl() {
@@ -33,24 +25,32 @@ public class MethodDeclarationsC extends MethodDeclarations {
         this.MethodDecl=MethodDecl;
     }
 
+    public MethodDeclarations getMethodDeclarations() {
+        return MethodDeclarations;
+    }
+
+    public void setMethodDeclarations(MethodDeclarations MethodDeclarations) {
+        this.MethodDeclarations=MethodDeclarations;
+    }
+
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(MethodDeclarations!=null) MethodDeclarations.accept(visitor);
         if(MethodDecl!=null) MethodDecl.accept(visitor);
+        if(MethodDeclarations!=null) MethodDeclarations.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(MethodDeclarations!=null) MethodDeclarations.traverseTopDown(visitor);
         if(MethodDecl!=null) MethodDecl.traverseTopDown(visitor);
+        if(MethodDeclarations!=null) MethodDeclarations.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(MethodDeclarations!=null) MethodDeclarations.traverseBottomUp(visitor);
         if(MethodDecl!=null) MethodDecl.traverseBottomUp(visitor);
+        if(MethodDeclarations!=null) MethodDeclarations.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -59,14 +59,14 @@ public class MethodDeclarationsC extends MethodDeclarations {
         buffer.append(tab);
         buffer.append("MethodDeclarationsC(\n");
 
-        if(MethodDeclarations!=null)
-            buffer.append(MethodDeclarations.toString("  "+tab));
+        if(MethodDecl!=null)
+            buffer.append(MethodDecl.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MethodDecl!=null)
-            buffer.append(MethodDecl.toString("  "+tab));
+        if(MethodDeclarations!=null)
+            buffer.append(MethodDeclarations.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

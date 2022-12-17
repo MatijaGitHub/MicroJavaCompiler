@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 2:19:31
+// 17/11/2022 15:59:0
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,6 +20,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Factor Factor) { }
     public void visit(VarList VarList) { }
     public void visit(ConstList ConstList) { }
+    public void visit(Designator Designator) { }
     public void visit(TypeIdentList TypeIdentList) { }
     public void visit(AndTerms AndTerms) { }
     public void visit(Statements Statements) { }
@@ -55,10 +56,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NotEqualOp NotEqualOp) { visit(); }
     public void visit(IsEqualOp IsEqualOp) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
-    public void visit(NoIdentExprList NoIdentExprList) { visit(); }
-    public void visit(IdentExprListExpr IdentExprListExpr) { visit(); }
-    public void visit(IdentExprListIdent IdentExprListIdent) { visit(); }
-    public void visit(Designator Designator) { visit(); }
+    public void visit(DesignatorThis DesignatorThis) { visit(); }
+    public void visit(DesignatorIdent DesignatorIdent) { visit(); }
+    public void visit(DesignatorExpr DesignatorExpr) { visit(); }
+    public void visit(DesignatorDot DesignatorDot) { visit(); }
     public void visit(DesignatorFactorExpr DesignatorFactorExpr) { visit(); }
     public void visit(DesignatorFactorNewAct DesignatorFactorNewAct) { visit(); }
     public void visit(DesignatorFactorNewExpr DesignatorFactorNewExpr) { visit(); }
@@ -118,11 +119,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormPars FormPars) { visit(); }
     public void visit(VoidType VoidType) { visit(); }
     public void visit(TypeType TypeType) { visit(); }
-    public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(NoStatements NoStatements) { visit(); }
     public void visit(StatementsC StatementsC) { visit(); }
     public void visit(NoFormsParametars NoFormsParametars) { visit(); }
     public void visit(FormsParametarsC FormsParametarsC) { visit(); }
+    public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(NoMethodDeclarations NoMethodDeclarations) { visit(); }
     public void visit(MethodDeclarationsC MethodDeclarationsC) { visit(); }
     public void visit(ConstructorDecl ConstructorDecl) { visit(); }

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 2:19:31
+// 17/11/2022 15:59:0
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,6 +20,7 @@ public interface Visitor {
     public void visit(Factor Factor);
     public void visit(VarList VarList);
     public void visit(ConstList ConstList);
+    public void visit(Designator Designator);
     public void visit(TypeIdentList TypeIdentList);
     public void visit(AndTerms AndTerms);
     public void visit(Statements Statements);
@@ -55,10 +56,10 @@ public interface Visitor {
     public void visit(NotEqualOp NotEqualOp);
     public void visit(IsEqualOp IsEqualOp);
     public void visit(Assignop Assignop);
-    public void visit(NoIdentExprList NoIdentExprList);
-    public void visit(IdentExprListExpr IdentExprListExpr);
-    public void visit(IdentExprListIdent IdentExprListIdent);
-    public void visit(Designator Designator);
+    public void visit(DesignatorThis DesignatorThis);
+    public void visit(DesignatorIdent DesignatorIdent);
+    public void visit(DesignatorExpr DesignatorExpr);
+    public void visit(DesignatorDot DesignatorDot);
     public void visit(DesignatorFactorExpr DesignatorFactorExpr);
     public void visit(DesignatorFactorNewAct DesignatorFactorNewAct);
     public void visit(DesignatorFactorNewExpr DesignatorFactorNewExpr);
@@ -118,11 +119,11 @@ public interface Visitor {
     public void visit(FormPars FormPars);
     public void visit(VoidType VoidType);
     public void visit(TypeType TypeType);
-    public void visit(MethodDecl MethodDecl);
     public void visit(NoStatements NoStatements);
     public void visit(StatementsC StatementsC);
     public void visit(NoFormsParametars NoFormsParametars);
     public void visit(FormsParametarsC FormsParametarsC);
+    public void visit(MethodDecl MethodDecl);
     public void visit(NoMethodDeclarations NoMethodDeclarations);
     public void visit(MethodDeclarationsC MethodDeclarationsC);
     public void visit(ConstructorDecl ConstructorDecl);
