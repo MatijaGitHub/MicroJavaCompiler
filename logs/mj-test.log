@@ -1,0 +1,87 @@
+INFO  23:36:43,177 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  23:36:43,184 - #2 program
+INFO  23:36:43,184 - #49 MJProgram
+INFO  23:36:43,184 - #7 const
+INFO  23:36:43,185 - #49 cock
+INFO  23:36:43,185 - #49 x1
+INFO  23:36:43,185 - #36 =
+INFO  23:36:43,185 - #47 6
+INFO  23:36:43,185 - #37 ;
+INFO  23:36:43,186 - #7 const
+INFO  23:36:43,187 - #49 int
+INFO  23:36:43,187 - #49 y
+INFO  23:36:43,187 - #36 =
+INFO  23:36:43,187 - #50 'c'
+INFO  23:36:43,187 - #39 ,
+INFO  23:36:43,188 - #49 z
+INFO  23:36:43,188 - #36 =
+INFO  23:36:43,188 - #48 true
+INFO  23:36:43,188 - #37 ;
+INFO  23:36:43,188 - #49 int
+INFO  23:36:43,189 - #49 a
+INFO  23:36:43,189 - #45 [
+INFO  23:36:43,189 - #46 ]
+INFO  23:36:43,189 - #39 ,
+INFO  23:36:43,190 - #49 b
+INFO  23:36:43,190 - #39 ,
+INFO  23:36:43,190 - #49 c
+INFO  23:36:43,191 - #45 [
+INFO  23:36:43,191 - #46 ]
+INFO  23:36:43,191 - #37 ;
+INFO  23:36:43,191 - #43 {
+INFO  23:36:43,192 - #44 }
+INFO  23:36:43,193 - Program(
+  DeclVar(
+    DeclConst(
+      DeclConst(
+        NoDecl(
+        ) [NoDecl]
+        ConstDecl(
+          Type(
+          ) [Type]
+          ConstDeclList(
+            ConstNumber(
+            ) [ConstNumber]
+            NoConstList(
+            ) [NoConstList]
+          ) [ConstDeclList]
+        ) [ConstDecl]
+      ) [DeclConst]
+      ConstDecl(
+        Type(
+        ) [Type]
+        ConstDeclList(
+          ConstChar(
+          ) [ConstChar]
+          ConstListC(
+            NoConstList(
+            ) [NoConstList]
+            ConstBool(
+            ) [ConstBool]
+          ) [ConstListC]
+        ) [ConstDeclList]
+      ) [ConstDecl]
+    ) [DeclConst]
+    VarDecl(
+      Type(
+      ) [Type]
+      VarDeclList(
+        BracketsC(
+        ) [BracketsC]
+        VarListC(
+          VarListC(
+            NoConstListVar(
+            ) [NoConstListVar]
+            NoBrackets(
+            ) [NoBrackets]
+          ) [VarListC]
+          BracketsC(
+          ) [BracketsC]
+        ) [VarListC]
+      ) [VarDeclList]
+    ) [VarDecl]
+  ) [DeclVar]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  23:36:43,193 - ===================================

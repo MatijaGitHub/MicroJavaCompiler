@@ -1,0 +1,56 @@
+INFO  23:23:26,777 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  23:23:26,784 - #2 program
+INFO  23:23:26,784 - #49 MJProgram
+INFO  23:23:26,784 - #7 const
+INFO  23:23:26,785 - #49 int
+INFO  23:23:26,785 - #49 x
+INFO  23:23:26,785 - #36 =
+INFO  23:23:26,785 - #47 6
+INFO  23:23:26,785 - #37 ;
+INFO  23:23:26,787 - #7 const
+INFO  23:23:26,787 - #49 int
+INFO  23:23:26,787 - #49 y
+INFO  23:23:26,787 - #36 =
+INFO  23:23:26,787 - #50 'c'
+INFO  23:23:26,787 - #39 ,
+INFO  23:23:26,788 - #49 z
+INFO  23:23:26,788 - #36 =
+INFO  23:23:26,788 - #48 true
+INFO  23:23:26,788 - #37 ;
+INFO  23:23:26,788 - #43 {
+INFO  23:23:26,788 - #44 }
+INFO  23:23:26,789 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDecl(
+        Type(
+        ) [Type]
+        ConstDeclList(
+          ConstNumber(
+          ) [ConstNumber]
+          NoConstList(
+          ) [NoConstList]
+        ) [ConstDeclList]
+      ) [ConstDecl]
+    ) [DeclConst]
+    ConstDecl(
+      Type(
+      ) [Type]
+      ConstDeclList(
+        ConstChar(
+        ) [ConstChar]
+        ConstListC(
+          NoConstList(
+          ) [NoConstList]
+          ConstBool(
+          ) [ConstBool]
+        ) [ConstListC]
+      ) [ConstDeclList]
+    ) [ConstDecl]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  23:23:26,790 - ===================================
