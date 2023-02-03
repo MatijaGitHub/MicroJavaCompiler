@@ -1,0 +1,333 @@
+INFO  20:18:03,291 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  20:18:03,323 - #2 program
+INFO  20:18:03,323 - #49 p
+INFO  20:18:03,323 - #7 const
+INFO  20:18:03,324 - #49 int
+INFO  20:18:03,324 - #49 size
+INFO  20:18:03,325 - #36 =
+INFO  20:18:03,325 - #47 10
+INFO  20:18:03,325 - #37 ;
+INFO  20:18:03,325 - #7 const
+INFO  20:18:03,325 - #49 char
+INFO  20:18:03,325 - #49 deda
+INFO  20:18:03,325 - #36 =
+INFO  20:18:03,326 - #50 a
+INFO  20:18:03,326 - #37 ;
+INFO  20:18:03,326 - #7 const
+INFO  20:18:03,326 - #49 int
+INFO  20:18:03,326 - #49 gegas
+INFO  20:18:03,326 - #36 =
+INFO  20:18:03,326 - #47 3
+INFO  20:18:03,326 - #37 ;
+INFO  20:18:03,327 - #7 const
+INFO  20:18:03,327 - #49 bool
+INFO  20:18:03,327 - #49 cond
+INFO  20:18:03,327 - #36 =
+INFO  20:18:03,327 - #48 false
+INFO  20:18:03,327 - #37 ;
+INFO  20:18:03,327 - #49 int
+INFO  20:18:03,327 - #49 a
+INFO  20:18:03,327 - #39 ,
+INFO  20:18:03,328 - #49 b
+INFO  20:18:03,328 - #39 ,
+INFO  20:18:03,329 - #49 c
+INFO  20:18:03,329 - #45 [
+INFO  20:18:03,329 - #46 ]
+INFO  20:18:03,329 - #37 ;
+INFO  20:18:03,329 - #49 char
+INFO  20:18:03,330 - #49 return_value
+INFO  20:18:03,330 - #37 ;
+INFO  20:18:03,330 - #43 {
+INFO  20:18:03,330 - #49 int
+INFO  20:18:03,330 - #49 f5
+INFO  20:18:03,331 - #41 (
+INFO  20:18:03,331 - #49 int
+INFO  20:18:03,331 - #49 arr
+INFO  20:18:03,331 - #39 ,
+INFO  20:18:03,331 - #49 char
+INFO  20:18:03,332 - #49 b
+INFO  20:18:03,332 - #39 ,
+INFO  20:18:03,332 - #49 bool
+INFO  20:18:03,332 - #49 factor
+INFO  20:18:03,332 - #42 )
+INFO  20:18:03,333 - #43 {
+INFO  20:18:03,333 - #14 return
+INFO  20:18:03,334 - #49 c
+INFO  20:18:03,334 - #45 [
+INFO  20:18:03,334 - #47 3
+INFO  20:18:03,334 - #46 ]
+INFO  20:18:03,335 - #25 *
+INFO  20:18:03,335 - #47 8
+INFO  20:18:03,336 - #24 -
+INFO  20:18:03,336 - #49 a
+INFO  20:18:03,336 - #23 +
+INFO  20:18:03,337 - #47 3
+INFO  20:18:03,337 - #25 *
+INFO  20:18:03,337 - #47 5
+INFO  20:18:03,337 - #37 ;
+INFO  20:18:03,337 - #44 }
+INFO  20:18:03,337 - #15 void
+INFO  20:18:03,338 - #49 main
+INFO  20:18:03,338 - #41 (
+INFO  20:18:03,340 - #42 )
+INFO  20:18:03,340 - #43 {
+INFO  20:18:03,340 - #44 }
+INFO  20:18:03,340 - #44 }
+INFO  20:18:03,342 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      DeclConst(
+        DeclConst(
+          DeclConst(
+            DeclConst(
+              NoDecl(
+              ) [NoDecl]
+              ConstDeclC(
+                Type(
+                 int
+                ) [Type]
+                EndingConstDeclListC1(
+                  EndingConstDeclListC(
+                   size
+                    ConstNumber(
+                     10
+                    ) [ConstNumber]
+                  ) [EndingConstDeclListC]
+                ) [EndingConstDeclListC1]
+              ) [ConstDeclC]
+            ) [DeclConst]
+            ConstDeclC(
+              Type(
+               char
+              ) [Type]
+              EndingConstDeclListC1(
+                EndingConstDeclListC(
+                 deda
+                  ConstChar(
+                   a
+                  ) [ConstChar]
+                ) [EndingConstDeclListC]
+              ) [EndingConstDeclListC1]
+            ) [ConstDeclC]
+          ) [DeclConst]
+          ConstDeclC(
+            Type(
+             int
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               gegas
+                ConstNumber(
+                 3
+                ) [ConstNumber]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           bool
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             cond
+              ConstBool(
+               false
+              ) [ConstBool]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        NonEndingVarDeclListC(
+          NonEndingVarDeclList(
+           a
+            NoBrackets(
+            ) [NoBrackets]
+          ) [NonEndingVarDeclList]
+          NonEndingVarDeclListC(
+            NonEndingVarDeclList(
+             b
+              NoBrackets(
+              ) [NoBrackets]
+            ) [NonEndingVarDeclList]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               c
+                BracketsC(
+                ) [BracketsC]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [NonEndingVarDeclListC]
+        ) [NonEndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+      EndingVarDeclListC(
+        EndingVarDeclList(
+         return_value
+          NoBrackets(
+          ) [NoBrackets]
+        ) [EndingVarDeclList]
+      ) [EndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    MethodDeclarationList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodName(
+          TypeType(
+            Type(
+             int
+            ) [Type]
+          ) [TypeType]
+         f5
+        ) [MethodName]
+        FormsParametarsC(
+          FormPars(
+            NonEndingTypeIdentListC(
+              NonEndingTypeIdentList(
+                Type(
+                 int
+                ) [Type]
+               arr
+                NoBrackets(
+                ) [NoBrackets]
+              ) [NonEndingTypeIdentList]
+              NonEndingTypeIdentListC(
+                NonEndingTypeIdentList(
+                  Type(
+                   char
+                  ) [Type]
+                 b
+                  NoBrackets(
+                  ) [NoBrackets]
+                ) [NonEndingTypeIdentList]
+                EndingTypeIdentListC(
+                  EndingTypeIdentList(
+                    Type(
+                     bool
+                    ) [Type]
+                   factor
+                    NoBrackets(
+                    ) [NoBrackets]
+                  ) [EndingTypeIdentList]
+                ) [EndingTypeIdentListC]
+              ) [NonEndingTypeIdentListC]
+            ) [NonEndingTypeIdentListC]
+          ) [FormPars]
+        ) [FormsParametarsC]
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        StatementsC(
+          NoStatements(
+          ) [NoStatements]
+          ReturnStatement(
+            ExpressionC(
+              PlusExpr(
+                Term(
+                  DesignatorFactor(
+                    DesignatorExpr(
+                      DesignatorIdent(
+                       c
+                      ) [DesignatorIdent]
+                      PlusExpr(
+                        Term(
+                          DesignatorFactorNumber(
+                           3
+                          ) [DesignatorFactorNumber]
+                          NoMulOperations(
+                          ) [NoMulOperations]
+                        ) [Term]
+                        NoAddopTerms(
+                        ) [NoAddopTerms]
+                      ) [PlusExpr]
+                    ) [DesignatorExpr]
+                  ) [DesignatorFactor]
+                  MulOperationsC(
+                    NoMulOperations(
+                    ) [NoMulOperations]
+                    MulOperation(
+                    ) [MulOperation]
+                    DesignatorFactorNumber(
+                     8
+                    ) [DesignatorFactorNumber]
+                  ) [MulOperationsC]
+                ) [Term]
+                AddopTermsC(
+                  AddopTermsC(
+                    NoAddopTerms(
+                    ) [NoAddopTerms]
+                    SubOperation(
+                    ) [SubOperation]
+                    Term(
+                      DesignatorFactor(
+                        DesignatorIdent(
+                         a
+                        ) [DesignatorIdent]
+                      ) [DesignatorFactor]
+                      NoMulOperations(
+                      ) [NoMulOperations]
+                    ) [Term]
+                  ) [AddopTermsC]
+                  AddOperation(
+                  ) [AddOperation]
+                  Term(
+                    DesignatorFactorNumber(
+                     3
+                    ) [DesignatorFactorNumber]
+                    MulOperationsC(
+                      NoMulOperations(
+                      ) [NoMulOperations]
+                      MulOperation(
+                      ) [MulOperation]
+                      DesignatorFactorNumber(
+                       5
+                      ) [DesignatorFactorNumber]
+                    ) [MulOperationsC]
+                  ) [Term]
+                ) [AddopTermsC]
+              ) [PlusExpr]
+            ) [ExpressionC]
+          ) [ReturnStatement]
+        ) [StatementsC]
+      ) [MethodDecl]
+    ) [MethodDeclarationList]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  20:18:03,342 - ===================================
+INFO  20:18:03,349 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  20:18:03,349 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  20:18:03,349 - Info na liniji 4: Kreirana je konstanta int gegas = 3.
+INFO  20:18:03,349 - Info na liniji 5: Kreirana je konstanta bool cond = false.
+INFO  20:18:03,349 - Info na liniji 6: Inserted a variable!
+INFO  20:18:03,349 - Info na liniji 6: Inserted b variable!
+INFO  20:18:03,349 - Info na liniji 6: Inserted c variable!
+INFO  20:18:03,349 - Info na liniji 7: Inserted return_value variable!
+INFO  20:18:03,349 - Info na liniji 10: Inserted f5 method!
+INFO  20:18:03,349 - Info: Num of terms: 4
+INFO  20:18:03,350 - Info na liniji 14: Inserted main method!

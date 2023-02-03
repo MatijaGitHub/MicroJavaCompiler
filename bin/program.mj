@@ -1,30 +1,53 @@
-program Program
-class A{int x[],y[];}
-const int pi = 3, e = 2;
-int a, b;
-class B extends A {
- int i;
- {
-int getValue(int a) int b; bool c;{ return this.i + this.x[0] + a; }
-void m()int a;{x.foreach(a => print(a););}
- }
-}
-class C extends B{A theA;int a;}
+program p
+const int size = 10 ; 
+const char deda = 'a';
+const int gegas = 3;
+const bool cond = false;
+int a, b, c[];
+char d[];
+const int elem = 3;
+bool se;
+
+//Assign value test
+char ch[];
+int in[];
+
+int a1, a2, a3;
+char c1, c2, c3;
+
+
+char return_value;
 {
-void main() A a; C c; int i; int x[]; char ch; {
- a = new A();
- a.x = new int[5]; a.y = new int[5];
-c = new C();
-c.theA = a; c.x = new int[5];
- x = new int[3];
- read(c.i);
- i = 0;
- while(i<5){
-read(c.x[i]); read(c.theA.x[i]);
- i++;
- }
- [a,,b] = c.x;
- print(c.getValue(c.theA.x[0]));
- c.m();
+	char f9(char carr[]){
+		f9(ch);
+		return f9(ch);
+	}
+
+	int f1(int a, int b, char c){
+		a = 3 + a + 15 + 4*5*6;
+		c1 = ch[7 + 8 + 3*a*a];
+		c2 = 'a';
+		a1 = 9*10 + 11;
+		return 3;
+	}
+	int f5(int arr, char b, bool factor){
+		a = c[13 + 14*15 - f1(16 , 17, return_value)];
+		se = true;
+		a = f5(18, 'a', false);
+		c1 = ch[19+ 20];
+		[, ,ch[21],ch[22],,, ] = ch;
+		[a1, a2, a3] = in;
+		//return f1(f1(23, f5(1, 'c', false), 'c'), a + 24, 'a', 3);
+		f1(f1( f1( f1(1,2,'a') , 2 , 'a') , 2 , f9(ch) ), 2 , 'd');
+		return f1(1, 2, 'a');
+	}
+	bool f4(){
+		
+		return true;
+	}
+	int f6(int a, char b){
+		return 25 + 26*f5(a + 27, 'c', true)+ 28 + f1(29, c[30 + 31] + 32, deda)*f5(33, 'a', f4());
+	}
+	
+	void main () {}
 }
-} 

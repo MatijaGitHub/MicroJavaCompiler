@@ -1,0 +1,248 @@
+INFO  19:53:50,038 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  19:53:50,079 - #2 program
+INFO  19:53:50,079 - #49 p
+INFO  19:53:50,080 - #7 const
+INFO  19:53:50,080 - #49 int
+INFO  19:53:50,081 - #49 size
+INFO  19:53:50,081 - #36 =
+INFO  19:53:50,081 - #47 10
+INFO  19:53:50,081 - #37 ;
+INFO  19:53:50,081 - #7 const
+INFO  19:53:50,082 - #49 char
+INFO  19:53:50,082 - #49 deda
+INFO  19:53:50,082 - #36 =
+INFO  19:53:50,082 - #50 a
+INFO  19:53:50,082 - #37 ;
+INFO  19:53:50,082 - #7 const
+INFO  19:53:50,082 - #49 int
+INFO  19:53:50,082 - #49 gegas
+INFO  19:53:50,083 - #36 =
+INFO  19:53:50,083 - #47 3
+INFO  19:53:50,083 - #37 ;
+INFO  19:53:50,083 - #7 const
+INFO  19:53:50,083 - #49 bool
+INFO  19:53:50,083 - #49 cond
+INFO  19:53:50,083 - #36 =
+INFO  19:53:50,083 - #48 false
+INFO  19:53:50,083 - #37 ;
+INFO  19:53:50,083 - #49 int
+INFO  19:53:50,083 - #49 a
+INFO  19:53:50,083 - #39 ,
+INFO  19:53:50,084 - #49 b
+INFO  19:53:50,085 - #39 ,
+INFO  19:53:50,085 - #49 c
+INFO  19:53:50,085 - #45 [
+INFO  19:53:50,085 - #46 ]
+INFO  19:53:50,085 - #37 ;
+INFO  19:53:50,086 - #49 char
+INFO  19:53:50,087 - #49 return_value
+INFO  19:53:50,087 - #37 ;
+INFO  19:53:50,087 - #43 {
+INFO  19:53:50,087 - #49 int
+INFO  19:53:50,087 - #49 f5
+INFO  19:53:50,088 - #41 (
+INFO  19:53:50,088 - #42 )
+INFO  19:53:50,089 - #43 {
+INFO  19:53:50,089 - #14 return
+INFO  19:53:50,090 - #49 c
+INFO  19:53:50,090 - #45 [
+INFO  19:53:50,090 - #47 3
+INFO  19:53:50,090 - #46 ]
+INFO  19:53:50,091 - #37 ;
+INFO  19:53:50,091 - #44 }
+INFO  19:53:50,092 - #15 void
+INFO  19:53:50,092 - #49 main
+INFO  19:53:50,093 - #41 (
+INFO  19:53:50,093 - #42 )
+INFO  19:53:50,093 - #43 {
+INFO  19:53:50,093 - #44 }
+INFO  19:53:50,093 - #44 }
+INFO  19:53:50,094 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      DeclConst(
+        DeclConst(
+          DeclConst(
+            DeclConst(
+              NoDecl(
+              ) [NoDecl]
+              ConstDeclC(
+                Type(
+                 int
+                ) [Type]
+                EndingConstDeclListC1(
+                  EndingConstDeclListC(
+                   size
+                    ConstNumber(
+                     10
+                    ) [ConstNumber]
+                  ) [EndingConstDeclListC]
+                ) [EndingConstDeclListC1]
+              ) [ConstDeclC]
+            ) [DeclConst]
+            ConstDeclC(
+              Type(
+               char
+              ) [Type]
+              EndingConstDeclListC1(
+                EndingConstDeclListC(
+                 deda
+                  ConstChar(
+                   a
+                  ) [ConstChar]
+                ) [EndingConstDeclListC]
+              ) [EndingConstDeclListC1]
+            ) [ConstDeclC]
+          ) [DeclConst]
+          ConstDeclC(
+            Type(
+             int
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               gegas
+                ConstNumber(
+                 3
+                ) [ConstNumber]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           bool
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             cond
+              ConstBool(
+               false
+              ) [ConstBool]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        NonEndingVarDeclListC(
+          NonEndingVarDeclList(
+           a
+            NoBrackets(
+            ) [NoBrackets]
+          ) [NonEndingVarDeclList]
+          NonEndingVarDeclListC(
+            NonEndingVarDeclList(
+             b
+              NoBrackets(
+              ) [NoBrackets]
+            ) [NonEndingVarDeclList]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               c
+                BracketsC(
+                ) [BracketsC]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [NonEndingVarDeclListC]
+        ) [NonEndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+      EndingVarDeclListC(
+        EndingVarDeclList(
+         return_value
+          NoBrackets(
+          ) [NoBrackets]
+        ) [EndingVarDeclList]
+      ) [EndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    MethodDeclarationList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodName(
+          TypeType(
+            Type(
+             int
+            ) [Type]
+          ) [TypeType]
+         f5
+        ) [MethodName]
+        NoFormsParametars(
+        ) [NoFormsParametars]
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        StatementsC(
+          NoStatements(
+          ) [NoStatements]
+          ReturnStatement(
+            ExpressionC(
+              PlusExpr(
+                Term(
+                  DesignatorFactor(
+                    DesignatorExpr(
+                      DesignatorIdent(
+                       c
+                      ) [DesignatorIdent]
+                      PlusExpr(
+                        Term(
+                          DesignatorFactorNumber(
+                           3
+                          ) [DesignatorFactorNumber]
+                          NoMulOperations(
+                          ) [NoMulOperations]
+                        ) [Term]
+                        NoAddopTerms(
+                        ) [NoAddopTerms]
+                      ) [PlusExpr]
+                    ) [DesignatorExpr]
+                  ) [DesignatorFactor]
+                  NoMulOperations(
+                  ) [NoMulOperations]
+                ) [Term]
+                NoAddopTerms(
+                ) [NoAddopTerms]
+              ) [PlusExpr]
+            ) [ExpressionC]
+          ) [ReturnStatement]
+        ) [StatementsC]
+      ) [MethodDecl]
+    ) [MethodDeclarationList]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  19:53:50,095 - ===================================
+INFO  19:53:50,110 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  19:53:50,110 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  19:53:50,110 - Info na liniji 4: Kreirana je konstanta int gegas = 3.
+INFO  19:53:50,110 - Info na liniji 5: Kreirana je konstanta bool cond = false.
+INFO  19:53:50,110 - Info na liniji 6: Inserted a variable!
+INFO  19:53:50,110 - Info na liniji 6: Inserted b variable!
+INFO  19:53:50,111 - Info na liniji 6: Inserted c variable!
+INFO  19:53:50,111 - Info na liniji 7: Inserted return_value variable!
+INFO  19:53:50,111 - Info na liniji 10: Inserted f5 method!
+ERROR 19:53:55,380 - Greska: DesignatorFactorNumber(
+ 3
+) [DesignatorFactorNumber]

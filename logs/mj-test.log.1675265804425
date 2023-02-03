@@ -1,0 +1,144 @@
+INFO  15:57:29,796 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  15:57:29,826 - #2 program
+INFO  15:57:29,827 - #49 p
+INFO  15:57:29,827 - #7 const
+INFO  15:57:29,827 - #49 int
+INFO  15:57:29,827 - #49 size
+INFO  15:57:29,828 - #36 =
+INFO  15:57:29,828 - #47 10
+INFO  15:57:29,828 - #37 ;
+INFO  15:57:29,828 - #7 const
+INFO  15:57:29,828 - #49 char
+INFO  15:57:29,828 - #49 deda
+INFO  15:57:29,828 - #36 =
+INFO  15:57:29,829 - #50 a
+INFO  15:57:29,829 - #37 ;
+INFO  15:57:29,829 - #7 const
+INFO  15:57:29,829 - #49 int
+INFO  15:57:29,829 - #49 gegas
+INFO  15:57:29,829 - #36 =
+INFO  15:57:29,829 - #47 3
+INFO  15:57:29,829 - #37 ;
+INFO  15:57:29,829 - #7 const
+INFO  15:57:29,830 - #49 bool
+INFO  15:57:29,830 - #49 cond
+INFO  15:57:29,830 - #36 =
+INFO  15:57:29,830 - #48 false
+INFO  15:57:29,830 - #37 ;
+INFO  15:57:29,830 - #49 int
+INFO  15:57:29,830 - #49 a
+INFO  15:57:29,830 - #39 ,
+INFO  15:57:29,831 - #49 b
+INFO  15:57:29,831 - #45 [
+INFO  15:57:29,831 - #46 ]
+INFO  15:57:29,831 - #39 ,
+INFO  15:57:29,832 - #49 c
+INFO  15:57:29,832 - #37 ;
+INFO  15:57:29,832 - #43 {
+INFO  15:57:29,833 - #44 }
+INFO  15:57:29,834 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclVar(
+    DeclConst(
+      DeclConst(
+        DeclConst(
+          DeclConst(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclC(
+              Type(
+               int
+              ) [Type]
+              EndingConstDeclListC1(
+                EndingConstDeclListC(
+                 size
+                  ConstNumber(
+                   10
+                  ) [ConstNumber]
+                ) [EndingConstDeclListC]
+              ) [EndingConstDeclListC1]
+            ) [ConstDeclC]
+          ) [DeclConst]
+          ConstDeclC(
+            Type(
+             char
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               deda
+                ConstChar(
+                 a
+                ) [ConstChar]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           int
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             gegas
+              ConstNumber(
+               3
+              ) [ConstNumber]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      ConstDeclC(
+        Type(
+         bool
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+           cond
+            ConstBool(
+             false
+            ) [ConstBool]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      NonEndingVarDeclListC(
+        NonEndingVarDeclList(
+         a
+          NoBrackets(
+          ) [NoBrackets]
+        ) [NonEndingVarDeclList]
+        NonEndingVarDeclListC(
+          NonEndingVarDeclList(
+           b
+            BracketsC(
+            ) [BracketsC]
+          ) [NonEndingVarDeclList]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             c
+              NoBrackets(
+              ) [NoBrackets]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [NonEndingVarDeclListC]
+      ) [NonEndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  15:57:29,834 - ===================================
+INFO  15:57:29,840 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  15:57:29,841 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  15:57:29,841 - Info na liniji 4: Kreirana je konstanta int gegas = 3.
+INFO  15:57:29,841 - Info na liniji 5: Kreirana je konstanta bool cond = false.
+INFO  15:57:29,841 - Info na liniji 6: Inserted a variable!
+INFO  15:57:29,841 - Info na liniji 6: Inserted b variable!
+INFO  15:57:29,841 - Info na liniji 6: Inserted c variable!
+ERROR 15:57:29,841 - Greska: Main method not found!

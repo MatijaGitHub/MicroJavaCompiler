@@ -1,0 +1,38 @@
+INFO  17:00:43,890 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:00:43,937 - #2 program
+INFO  17:00:43,937 - #49 p
+INFO  17:00:43,937 - #7 const
+INFO  17:00:43,938 - #49 int
+INFO  17:00:43,938 - #49 babajay
+INFO  17:00:43,938 - #28 ==
+ERROR 17:00:43,938 - 
+Sintaksna greska na liniji 2
+INFO  17:00:43,939 - #47 3
+INFO  17:00:43,939 - #39 ,
+INFO  17:00:43,939 - #49 mamica
+INFO  17:00:43,939 - #36 =
+INFO  17:00:43,939 - #21 --
+ERROR 17:00:43,939 - Izvrsen oporavak do , u liniji 2 rs.ac.bg.etf.pp1.ast.Type@27bc2616
+ERROR 17:00:43,940 - 
+Sintaksna greska na liniji 2
+INFO  17:00:43,940 - #47 4
+INFO  17:00:43,940 - #39 ,
+INFO  17:00:43,940 - #49 haha
+INFO  17:00:43,940 - #28 ==
+INFO  17:00:43,940 - #47 3
+INFO  17:00:43,940 - #37 ;
+INFO  17:00:43,940 - #7 const
+INFO  17:00:43,940 - #49 int
+INFO  17:00:43,941 - #49 size
+ERROR 17:00:43,941 - Izvrsen oporavak do ; u liniji 2
+INFO  17:00:43,942 - #36 =
+INFO  17:00:43,942 - #47 10
+INFO  17:00:43,942 - #37 ;
+INFO  17:00:43,944 - #20 ++
+ERROR 17:00:43,944 - 
+Sintaksna greska na liniji 6
+INFO  17:00:43,944 - #23 +
+INFO  17:00:43,944 - #36 =
+INFO  17:00:43,944 - #43 {
+INFO  17:00:43,944 - #44 }
+ERROR 17:00:43,944 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9

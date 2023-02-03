@@ -1,28 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 15:59:0
+// 3/1/2023 18:14:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ExprListC extends ExprList {
 
-    private ExprList ExprList;
     private Expr Expr;
+    private ExprList ExprList;
 
-    public ExprListC (ExprList ExprList, Expr Expr) {
-        this.ExprList=ExprList;
-        if(ExprList!=null) ExprList.setParent(this);
+    public ExprListC (Expr Expr, ExprList ExprList) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-    }
-
-    public ExprList getExprList() {
-        return ExprList;
-    }
-
-    public void setExprList(ExprList ExprList) {
         this.ExprList=ExprList;
+        if(ExprList!=null) ExprList.setParent(this);
     }
 
     public Expr getExpr() {
@@ -33,24 +25,32 @@ public class ExprListC extends ExprList {
         this.Expr=Expr;
     }
 
+    public ExprList getExprList() {
+        return ExprList;
+    }
+
+    public void setExprList(ExprList ExprList) {
+        this.ExprList=ExprList;
+    }
+
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ExprList!=null) ExprList.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
+        if(ExprList!=null) ExprList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ExprList!=null) ExprList.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(ExprList!=null) ExprList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ExprList!=null) ExprList.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(ExprList!=null) ExprList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -59,14 +59,14 @@ public class ExprListC extends ExprList {
         buffer.append(tab);
         buffer.append("ExprListC(\n");
 
-        if(ExprList!=null)
-            buffer.append(ExprList.toString("  "+tab));
+        if(Expr!=null)
+            buffer.append(Expr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Expr!=null)
-            buffer.append(Expr.toString("  "+tab));
+        if(ExprList!=null)
+            buffer.append(ExprList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

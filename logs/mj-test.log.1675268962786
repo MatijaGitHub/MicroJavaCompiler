@@ -1,0 +1,218 @@
+INFO  17:28:03,326 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:28:03,356 - #2 program
+INFO  17:28:03,356 - #49 p
+INFO  17:28:03,357 - #7 const
+INFO  17:28:03,358 - #49 int
+INFO  17:28:03,358 - #49 size
+INFO  17:28:03,358 - #36 =
+INFO  17:28:03,358 - #47 10
+INFO  17:28:03,358 - #37 ;
+INFO  17:28:03,358 - #7 const
+INFO  17:28:03,359 - #49 char
+INFO  17:28:03,359 - #49 deda
+INFO  17:28:03,359 - #36 =
+INFO  17:28:03,359 - #50 a
+INFO  17:28:03,359 - #37 ;
+INFO  17:28:03,359 - #7 const
+INFO  17:28:03,360 - #49 int
+INFO  17:28:03,360 - #49 gegas
+INFO  17:28:03,360 - #36 =
+INFO  17:28:03,360 - #47 3
+INFO  17:28:03,360 - #37 ;
+INFO  17:28:03,360 - #7 const
+INFO  17:28:03,360 - #49 bool
+INFO  17:28:03,360 - #49 cond
+INFO  17:28:03,360 - #36 =
+INFO  17:28:03,360 - #48 false
+INFO  17:28:03,360 - #37 ;
+INFO  17:28:03,360 - #49 int
+INFO  17:28:03,360 - #49 a
+INFO  17:28:03,360 - #39 ,
+INFO  17:28:03,361 - #49 b
+INFO  17:28:03,362 - #39 ,
+INFO  17:28:03,362 - #49 c
+INFO  17:28:03,362 - #45 [
+INFO  17:28:03,362 - #46 ]
+INFO  17:28:03,362 - #37 ;
+INFO  17:28:03,362 - #43 {
+INFO  17:28:03,363 - #15 void
+INFO  17:28:03,364 - #49 f1
+INFO  17:28:03,364 - #41 (
+INFO  17:28:03,365 - #49 int
+INFO  17:28:03,365 - #49 a
+INFO  17:28:03,365 - #39 ,
+INFO  17:28:03,365 - #49 char
+INFO  17:28:03,365 - #49 b
+INFO  17:28:03,365 - #42 )
+INFO  17:28:03,366 - #43 {
+INFO  17:28:03,366 - #44 }
+INFO  17:28:03,367 - #49 int
+INFO  17:28:03,367 - #49 f2
+INFO  17:28:03,367 - #41 (
+INFO  17:28:03,367 - #42 )
+INFO  17:28:03,368 - #43 {
+INFO  17:28:03,368 - #44 }
+INFO  17:28:03,368 - #44 }
+INFO  17:28:03,369 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclVar(
+    DeclConst(
+      DeclConst(
+        DeclConst(
+          DeclConst(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclC(
+              Type(
+               int
+              ) [Type]
+              EndingConstDeclListC1(
+                EndingConstDeclListC(
+                 size
+                  ConstNumber(
+                   10
+                  ) [ConstNumber]
+                ) [EndingConstDeclListC]
+              ) [EndingConstDeclListC1]
+            ) [ConstDeclC]
+          ) [DeclConst]
+          ConstDeclC(
+            Type(
+             char
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               deda
+                ConstChar(
+                 a
+                ) [ConstChar]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           int
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             gegas
+              ConstNumber(
+               3
+              ) [ConstNumber]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      ConstDeclC(
+        Type(
+         bool
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+           cond
+            ConstBool(
+             false
+            ) [ConstBool]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      NonEndingVarDeclListC(
+        NonEndingVarDeclList(
+         a
+          NoBrackets(
+          ) [NoBrackets]
+        ) [NonEndingVarDeclList]
+        NonEndingVarDeclListC(
+          NonEndingVarDeclList(
+           b
+            NoBrackets(
+            ) [NoBrackets]
+          ) [NonEndingVarDeclList]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             c
+              BracketsC(
+              ) [BracketsC]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [NonEndingVarDeclListC]
+      ) [NonEndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    MethodDeclarationList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodName(
+          VoidType(
+          ) [VoidType]
+         f1
+        ) [MethodName]
+        FormsParametarsC(
+          FormPars(
+            NonEndingTypeIdentListC(
+              NonEndingTypeIdentList(
+                Type(
+                 int
+                ) [Type]
+               a
+                NoBrackets(
+                ) [NoBrackets]
+              ) [NonEndingTypeIdentList]
+              EndingTypeIdentListC(
+                EndingTypeIdentList(
+                  Type(
+                   char
+                  ) [Type]
+                 b
+                  NoBrackets(
+                  ) [NoBrackets]
+                ) [EndingTypeIdentList]
+              ) [EndingTypeIdentListC]
+            ) [NonEndingTypeIdentListC]
+          ) [FormPars]
+        ) [FormsParametarsC]
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        NoStatements(
+        ) [NoStatements]
+      ) [MethodDecl]
+    ) [MethodDeclarationList]
+    MethodDecl(
+      MethodName(
+        TypeType(
+          Type(
+           int
+          ) [Type]
+        ) [TypeType]
+       f2
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  17:28:03,370 - ===================================
+INFO  17:28:03,377 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  17:28:03,377 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  17:28:03,377 - Info na liniji 4: Kreirana je konstanta int gegas = 3.
+INFO  17:28:03,377 - Info na liniji 5: Kreirana je konstanta bool cond = false.
+INFO  17:28:03,377 - Info na liniji 6: Inserted a variable!
+INFO  17:28:03,377 - Info na liniji 6: Inserted b variable!
+INFO  17:28:03,377 - Info na liniji 6: Inserted c variable!
+INFO  17:28:03,377 - Info na liniji 8: Inserted f1 method!
+INFO  17:28:03,378 - Info na liniji 9: Inserted f2 method!
+ERROR 17:28:03,378 - Greska: Main method not found!

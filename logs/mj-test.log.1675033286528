@@ -1,0 +1,33 @@
+INFO  00:00:50,440 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  00:00:50,468 - #2 program
+INFO  00:00:50,468 - #49 p
+INFO  00:00:50,469 - #7 const
+INFO  00:00:50,469 - #49 int
+INFO  00:00:50,469 - #49 size
+INFO  00:00:50,469 - #36 =
+INFO  00:00:50,470 - #24 -
+ERROR 00:00:50,470 - 
+Sintaksna greska na liniji 2
+INFO  00:00:50,470 - #47 10
+INFO  00:00:50,470 - #39 ,
+INFO  00:00:50,470 - #49 aqua
+INFO  00:00:50,470 - #36 =
+INFO  00:00:50,470 - #47 2
+ERROR 00:00:50,470 - Izvrsen oporavak do , u liniji 2
+ERROR 00:00:50,471 - 
+Sintaksna greska na liniji 2
+INFO  00:00:50,471 - #39 ,
+INFO  00:00:50,471 - #49 retard
+INFO  00:00:50,471 - #36 =
+INFO  00:00:50,472 - #47 3
+ERROR 00:00:50,472 - Izvrsen oporavak do , u liniji 2
+ERROR 00:00:50,472 - 
+Sintaksna greska na liniji 2
+INFO  00:00:50,472 - #37 ;
+INFO  00:00:50,472 - #7 const
+INFO  00:00:50,472 - #49 int
+INFO  00:00:50,472 - #20 ++
+ERROR 00:00:50,472 - Izvrsen oporavak do ; u liniji 2
+ERROR 00:00:50,473 - 
+Sintaksna greska na liniji 3
+ERROR 00:00:50,473 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 3

@@ -1,0 +1,57 @@
+INFO  13:15:31,630 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  13:15:31,658 - #2 program
+INFO  13:15:31,658 - #49 p
+INFO  13:15:31,658 - #7 const
+INFO  13:15:31,659 - #49 int
+INFO  13:15:31,659 - #49 size
+INFO  13:15:31,660 - #36 =
+INFO  13:15:31,660 - #47 10
+INFO  13:15:31,660 - #37 ;
+INFO  13:15:31,660 - #7 const
+INFO  13:15:31,661 - #49 int
+INFO  13:15:31,661 - #49 b
+INFO  13:15:31,661 - #36 =
+INFO  13:15:31,661 - #47 3
+INFO  13:15:31,661 - #37 ;
+INFO  13:15:31,661 - #43 {
+INFO  13:15:31,661 - #44 }
+INFO  13:15:31,662 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+         int
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+           size
+            ConstNumber(
+            ) [ConstNumber]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+       int
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListC(
+         b
+          ConstNumber(
+          ) [ConstNumber]
+        ) [EndingConstDeclListC]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  13:15:31,662 - ===================================
+INFO  13:15:31,668 - p
+ERROR 13:15:31,668 - Greska: glavni metod sa potpisom: void main() {...} metod nije pronadjen!

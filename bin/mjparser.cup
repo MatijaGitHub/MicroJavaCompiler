@@ -60,28 +60,42 @@ terminal THIS, FOREACH, INC, DEC, ARR, PLUS, MINUS, MULT;
 terminal DIV, MOD, ISEQUAL, NOTEQUAL, GRT, GRTEQ, LOW, LOWEQ, AND, OR;
 terminal EQUAL, SEMI, COLON, COMMA, DOT, LPAREN, RPAREN, LBRACE, RBRACE;
 terminal LBRACKET, RBRACKET;
-terminal NUMBER;
-terminal BOOLCONST;
-terminal IDENT;
-terminal CHARCONST;
+terminal Integer NUMBER;
+terminal Boolean BOOLCONST;
+terminal String IDENT;
+terminal Character CHARCONST;
 
 
-nonterminal Program, ConstDecl, VarDecl, ClassDecl, MethodDecl, ConstructorDecl;
-nonterminal Type, FormPars, Statement, DesignatorStatement, ActPars, Condition;
-nonterminal CondTerm, CondFact, Expr, Term, Factor, Designator, Label;
+nonterminal ConstDecl, VarDecl, ClassDecl, MethodDecl, ConstructorDecl;
+nonterminal FormPars, Statement, DesignatorStatement, Condition;
+nonterminal CondTerm, CondFact, Label;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ActParsOpt, ActPars, ExprList;
 nonterminal Assignop, Relop, Addop, Mulop; 
 nonterminal Decl, MethodDeclList, ConstDeclList, ConstList, Const;
-nonterminal VarDeclList, VarList, Brackets;
+nonterminal VarDeclList, Brackets;
 nonterminal ExtendsType, VarDeclarations, ClassDeclarations, MethodDeclarations, ConstructorDeclarations;
 nonterminal FormsParametars, Statements, TypeOrVoid, TypeIdentList, ElseStatement;
-nonterminal Expression, NumberConst, AssignOpExpr, ActParsOpt, DesignatorOpt;
-nonterminal DesignatorList, ExprList, OrTerms, AndTerms, AddopTerms, MulOperations, IdentExprList;
-
+nonterminal Expression, NumberConst, DesignatorOpt;
+nonterminal DesignatorList, OrTerms, AndTerms, AddopTerms, MulOperations, IdentExprList;
+nonterminal EndingConstDeclList, NonEndingConstDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName , Program;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr;
+nonterminal NonEndingVarDeclList, EndingVarDeclList;
+nonterminal NonEndingTypeIdentList, EndingTypeIdentList;
+nonterminal MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
 
 
 precedence left ELSE;
 
-Program ::= (Program) PROG IDENT Decl LBRACE MethodDeclList RBRACE;
+Program ::= (Program) PROG ProgName:p Decl LBRACE MethodDeclList RBRACE
+					
+					;
+
+ProgName ::= (ProgName) IDENT:progName;
 
 Decl ::= (DeclConst) Decl ConstDecl 
 		|
@@ -96,33 +110,46 @@ MethodDeclList ::= (MethodDeclarationList) MethodDeclList MethodDecl
 					|
 					(NoMethodDecl) /*epsilon*/ ;
 
-ConstDecl ::= (ConstDecl) CONST Type ConstDeclList SEMI;
+ConstDecl ::= (ConstDeclC) CONST Type ConstDeclList;
 
-ConstDeclList ::= (ConstDeclList) IDENT EQUAL Const ConstList;
 
-ConstList ::= (ConstListC) ConstList COMMA IDENT EQUAL Const
-			|
-			(NoConstList)
-			;
+ConstDeclList ::= (NonEndingConstDeclListC1) NonEndingConstDeclList ConstDeclList 
+				  |
+				  (EndingConstDeclListC1) EndingConstDeclList
+				  ;
+EndingConstDeclList ::= (EndingConstDeclListC) IDENT:constName EQUAL Const SEMI
+						|
+						(EndingConstDeclListError) error SEMI:l
+						{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :}
+						;
 
-Const ::= (ConstNumber) NUMBER
+
+NonEndingConstDeclList ::=  (NonEndingConstDeclListC) IDENT:constName EQUAL Const COMMA
+						|
+						(NonEndingConstDeclListError) error COMMA:l
+						{: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
+						;
+
+
+Const ::= (ConstNumber) NUMBER:n
 		|
-		(ConstBool) BOOLCONST
+		(ConstBool) BOOLCONST:b
 		|
-		(ConstChar) CHARCONST
+		(ConstChar) CHARCONST:c
 		;
 
-Type ::= (Type) IDENT;
+Type ::= (Type) IDENT:typeName;
 
-VarDecl ::= (VarDecl) Type VarDeclList SEMI;
+VarDecl ::= (VarDecl) Type VarDeclList;
 
+VarDeclList ::= (NonEndingVarDeclListC) NonEndingVarDeclList VarDeclList
+				|
+				(EndingVarDeclListC) EndingVarDeclList
+				;
 
-VarDeclList ::= (VarDeclList) IDENT Brackets VarList;
+NonEndingVarDeclList ::= (NonEndingVarDeclList) IDENT:varName Brackets COMMA;
 
-VarList ::= (VarListC) VarList COMMA IDENT Brackets
-			|
-			(NoConstListVar)
-			;
+EndingVarDeclList ::= (EndingVarDeclList) IDENT:varName Brackets SEMI;
 			
 Brackets ::= (BracketsC) LBRACKET RBRACKET
 			|
@@ -159,9 +186,15 @@ MethodDeclarations	::= (MethodDeclarationsC)  MethodDecl MethodDeclarations
 						|
 						(NoMethodDeclarations)
 						;
-MethodDecl ::= (MethodDecl) TypeOrVoid IDENT LPAREN FormsParametars RPAREN VarDeclarations LBRACE Statements RBRACE;
+MethodDecl ::= (MethodDecl) MethodName:m LPAREN FormsParametars RPAREN VarDeclarations LBRACE Statements RBRACE;
+
+MethodName ::= (MethodName) TypeOrVoid IDENT:methName;
 
 
+TypeOrVoid ::=  (TypeType)Type
+				|
+				(VoidType)VOID
+				;
 
 FormsParametars ::= (FormsParametarsC) FormPars
 					|
@@ -177,17 +210,19 @@ Statements ::= (StatementsC) Statements Statement
 
 
 
-TypeOrVoid ::=  (TypeType)Type
-				|
-				(VoidType)VOID
-				;
-				
-FormPars ::= (FormPars) Type IDENT Brackets TypeIdentList;
 
-TypeIdentList ::= (TypeIdentListC) TypeIdentList COMMA Type IDENT Brackets
+				
+FormPars ::= (FormPars) TypeIdentList;
+
+
+TypeIdentList ::= (NonEndingTypeIdentListC) NonEndingTypeIdentList TypeIdentList
 				  |
-				  (NoTypeIdentList)
+				  (EndingTypeIdentListC) EndingTypeIdentList
 				  ;
+				  
+NonEndingTypeIdentList ::= (NonEndingTypeIdentList) Type IDENT:identName Brackets COMMA;
+
+EndingTypeIdentList ::= (EndingTypeIdentList) Type IDENT:identName Brackets;
 
 
 Statement ::= 	(DesignatorStatementType) DesignatorStatement SEMI
@@ -268,12 +303,12 @@ DesignatorList ::= 	(DesignatorListC) DesignatorList COMMA DesignatorOpt
 			  
 			  
 			  
-ActPars ::=(ActPars) Expr ExprList;		  
+ActPars ::=(ActPars) ExprList;		  
 			  
 			  
-ExprList ::=    (ExprListC) ExprList COMMA Expr
+ExprList ::=    (ExprListC) Expr COMMA ExprList
 				|	  
-			  	(NoExprList)
+			  	(NoExprList) Expr
 			  	;
 			  
 			  
@@ -296,22 +331,22 @@ CondFact ::= (OneCondFact)Expr
 			 (TwoCondFact)Expr Relop Expr
 			 ;		  
 			  
-Expr ::= (PlusExpr) Term AddopTerms
+Expr ::= (PlusExpr) AddopTerms
 		 |
-		 (MinusExpr) MINUS Term AddopTerms
+		 (MinusExpr) MINUS AddopTerms
 		 ;
 		 
-AddopTerms ::= 	(AddopTermsC) AddopTerms Addop Term
+AddopTerms ::= 	(NotEndAddopTerm) Term Addop AddopTerms
 				|
-				(NoAddopTerms)
+				(EndAddopTerm) Term
 				;
 			  
 			  
-Term ::= (Term) Factor MulOperations;			  
+Term ::= (Term) MulOperations;			  
 			  
-MulOperations ::=   (MulOperationsC) MulOperations Mulop Factor
+MulOperations ::=   (BeginMulOp) Factor Mulop MulOperations
 					|
-					(NoMulOperations)
+					(EndMulOp) Factor
 					;			  
 
 Factor ::=  (DesignatorFactor) Designator
@@ -335,14 +370,14 @@ Designator ::= 	(DesignatorDot) Designator DOT IDENT
 				|
 				(DesignatorExpr) Designator LBRACKET Expr RBRACKET 
 				|
-				(DesignatorIdent) IDENT
+				(DesignatorIdent) IDENT:designName
 				|
 				(DesignatorThis) THIS
 				;		  
 			  
 	
 
-
+Label ::= (Label) IDENT;
 			  
 			  
 Assignop ::= (Assignop) EQUAL;		  

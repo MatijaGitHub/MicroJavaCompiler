@@ -1,0 +1,65 @@
+INFO  16:55:44,877 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  16:55:44,904 - #2 program
+INFO  16:55:44,904 - #49 p
+INFO  16:55:44,904 - #7 const
+INFO  16:55:44,904 - #49 int
+INFO  16:55:44,904 - #49 babajay
+INFO  16:55:44,905 - #28 ==
+ERROR 16:55:44,905 - 
+Sintaksna greska na liniji 2
+INFO  16:55:44,905 - #47 3
+INFO  16:55:44,905 - #39 ,
+INFO  16:55:44,905 - #49 mamica
+INFO  16:55:44,905 - #36 =
+INFO  16:55:44,905 - #21 --
+ERROR 16:55:44,906 - Izvrsen oporavak do , u liniji 2 rs.ac.bg.etf.pp1.ast.Type@27bc2616
+ERROR 16:55:44,906 - 
+Sintaksna greska na liniji 2
+INFO  16:55:44,906 - #47 4
+INFO  16:55:44,906 - #39 ,
+INFO  16:55:44,906 - #49 haha
+INFO  16:55:44,906 - #28 ==
+INFO  16:55:44,906 - #47 3
+INFO  16:55:44,907 - #37 ;
+INFO  16:55:44,907 - #7 const
+INFO  16:55:44,907 - #49 int
+INFO  16:55:44,907 - #49 size
+ERROR 16:55:44,907 - Izvrsen oporavak do ; u liniji 2
+INFO  16:55:44,908 - #36 =
+INFO  16:55:44,908 - #47 10
+INFO  16:55:44,908 - #37 ;
+INFO  16:55:44,908 - #43 {
+INFO  16:55:44,908 - #44 }
+INFO  16:55:44,909 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+        ) [Type]
+        NonEndingConstDeclListC1(
+          NonEndingConstDeclListError(
+          ) [NonEndingConstDeclListError]
+          EndingConstDeclListC1(
+            EndingConstDeclListError(
+            ) [EndingConstDeclListError]
+          ) [EndingConstDeclListC1]
+        ) [NonEndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListC(
+          ConstNumber(
+          ) [ConstNumber]
+        ) [EndingConstDeclListC]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  16:55:44,909 - ===================================

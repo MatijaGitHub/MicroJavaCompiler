@@ -1,0 +1,63 @@
+INFO  23:34:52,317 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  23:34:52,346 - #2 program
+INFO  23:34:52,346 - #49 p
+INFO  23:34:52,346 - #7 const
+INFO  23:34:52,346 - #49 int
+INFO  23:34:52,346 - #49 size
+INFO  23:34:52,347 - #36 =
+INFO  23:34:52,347 - #47 10
+INFO  23:34:52,347 - #39 ,
+INFO  23:34:52,348 - #49 aqua
+INFO  23:34:52,348 - #36 =
+INFO  23:34:52,348 - #47 2
+INFO  23:34:52,348 - #39 ,
+INFO  23:34:52,348 - #49 retard
+INFO  23:34:52,348 - #36 =
+INFO  23:34:52,348 - #47 3
+INFO  23:34:52,348 - #37 ;
+INFO  23:34:52,349 - #23 +
+ERROR 23:34:52,349 - 
+Sintaksna greska na liniji 3
+INFO  23:34:52,349 - #36 =
+INFO  23:34:52,349 - #36 =
+INFO  23:34:52,349 - #47 32
+INFO  23:34:52,350 - #49 a
+INFO  23:34:52,350 - #37 ;
+INFO  23:34:52,350 - #23 +
+INFO  23:34:52,350 - #36 =
+INFO  23:34:52,350 - #36 =
+INFO  23:34:52,350 - #47 32
+INFO  23:34:52,350 - #49 a
+INFO  23:34:52,350 - #37 ;
+INFO  23:34:52,350 - #7 const
+INFO  23:34:52,350 - #49 int
+INFO  23:34:52,350 - #49 size
+ERROR 23:34:52,351 - Izvrsen oporavak do ; u liniji 21
+INFO  23:34:52,351 - #36 =
+INFO  23:34:52,351 - #47 10
+INFO  23:34:52,351 - #37 ;
+INFO  23:34:52,351 - #43 {
+INFO  23:34:52,351 - #44 }
+INFO  23:34:52,352 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ErrorConstDecl(
+      ) [ErrorConstDecl]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      ConstDeclList(
+        ConstNumber(
+        ) [ConstNumber]
+        NoConstList(
+        ) [NoConstList]
+      ) [ConstDeclList]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  23:34:52,352 - ===================================

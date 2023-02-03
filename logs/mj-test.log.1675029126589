@@ -1,0 +1,50 @@
+INFO  22:51:39,881 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  22:51:39,909 - #2 program
+INFO  22:51:39,909 - #49 p
+INFO  22:51:39,909 - #7 const
+INFO  22:51:39,910 - #49 int
+INFO  22:51:39,910 - #49 size
+INFO  22:51:39,910 - #36 =
+INFO  22:51:39,910 - #47 10
+INFO  22:51:39,910 - #39 ,
+INFO  22:51:39,911 - #49 aqua
+INFO  22:51:39,911 - #28 ==
+ERROR 22:51:39,911 - 
+Sintaksna greska na liniji 2
+INFO  22:51:39,911 - #47 2
+INFO  22:51:39,911 - #39 ,
+INFO  22:51:39,911 - #49 retard
+INFO  22:51:39,912 - #36 =
+INFO  22:51:39,912 - #47 3
+INFO  22:51:39,912 - #37 ;
+INFO  22:51:39,912 - #7 const
+INFO  22:51:39,912 - #49 int
+INFO  22:51:39,912 - #49 size
+INFO  22:51:39,913 - #36 =
+INFO  22:51:39,913 - #47 10
+INFO  22:51:39,913 - #37 ;
+INFO  22:51:39,914 - #43 {
+INFO  22:51:39,914 - #44 }
+INFO  22:51:39,915 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ErrorConstDecl(
+      ) [ErrorConstDecl]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      ConstDeclList(
+        ConstNumber(
+        ) [ConstNumber]
+        NoConstList(
+        ) [NoConstList]
+      ) [ConstDeclList]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  22:51:39,915 - ===================================

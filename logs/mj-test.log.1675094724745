@@ -1,0 +1,70 @@
+INFO  17:02:04,018 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:02:04,060 - #2 program
+INFO  17:02:04,060 - #49 p
+INFO  17:02:04,060 - #7 const
+INFO  17:02:04,061 - #49 int
+INFO  17:02:04,061 - #49 babajay
+INFO  17:02:04,061 - #28 ==
+ERROR 17:02:04,061 - 
+Sintaksna greska na liniji 2
+INFO  17:02:04,061 - #47 3
+INFO  17:02:04,061 - #39 ,
+INFO  17:02:04,061 - #49 mamica
+INFO  17:02:04,062 - #36 =
+INFO  17:02:04,062 - #21 --
+ERROR 17:02:04,062 - Izvrsen oporavak do , u liniji 2 rs.ac.bg.etf.pp1.ast.Type@27bc2616
+ERROR 17:02:04,063 - 
+Sintaksna greska na liniji 2
+INFO  17:02:04,063 - #47 4
+INFO  17:02:04,063 - #39 ,
+INFO  17:02:04,063 - #49 haha
+INFO  17:02:04,063 - #28 ==
+INFO  17:02:04,063 - #47 3
+INFO  17:02:04,063 - #37 ;
+INFO  17:02:04,063 - #7 const
+INFO  17:02:04,063 - #49 int
+INFO  17:02:04,063 - #49 size
+ERROR 17:02:04,063 - Izvrsen oporavak do ; u liniji 2
+INFO  17:02:04,064 - #36 =
+INFO  17:02:04,064 - #47 10
+INFO  17:02:04,064 - #37 ;
+INFO  17:02:04,065 - #20 ++
+ERROR 17:02:04,065 - 
+Sintaksna greska na liniji 6
+INFO  17:02:04,065 - #23 +
+INFO  17:02:04,065 - #36 =
+INFO  17:02:04,065 - #37 ;
+INFO  17:02:04,065 - #43 {
+INFO  17:02:04,065 - #44 }
+ERROR 17:02:04,065 - Izvrsen oporavak do ; u liniji 3
+INFO  17:02:04,067 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+        ) [Type]
+        NonEndingConstDeclListC1(
+          NonEndingConstDeclListError(
+          ) [NonEndingConstDeclListError]
+          EndingConstDeclListC1(
+            EndingConstDeclListError(
+            ) [EndingConstDeclListError]
+          ) [EndingConstDeclListC1]
+        ) [NonEndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListError(
+        ) [EndingConstDeclListError]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  17:02:04,067 - ===================================

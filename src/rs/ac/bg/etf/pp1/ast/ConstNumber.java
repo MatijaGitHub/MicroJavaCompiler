@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/11/2022 15:59:0
+// 3/1/2023 18:14:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstNumber extends Const {
 
-    public ConstNumber () {
+    private Integer n;
+
+    public ConstNumber (Integer n) {
+        this.n=n;
+    }
+
+    public Integer getN() {
+        return n;
+    }
+
+    public void setN(Integer n) {
+        this.n=n;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class ConstNumber extends Const {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ConstNumber(\n");
+
+        buffer.append(" "+tab+n);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [ConstNumber]");

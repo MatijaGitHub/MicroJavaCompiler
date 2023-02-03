@@ -1,0 +1,103 @@
+INFO  14:56:52,517 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  14:56:52,546 - #2 program
+INFO  14:56:52,547 - #49 p
+INFO  14:56:52,547 - #7 const
+INFO  14:56:52,547 - #49 int
+INFO  14:56:52,547 - #49 size
+INFO  14:56:52,548 - #36 =
+INFO  14:56:52,548 - #47 10
+INFO  14:56:52,548 - #37 ;
+INFO  14:56:52,548 - #7 const
+INFO  14:56:52,549 - #49 char
+INFO  14:56:52,549 - #49 deda
+INFO  14:56:52,549 - #36 =
+INFO  14:56:52,549 - #50 a
+INFO  14:56:52,549 - #37 ;
+INFO  14:56:52,549 - #7 const
+INFO  14:56:52,549 - #49 int
+INFO  14:56:52,549 - #49 b
+INFO  14:56:52,549 - #36 =
+INFO  14:56:52,550 - #47 3
+INFO  14:56:52,550 - #37 ;
+INFO  14:56:52,550 - #7 const
+INFO  14:56:52,550 - #49 bool
+INFO  14:56:52,550 - #49 s
+INFO  14:56:52,550 - #36 =
+INFO  14:56:52,550 - #48 true
+INFO  14:56:52,550 - #37 ;
+INFO  14:56:52,550 - #43 {
+INFO  14:56:52,550 - #44 }
+INFO  14:56:52,551 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclConst(
+    DeclConst(
+      DeclConst(
+        DeclConst(
+          NoDecl(
+          ) [NoDecl]
+          ConstDeclC(
+            Type(
+             int
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               size
+                ConstNumber(
+                 10
+                ) [ConstNumber]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           char
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             deda
+              ConstChar(
+               a
+              ) [ConstChar]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      ConstDeclC(
+        Type(
+         int
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+           b
+            ConstNumber(
+             3
+            ) [ConstNumber]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+       bool
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListC(
+         s
+          ConstBool(
+           true
+          ) [ConstBool]
+        ) [EndingConstDeclListC]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  14:56:52,552 - ===================================
+INFO  14:56:52,558 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  14:56:52,558 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  14:56:52,558 - Info na liniji 4: Kreirana je konstanta int b = 3.
+ERROR 14:56:52,558 - Greska: Main method not found!

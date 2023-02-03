@@ -1,0 +1,53 @@
+INFO  12:45:38,061 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  12:45:40,161 - #2 program
+INFO  12:45:40,164 - #49 p
+INFO  12:45:40,166 - #7 const
+INFO  12:45:40,186 - #49 int
+INFO  12:45:40,188 - #49 size
+INFO  12:45:40,200 - #36 =
+INFO  12:45:40,202 - #47 10
+INFO  12:45:40,203 - #37 ;
+INFO  12:45:40,221 - #7 const
+INFO  12:45:40,226 - #49 int
+INFO  12:45:40,227 - #49 b
+INFO  12:45:40,229 - #36 =
+INFO  12:45:40,231 - #47 3
+INFO  12:45:40,233 - #37 ;
+INFO  12:45:40,235 - #43 {
+INFO  12:45:40,240 - #44 }
+INFO  12:45:40,837 - Program(
+  ProgName(
+  ) [ProgName]
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+            ConstNumber(
+            ) [ConstNumber]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListC(
+          ConstNumber(
+          ) [ConstNumber]
+        ) [EndingConstDeclListC]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  12:45:41,148 - ===================================
+INFO  12:46:12,374 - Piip
+ERROR 12:46:15,675 - Greska: glavni metod sa potpisom: void main() {...} metod nije pronadjen!
+INFO  12:46:36,751 - rs.ac.bg.etf.pp1.ast.ProgName@68ceda24

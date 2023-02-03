@@ -1,0 +1,50 @@
+INFO  12:35:31,270 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  12:35:31,296 - #2 program
+INFO  12:35:31,296 - #49 p
+INFO  12:35:31,296 - #7 const
+INFO  12:35:31,297 - #49 int
+INFO  12:35:31,297 - #49 size
+INFO  12:35:31,297 - #36 =
+INFO  12:35:31,297 - #47 10
+INFO  12:35:31,297 - #37 ;
+INFO  12:35:31,298 - #7 const
+INFO  12:35:31,298 - #49 int
+INFO  12:35:31,298 - #49 b
+INFO  12:35:31,298 - #36 =
+INFO  12:35:31,298 - #47 3
+INFO  12:35:31,298 - #37 ;
+INFO  12:35:31,298 - #43 {
+INFO  12:35:31,299 - #44 }
+INFO  12:35:31,299 - Program(
+  ProgName(
+  ) [ProgName]
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+            ConstNumber(
+            ) [ConstNumber]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListC(
+          ConstNumber(
+          ) [ConstNumber]
+        ) [EndingConstDeclListC]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  12:35:31,300 - ===================================

@@ -87,10 +87,11 @@ import java_cup.runtime.Symbol;
 <COMMENT> .      { yybegin(COMMENT); }
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
-"true"|"false" {return new_symbol(sym.BOOLCONST,Boolean.parseBoolean(yytext()));}
+"true" {return new_symbol(sym.BOOLCONST, true);}
+"false" {return new_symbol(sym.BOOLCONST, false);}
 [0-9]+  { return new_symbol(sym.NUMBER, Integer.parseInt(yytext())); }
 ([a-z]|[A-Z])[a-zA-Z0-9_]* 	{return new_symbol (sym.IDENT, yytext());}
-"'"[a-zA-Z]"'" {return new_symbol(sym.CHARCONST, yytext());}
+'.'		 	{ return new_symbol(sym.CHARCONST, yytext().charAt(1)); }
 
 
 . { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }

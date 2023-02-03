@@ -1,0 +1,73 @@
+INFO  00:01:26,531 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  00:01:26,559 - #2 program
+INFO  00:01:26,559 - #49 p
+INFO  00:01:26,559 - #7 const
+INFO  00:01:26,559 - #49 int
+INFO  00:01:26,559 - #49 size
+INFO  00:01:26,560 - #36 =
+INFO  00:01:26,560 - #24 -
+ERROR 00:01:26,560 - 
+Sintaksna greska na liniji 2
+INFO  00:01:26,560 - #47 10
+INFO  00:01:26,560 - #39 ,
+INFO  00:01:26,560 - #49 aqua
+INFO  00:01:26,560 - #36 =
+INFO  00:01:26,561 - #47 2
+ERROR 00:01:26,561 - Izvrsen oporavak do , u liniji 2
+ERROR 00:01:26,561 - 
+Sintaksna greska na liniji 2
+INFO  00:01:26,561 - #39 ,
+INFO  00:01:26,561 - #49 retard
+INFO  00:01:26,561 - #36 =
+INFO  00:01:26,562 - #47 3
+ERROR 00:01:26,562 - Izvrsen oporavak do , u liniji 2
+ERROR 00:01:26,562 - 
+Sintaksna greska na liniji 2
+INFO  00:01:26,562 - #37 ;
+INFO  00:01:26,562 - #7 const
+INFO  00:01:26,562 - #49 int
+INFO  00:01:26,562 - #49 size
+ERROR 00:01:26,562 - Izvrsen oporavak do ; u liniji 2
+INFO  00:01:26,563 - #36 =
+INFO  00:01:26,563 - #47 10
+ERROR 00:01:26,563 - 
+Sintaksna greska na liniji 3
+INFO  00:01:26,563 - #37 ;
+INFO  00:01:26,563 - #43 {
+INFO  00:01:26,563 - #44 }
+ERROR 00:01:26,563 - Izvrsen oporavak do ; u liniji 3
+INFO  00:01:26,564 - Program(
+  DeclConst(
+    DeclConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDeclC(
+        Type(
+        ) [Type]
+        NonEndingConstDeclListC1(
+          NonEndingConstDeclListError(
+          ) [NonEndingConstDeclListError]
+          NonEndingConstDeclListC1(
+            NonEndingConstDeclListError(
+            ) [NonEndingConstDeclListError]
+            EndingConstDeclListC1(
+              EndingConstDeclListError(
+              ) [EndingConstDeclListError]
+            ) [EndingConstDeclListC1]
+          ) [NonEndingConstDeclListC1]
+        ) [NonEndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListError(
+        ) [EndingConstDeclListError]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  00:01:26,564 - ===================================

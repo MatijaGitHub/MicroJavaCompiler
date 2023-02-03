@@ -1,0 +1,165 @@
+INFO  17:34:17,513 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:34:17,556 - #2 program
+INFO  17:34:17,556 - #49 p
+INFO  17:34:17,556 - #7 const
+INFO  17:34:17,557 - #49 int
+INFO  17:34:17,557 - #49 size
+INFO  17:34:17,558 - #36 =
+INFO  17:34:17,558 - #47 10
+INFO  17:34:17,558 - #37 ;
+INFO  17:34:17,558 - #7 const
+INFO  17:34:17,558 - #49 char
+INFO  17:34:17,559 - #49 deda
+INFO  17:34:17,559 - #36 =
+INFO  17:34:17,559 - #50 a
+INFO  17:34:17,559 - #37 ;
+INFO  17:34:17,559 - #7 const
+INFO  17:34:17,559 - #49 int
+INFO  17:34:17,559 - #49 gegas
+INFO  17:34:17,559 - #36 =
+INFO  17:34:17,559 - #47 3
+INFO  17:34:17,559 - #37 ;
+INFO  17:34:17,559 - #7 const
+INFO  17:34:17,560 - #49 bool
+INFO  17:34:17,560 - #49 cond
+INFO  17:34:17,560 - #36 =
+INFO  17:34:17,560 - #48 false
+INFO  17:34:17,560 - #37 ;
+INFO  17:34:17,560 - #49 int
+INFO  17:34:17,560 - #49 a
+INFO  17:34:17,560 - #39 ,
+INFO  17:34:17,561 - #49 b
+INFO  17:34:17,562 - #39 ,
+INFO  17:34:17,562 - #49 c
+INFO  17:34:17,562 - #45 [
+INFO  17:34:17,562 - #46 ]
+INFO  17:34:17,562 - #37 ;
+INFO  17:34:17,562 - #43 {
+INFO  17:34:17,563 - #15 void
+INFO  17:34:17,564 - #49 main
+INFO  17:34:17,564 - #41 (
+INFO  17:34:17,565 - #42 )
+INFO  17:34:17,565 - #43 {
+INFO  17:34:17,565 - #44 }
+INFO  17:34:17,566 - #44 }
+INFO  17:34:17,568 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  DeclVar(
+    DeclConst(
+      DeclConst(
+        DeclConst(
+          DeclConst(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclC(
+              Type(
+               int
+              ) [Type]
+              EndingConstDeclListC1(
+                EndingConstDeclListC(
+                 size
+                  ConstNumber(
+                   10
+                  ) [ConstNumber]
+                ) [EndingConstDeclListC]
+              ) [EndingConstDeclListC1]
+            ) [ConstDeclC]
+          ) [DeclConst]
+          ConstDeclC(
+            Type(
+             char
+            ) [Type]
+            EndingConstDeclListC1(
+              EndingConstDeclListC(
+               deda
+                ConstChar(
+                 a
+                ) [ConstChar]
+              ) [EndingConstDeclListC]
+            ) [EndingConstDeclListC1]
+          ) [ConstDeclC]
+        ) [DeclConst]
+        ConstDeclC(
+          Type(
+           int
+          ) [Type]
+          EndingConstDeclListC1(
+            EndingConstDeclListC(
+             gegas
+              ConstNumber(
+               3
+              ) [ConstNumber]
+            ) [EndingConstDeclListC]
+          ) [EndingConstDeclListC1]
+        ) [ConstDeclC]
+      ) [DeclConst]
+      ConstDeclC(
+        Type(
+         bool
+        ) [Type]
+        EndingConstDeclListC1(
+          EndingConstDeclListC(
+           cond
+            ConstBool(
+             false
+            ) [ConstBool]
+          ) [EndingConstDeclListC]
+        ) [EndingConstDeclListC1]
+      ) [ConstDeclC]
+    ) [DeclConst]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      NonEndingVarDeclListC(
+        NonEndingVarDeclList(
+         a
+          NoBrackets(
+          ) [NoBrackets]
+        ) [NonEndingVarDeclList]
+        NonEndingVarDeclListC(
+          NonEndingVarDeclList(
+           b
+            NoBrackets(
+            ) [NoBrackets]
+          ) [NonEndingVarDeclList]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             c
+              BracketsC(
+              ) [BracketsC]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [NonEndingVarDeclListC]
+      ) [NonEndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  17:34:17,568 - ===================================
+INFO  17:34:17,580 - Info na liniji 2: Kreirana je konstanta int size = 10.
+INFO  17:34:17,580 - Info na liniji 3: Kreirana je konstanta char deda = a.
+INFO  17:34:17,580 - Info na liniji 4: Kreirana je konstanta int gegas = 3.
+INFO  17:34:17,580 - Info na liniji 5: Kreirana je konstanta bool cond = false.
+INFO  17:34:17,581 - Info na liniji 6: Inserted a variable!
+INFO  17:34:17,581 - Info na liniji 6: Inserted b variable!
+INFO  17:34:17,581 - Info na liniji 6: Inserted c variable!
+INFO  17:34:17,581 - Info na liniji 10: Inserted main method!

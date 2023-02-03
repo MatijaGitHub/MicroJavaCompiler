@@ -1,0 +1,31 @@
+INFO  00:09:58,875 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  00:09:58,903 - #2 program
+INFO  00:09:58,903 - #49 p
+INFO  00:09:58,903 - #7 const
+INFO  00:09:58,904 - #49 int
+INFO  00:09:58,904 - #49 size
+INFO  00:09:58,904 - #36 =
+INFO  00:09:58,904 - #47 10
+ERROR 00:09:58,904 - 
+Sintaksna greska na liniji 3
+INFO  00:09:58,904 - #37 ;
+INFO  00:09:58,905 - #43 {
+INFO  00:09:58,905 - #44 }
+ERROR 00:09:58,905 - Izvrsen oporavak do ; u liniji 3
+INFO  00:09:58,907 - Program(
+  DeclConst(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclC(
+      Type(
+      ) [Type]
+      EndingConstDeclListC1(
+        EndingConstDeclListError(
+        ) [EndingConstDeclListError]
+      ) [EndingConstDeclListC1]
+    ) [ConstDeclC]
+  ) [DeclConst]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  00:09:58,907 - ===================================
