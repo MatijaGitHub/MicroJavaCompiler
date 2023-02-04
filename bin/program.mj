@@ -11,18 +11,21 @@ bool se;
 //Assign value test
 char ch[];
 int in[];
-
 int a1, a2, a3;
 char c1, c2, c3;
 
 
 char return_value;
 {
-	char f9(char carr[]){
-		f9(ch);
+
+	char f9(char carr[]) int x;{
+		//f9(ch,2);
+		len(ch);
 		return f9(ch);
 	}
 
+	
+	// novi komentar
 	int f1(int a, int b, char c){
 		a = 3 + a + 15 + 4*5*6;
 		c1 = ch[7 + 8 + 3*a*a];
@@ -45,9 +48,22 @@ char return_value;
 		
 		return true;
 	}
-	int f6(int a, char b){
+	int f6(int a, char b) int x123, y123;{
+		x123 = 3;
 		return 25 + 26*f5(a + 27, 'c', true)+ 28 + f1(29, c[30 + 31] + 32, deda)*f5(33, 'a', f4());
 	}
 	
-	void main () {}
+	void main () {
+		
+		while(true){
+			break;
+		}
+		if(c == null || false && f4()){
+			
+		}
+		c++;
+		x123 = 3;
+		read(c[1]);
+		print(c[1], 2);
+	}
 }

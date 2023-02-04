@@ -1,13 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2023 18:14:20
+// 4/1/2023 1:1:55
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class NoAndTerms extends AndTerms {
 
-    public NoAndTerms () {
+    private CondFact CondFact;
+
+    public NoAndTerms (CondFact CondFact) {
+        this.CondFact=CondFact;
+        if(CondFact!=null) CondFact.setParent(this);
+    }
+
+    public CondFact getCondFact() {
+        return CondFact;
+    }
+
+    public void setCondFact(CondFact CondFact) {
+        this.CondFact=CondFact;
     }
 
     public void accept(Visitor visitor) {
@@ -15,13 +27,16 @@ public class NoAndTerms extends AndTerms {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(CondFact!=null) CondFact.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(CondFact!=null) CondFact.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(CondFact!=null) CondFact.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -29,6 +44,12 @@ public class NoAndTerms extends AndTerms {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("NoAndTerms(\n");
+
+        if(CondFact!=null)
+            buffer.append(CondFact.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [NoAndTerms]");

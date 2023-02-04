@@ -74,9 +74,6 @@ nonterminal ConstructorDecl ConstructorDecl;
 nonterminal FormPars FormPars;
 nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
-nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
 nonterminal Label Label;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Term;
@@ -106,8 +103,6 @@ nonterminal Expression Expression;
 nonterminal NumberConst NumberConst;
 nonterminal DesignatorOpt DesignatorOpt;
 nonterminal DesignatorList DesignatorList;
-nonterminal OrTerms OrTerms;
-nonterminal AndTerms AndTerms;
 nonterminal AddopTerms AddopTerms;
 nonterminal MulOperations MulOperations;
 nonterminal IdentExprList IdentExprList;
@@ -122,6 +117,9 @@ nonterminal NonEndingTypeIdentList NonEndingTypeIdentList;
 nonterminal EndingTypeIdentList EndingTypeIdentList;
 nonterminal MethodName MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
+nonterminal While While;
+nonterminal Foreach Foreach;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition, OrTerms, AndTerms;
 
 
 precedence left ELSE;
@@ -264,7 +262,7 @@ Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 SEMI {: RESULT=n
 				|
  				(IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ElseStatement:E3 {: RESULT=new IfStatement(C1, S2, E3); RESULT.setLine(C1left); :}
  				|
- 				(WhileStatement) WHILE LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new WhileStatement(C1, S2); RESULT.setLine(C1left); :}
+ 				(WhileStatement) While:W1 LPAREN Condition:C2 RPAREN Statement:S3 {: RESULT=new WhileStatement(W1, C2, S3); RESULT.setLine(W1left); :}
  				|
  				(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 			  	|
@@ -276,13 +274,16 @@ Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 SEMI {: RESULT=n
 			  	|
 			  	(PrintStatement) PRINT LPAREN Expr:E1 NumberConst:N2 RPAREN SEMI {: RESULT=new PrintStatement(E1, N2); RESULT.setLine(E1left); :}
 				|
-			  	(ForeachStatement) Designator:D1 DOT FOREACH LPAREN IDENT:I2 ARR Statement:S3 RPAREN SEMI {: RESULT=new ForeachStatement(D1, I2, S3); RESULT.setLine(D1left); :}
+			  	(ForeachStatement) Designator:D1 DOT Foreach:F2 LPAREN IDENT:identName ARR Statement:S3 RPAREN SEMI {: RESULT=new ForeachStatement(D1, F2, identName, S3); RESULT.setLine(D1left); :}
 			  	|
 			  	(MultipleStatements) LBRACE Statements:S1 RBRACE {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
 			  	;
 			  
 			  
-			  
+While ::= (While) WHILE {: RESULT=new While(); :};			  
+
+Foreach ::= (Foreach) FOREACH {: RESULT=new Foreach(); :};
+
 
 Expression ::= (ExpressionC) Expr:E1 {: RESULT=new ExpressionC(E1); RESULT.setLine(E1left); :}
 			   |
@@ -347,18 +348,18 @@ ExprList ::=    (ExprListC) Expr:E1 COMMA ExprList:E2 {: RESULT=new ExprListC(E1
 			  	;
 			  
 			  
-Condition ::= (Condition) CondTerm:C1 OrTerms:O2 {: RESULT=new Condition(C1, O2); RESULT.setLine(C1left); :};
+Condition ::= (Condition) OrTerms:O1 {: RESULT=new Condition(O1); RESULT.setLine(O1left); :};
 
 OrTerms ::= (OrTermsC) OrTerms:O1 OR CondTerm:C2 {: RESULT=new OrTermsC(O1, C2); RESULT.setLine(O1left); :}
 			|
-			(NoOrTerms) {: RESULT=new NoOrTerms(); :}
+			(NoOrTerms) CondTerm:C1 {: RESULT=new NoOrTerms(C1); RESULT.setLine(C1left); :} 
 			; 
 			
-CondTerm ::= (CondTerm) CondFact:C1 AndTerms:A2 {: RESULT=new CondTerm(C1, A2); RESULT.setLine(C1left); :}; 
+CondTerm ::= (CondTerm) AndTerms:A1 {: RESULT=new CondTerm(A1); RESULT.setLine(A1left); :}; 
 
 AndTerms ::= (AndTermsC) AndTerms:A1 AND CondFact:C2 {: RESULT=new AndTermsC(A1, C2); RESULT.setLine(A1left); :}
 			 |
-			 (NoAndTerms) {: RESULT=new NoAndTerms(); :}
+			 (NoAndTerms) CondFact:C1 {: RESULT=new NoAndTerms(C1); RESULT.setLine(C1left); :} 
 			 ;
 			  
 CondFact ::= (OneCondFact)Expr:E1 {: RESULT=new OneCondFact(E1); RESULT.setLine(E1left); :}
@@ -441,6 +442,8 @@ Addop ::=   (AddOperation) PLUS {: RESULT=new AddOperation(); :}
 Mulop ::=   (MulOperation) MULT {: RESULT=new MulOperation(); :}
 			|
 			(DivOperation) DIV {: RESULT=new DivOperation(); :}
+			|
+			(ModOperation) MOD {: RESULT=new ModOperation(); :}
 			;
 
 

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2023 18:14:20
+// 4/1/2023 1:1:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,22 +9,13 @@ public class CondTerm implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private CondFact CondFact;
+    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
+
     private AndTerms AndTerms;
 
-    public CondTerm (CondFact CondFact, AndTerms AndTerms) {
-        this.CondFact=CondFact;
-        if(CondFact!=null) CondFact.setParent(this);
+    public CondTerm (AndTerms AndTerms) {
         this.AndTerms=AndTerms;
         if(AndTerms!=null) AndTerms.setParent(this);
-    }
-
-    public CondFact getCondFact() {
-        return CondFact;
-    }
-
-    public void setCondFact(CondFact CondFact) {
-        this.CondFact=CondFact;
     }
 
     public AndTerms getAndTerms() {
@@ -56,18 +47,15 @@ public class CondTerm implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(CondFact!=null) CondFact.accept(visitor);
         if(AndTerms!=null) AndTerms.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(CondFact!=null) CondFact.traverseTopDown(visitor);
         if(AndTerms!=null) AndTerms.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(CondFact!=null) CondFact.traverseBottomUp(visitor);
         if(AndTerms!=null) AndTerms.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -76,12 +64,6 @@ public class CondTerm implements SyntaxNode {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("CondTerm(\n");
-
-        if(CondFact!=null)
-            buffer.append(CondFact.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
 
         if(AndTerms!=null)
             buffer.append(AndTerms.toString("  "+tab));

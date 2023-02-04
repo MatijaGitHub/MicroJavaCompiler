@@ -2,7 +2,7 @@ package rs.ac.bg.etf.pp1;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -29,7 +29,7 @@ public class MJParserTest {
         
         Reader br = null;
         try {
-            File sourceCode = new File("test/program.mj");
+            File sourceCode = new File("test/test302.mj");
             log.info("Compiling source file: " + sourceCode.getAbsolutePath());
             
             br = new BufferedReader(new FileReader(sourceCode));

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2023 18:14:20
+// 4/1/2023 1:1:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,22 +9,13 @@ public class Condition implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private CondTerm CondTerm;
+    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
+
     private OrTerms OrTerms;
 
-    public Condition (CondTerm CondTerm, OrTerms OrTerms) {
-        this.CondTerm=CondTerm;
-        if(CondTerm!=null) CondTerm.setParent(this);
+    public Condition (OrTerms OrTerms) {
         this.OrTerms=OrTerms;
         if(OrTerms!=null) OrTerms.setParent(this);
-    }
-
-    public CondTerm getCondTerm() {
-        return CondTerm;
-    }
-
-    public void setCondTerm(CondTerm CondTerm) {
-        this.CondTerm=CondTerm;
     }
 
     public OrTerms getOrTerms() {
@@ -56,18 +47,15 @@ public class Condition implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(CondTerm!=null) CondTerm.accept(visitor);
         if(OrTerms!=null) OrTerms.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(CondTerm!=null) CondTerm.traverseTopDown(visitor);
         if(OrTerms!=null) OrTerms.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(CondTerm!=null) CondTerm.traverseBottomUp(visitor);
         if(OrTerms!=null) OrTerms.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -76,12 +64,6 @@ public class Condition implements SyntaxNode {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("Condition(\n");
-
-        if(CondTerm!=null)
-            buffer.append(CondTerm.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
 
         if(OrTerms!=null)
             buffer.append(OrTerms.toString("  "+tab));
