@@ -1,37 +1,30 @@
-program run_test
-int arr[];
-int c;
-char n;
+//Test 302
+
+program test302
+
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+int niz2;
+
+int niz[];
+int a, curr;
+
 {
-
-
-	int f1(char a, int x1, int x2){
-		print(a);
-		return x1 + x2;
+	
+	
+	
+	void main()
+	{
+		niz = new int[10];
+		niz[0]++;
+		niz[1]--;
+		print(niz[0]);
+		print(niz[1]);
+		
+	
 	}
-    void main()
-    int x,y,c;
-    {
-    	
-    	arr = new int[5];
-    	arr[0] = 1;
-    	arr[1] = 2;
-    	arr[2] = 3;
-    	arr[3] = 4;
-    	arr[4] = 5;
-		arr.foreach(c=>{
-			print(c);
-			arr.foreach(c=>{
-				print(c);
-			});
-			print(eol);
-		});   
-		
-		print(f1('x', f1('y', 3, f1('z', 7, 23)), 7));
-		
-		x = f1('c', 1, 2) * 3 - 1;
-		print(x);
-    	
-    }
-   
 }
+

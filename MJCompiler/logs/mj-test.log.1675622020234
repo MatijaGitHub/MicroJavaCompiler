@@ -1,0 +1,276 @@
+INFO  19:33:07,489 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  19:33:07,525 - #2 program
+INFO  19:33:07,525 - #49 test302
+INFO  19:33:07,525 - #7 const
+INFO  19:33:07,526 - #49 int
+INFO  19:33:07,526 - #49 jedan
+INFO  19:33:07,526 - #36 =
+INFO  19:33:07,526 - #47 1
+INFO  19:33:07,526 - #37 ;
+INFO  19:33:07,526 - #49 int
+INFO  19:33:07,527 - #49 i
+INFO  19:33:07,527 - #37 ;
+INFO  19:33:07,528 - #49 bool
+INFO  19:33:07,530 - #49 ibool
+INFO  19:33:07,530 - #37 ;
+INFO  19:33:07,530 - #49 int
+INFO  19:33:07,530 - #49 niz2
+INFO  19:33:07,530 - #37 ;
+INFO  19:33:07,530 - #49 int
+INFO  19:33:07,530 - #49 niz
+INFO  19:33:07,530 - #45 [
+INFO  19:33:07,530 - #46 ]
+INFO  19:33:07,530 - #37 ;
+INFO  19:33:07,530 - #49 int
+INFO  19:33:07,530 - #49 a
+INFO  19:33:07,530 - #39 ,
+INFO  19:33:07,530 - #49 curr
+INFO  19:33:07,531 - #37 ;
+INFO  19:33:07,531 - #43 {
+INFO  19:33:07,531 - #15 void
+INFO  19:33:07,531 - #49 main
+INFO  19:33:07,532 - #41 (
+INFO  19:33:07,532 - #42 )
+INFO  19:33:07,532 - #43 {
+INFO  19:33:07,533 - #49 niz
+INFO  19:33:07,533 - #36 =
+INFO  19:33:07,533 - #11 new
+INFO  19:33:07,534 - #49 int
+INFO  19:33:07,534 - #45 [
+INFO  19:33:07,534 - #47 10
+INFO  19:33:07,534 - #46 ]
+INFO  19:33:07,534 - #37 ;
+INFO  19:33:07,535 - #49 niz
+INFO  19:33:07,535 - #45 [
+INFO  19:33:07,535 - #47 0
+INFO  19:33:07,535 - #46 ]
+INFO  19:33:07,535 - #20 ++
+INFO  19:33:07,535 - #37 ;
+INFO  19:33:07,535 - #12 print
+INFO  19:33:07,536 - #41 (
+INFO  19:33:07,536 - #49 niz
+INFO  19:33:07,536 - #45 [
+INFO  19:33:07,536 - #47 0
+INFO  19:33:07,536 - #46 ]
+INFO  19:33:07,536 - #42 )
+INFO  19:33:07,536 - #37 ;
+INFO  19:33:07,536 - #44 }
+INFO  19:33:07,537 - #44 }
+INFO  19:33:07,538 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      DeclVar(
+        DeclVar(
+          DeclVar(
+            DeclConst(
+              NoDecl(
+              ) [NoDecl]
+              ConstDeclC(
+                Type(
+                 int
+                ) [Type]
+                EndingConstDeclListC1(
+                  EndingConstDeclListC(
+                   jedan
+                    ConstNumber(
+                     1
+                    ) [ConstNumber]
+                  ) [EndingConstDeclListC]
+                ) [EndingConstDeclListC1]
+              ) [ConstDeclC]
+            ) [DeclConst]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              EndingVarDeclListC(
+                EndingVarDeclList(
+                 i
+                  NoBrackets(
+                  ) [NoBrackets]
+                ) [EndingVarDeclList]
+              ) [EndingVarDeclListC]
+            ) [VarDecl]
+          ) [DeclVar]
+          VarDecl(
+            Type(
+             bool
+            ) [Type]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               ibool
+                NoBrackets(
+                ) [NoBrackets]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [VarDecl]
+        ) [DeclVar]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             niz2
+              NoBrackets(
+              ) [NoBrackets]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [VarDecl]
+      ) [DeclVar]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           niz
+            BracketsC(
+            ) [BracketsC]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      NonEndingVarDeclListC(
+        NonEndingVarDeclList(
+         a
+          NoBrackets(
+          ) [NoBrackets]
+        ) [NonEndingVarDeclList]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           curr
+            NoBrackets(
+            ) [NoBrackets]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [NonEndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      StatementsC(
+        StatementsC(
+          StatementsC(
+            NoStatements(
+            ) [NoStatements]
+            DesignatorStatementType(
+              DesignatorStatementOne(
+                AssignOpExprBase(
+                  DesignatorIdent(
+                   niz
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  PlusExpr(
+                    EndAddopTerm(
+                      Term(
+                        EndMulOp(
+                          DesignatorFactorNewExpr(
+                            Type(
+                             int
+                            ) [Type]
+                            PlusExpr(
+                              EndAddopTerm(
+                                Term(
+                                  EndMulOp(
+                                    DesignatorFactorNumber(
+                                     10
+                                    ) [DesignatorFactorNumber]
+                                  ) [EndMulOp]
+                                ) [Term]
+                              ) [EndAddopTerm]
+                            ) [PlusExpr]
+                          ) [DesignatorFactorNewExpr]
+                        ) [EndMulOp]
+                      ) [Term]
+                    ) [EndAddopTerm]
+                  ) [PlusExpr]
+                ) [AssignOpExprBase]
+              ) [DesignatorStatementOne]
+            ) [DesignatorStatementType]
+          ) [StatementsC]
+          DesignatorStatementType(
+            DesignatorStatementOne(
+              AssignOpExprInc(
+                DesignatorExpr(
+                  DesignatorIdent(
+                   niz
+                  ) [DesignatorIdent]
+                  PlusExpr(
+                    EndAddopTerm(
+                      Term(
+                        EndMulOp(
+                          DesignatorFactorNumber(
+                           0
+                          ) [DesignatorFactorNumber]
+                        ) [EndMulOp]
+                      ) [Term]
+                    ) [EndAddopTerm]
+                  ) [PlusExpr]
+                ) [DesignatorExpr]
+              ) [AssignOpExprInc]
+            ) [DesignatorStatementOne]
+          ) [DesignatorStatementType]
+        ) [StatementsC]
+        PrintStatement(
+          PlusExpr(
+            EndAddopTerm(
+              Term(
+                EndMulOp(
+                  DesignatorFactor(
+                    DesignatorExpr(
+                      DesignatorIdent(
+                       niz
+                      ) [DesignatorIdent]
+                      PlusExpr(
+                        EndAddopTerm(
+                          Term(
+                            EndMulOp(
+                              DesignatorFactorNumber(
+                               0
+                              ) [DesignatorFactorNumber]
+                            ) [EndMulOp]
+                          ) [Term]
+                        ) [EndAddopTerm]
+                      ) [PlusExpr]
+                    ) [DesignatorExpr]
+                  ) [DesignatorFactor]
+                ) [EndMulOp]
+              ) [Term]
+            ) [EndAddopTerm]
+          ) [PlusExpr]
+          NoNumberConst(
+          ) [NoNumberConst]
+        ) [PrintStatement]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  19:33:07,539 - ===================================
+INFO  19:33:07,547 - Info na liniji 5: Kreirana je konstanta int jedan = 1.
+INFO  19:33:07,548 - Info na liniji 7: Inserted i variable!
+INFO  19:33:07,548 - Info na liniji 8: Inserted ibool variable!
+INFO  19:33:07,548 - Info na liniji 10: Inserted niz2 variable!
+INFO  19:33:07,548 - Info na liniji 12: Inserted niz variable!
+INFO  19:33:07,548 - Info na liniji 13: Inserted a variable!
+INFO  19:33:07,548 - Info na liniji 13: Inserted curr variable!
+INFO  19:33:07,548 - Info na liniji 19: Inserted main method!
