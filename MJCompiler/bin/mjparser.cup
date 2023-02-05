@@ -67,7 +67,7 @@ terminal Character CHARCONST;
 
 
 nonterminal ConstDecl, VarDecl, ClassDecl, MethodDecl, ConstructorDecl;
-nonterminal FormPars, Statement, DesignatorStatement;
+nonterminal FormPars, DesignatorStatement;
 nonterminal Label;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Term;
@@ -90,8 +90,9 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj FuncCall;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
 nonterminal While, Foreach;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition, OrTerms, AndTerms;
-
-
+nonterminal EndIfStatement, EndElseStatement;
+nonterminal IfStart, BeginElseStatement, BeginWhile;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
 precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p Decl LBRACE MethodDeclList RBRACE
@@ -230,9 +231,9 @@ EndingTypeIdentList ::= (EndingTypeIdentList) Type IDENT:identName Brackets;
 
 Statement ::= 	(DesignatorStatementType) DesignatorStatement SEMI
 				|
- 				(IfStatement) IF LPAREN Condition RPAREN Statement ElseStatement
+ 				(IfStatement) IfStart LPAREN Condition EndIfStatement RPAREN Statement ElseStatement
  				|
- 				(WhileStatement) While LPAREN Condition RPAREN Statement
+ 				(WhileStatement) While LPAREN Condition RPAREN BeginWhile Statement
  				|
  				(BreakStatement) BREAK SEMI
 			  	|
@@ -248,7 +249,14 @@ Statement ::= 	(DesignatorStatementType) DesignatorStatement SEMI
 			  	|
 			  	(MultipleStatements) LBRACE Statements RBRACE
 			  	;
-			  
+
+
+
+
+
+BeginWhile ::= (BeginWhile) ;
+
+IfStart ::= (IfStart) IF;		  
 			  
 While ::= (While) WHILE;			  
 
@@ -261,11 +269,21 @@ Expression ::= (ExpressionC) Expr
 			   ;	
 	
 		  
-ElseStatement ::= (ElseStatementC) ELSE Statement
+ElseStatement ::= (ElseStatementC) BeginElseStatement Statement EndElseStatement
 				  |
 				  (NoElseStatement)
 				  ;	  
-			  
+
+BeginElseStatement ::= (BeginElseStatement) ELSE;
+
+EndIfStatement ::= (EndIfStatement)
+					;
+	
+EndElseStatement ::= (EndElseStatement) 
+					;
+					
+					
+							  
 NumberConst ::=	(NumberConstC) COMMA NUMBER:len
 				|
 				(NoNumberConst)

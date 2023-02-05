@@ -15,8 +15,20 @@ public class CodeGenerator extends VisitorAdaptor {
 		public Obj obj;
 		public Integer index;
 	}
+	private class IfElseStatementCounter{
+		public Integer ifStatementBegin = 0;
+		public Integer elseStatementBegin = 0;
+	}
+	private class WhileStatementCounter{
+		public Integer ifStatementBegin = 0;
+		public Integer elseStatementBegin = 0;
+		public ArrayList<Integer> breakFixups;
+	}
 	private int mainStart;
 	private Stack<Obj> functionCalls = new Stack<>();
+	private Stack<IfElseStatementCounter> ifElseStack = new Stack<>();
+	private Stack<WhileStatementCounter> whileStack = new Stack<>();
+	private Stack<Integer> forEachStack = new Stack<>();
 	private int indexOfArray = 0;
 	//private int itemsToStore = 0;
 	ArrayList<ObjectIndexPair> itemsToStore = new ArrayList<>();
@@ -143,7 +155,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(AssignOpExprBase assignOp) {
+		
 		Code.store(assignOp.getDesignator().obj);
+		
+		
 	}
 	
 	public void visit(BeginMulOp beginMulOp) {
@@ -270,36 +285,165 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.sub);
 	}
 	
-	public void visit(OneCondFact oneCondFact) {
-		
-	}
 	public void visit(TwoCondFact twoCondFact) {
-		
+		int jmpCode = 0;
+		if(twoCondFact.getRelop() instanceof IsEqualOp) {
+			jmpCode = Code.ne;
+		}
+		else if(twoCondFact.getRelop() instanceof NotEqualOp) {
+			jmpCode = Code.eq;
+		}
+		else if(twoCondFact.getRelop() instanceof GrtOp) {
+			jmpCode = Code.le;
+		}
+		else if(twoCondFact.getRelop() instanceof GrtEqOp) {
+			jmpCode = Code.lt;
+		}
+		else if(twoCondFact.getRelop() instanceof LowOp) {
+			jmpCode = Code.ge;
+		}
+		else { //LoweqOp
+			jmpCode = Code.gt;
+		}
+		Code.putFalseJump(jmpCode, 0);
+		int adr1 = Code.pc - 2;
+		Code.loadConst(0);
+		Code.putJump(0);
+		int adr2 = Code.pc - 2;
+		Code.fixup(adr1);
+		Code.loadConst(1);
+		Code.fixup(adr2);
 	}
 	
 	
 	
+	public void visit(IfStart ifStart) {
+		IfElseStatementCounter ifElse = new IfElseStatementCounter();
+		ifElse.ifStatementBegin = 0;
+		ifElse.elseStatementBegin = 0;
+		ifElseStack.push(ifElse);
+	}
+	
+	
+	public void visit(EndIfStatement endIfStatement) {
+		
+		Code.loadConst(1);
+		Code.putFalseJump(Code.eq, 0);
+		IfElseStatementCounter ifElse = ifElseStack.pop();
+		ifElse.ifStatementBegin = Code.pc;
+		ifElseStack.push(ifElse);
+	}
+
+	public void visit(BeginElseStatement beginElseStatement) {
+		Code.putJump(0);
+		IfElseStatementCounter ifElse = ifElseStack.pop();
+		Code.fixup(ifElse.ifStatementBegin - 2);
+		ifElse.elseStatementBegin = Code.pc;
+		ifElseStack.push(ifElse);
+	}
+	
+	
+	public void visit(EndElseStatement endElseStatement) {
+		IfElseStatementCounter ifElse = ifElseStack.pop();
+		//ifElse.elseStatementEnd = Code.pc;
+		ifElseStack.push(ifElse);
+	}
+	
+	
+	public void visit(NoElseStatement noElseStatement) {
+		IfElseStatementCounter ifElse = ifElseStack.pop();
+		Code.fixup(ifElse.ifStatementBegin - 2);
+		ifElse.elseStatementBegin = Code.pc;
+		ifElseStack.push(ifElse);
+	}
 	
 	
 	
+	public void visit(IfStatement ifStmt) {
+		IfElseStatementCounter ifElse = ifElseStack.pop();
+		if(ifStmt.getElseStatement() instanceof ElseStatementC)
+			Code.fixup(ifElse.elseStatementBegin - 2);
+	}
 	
 	
 	
+	public void visit(BeginWhile beginWhile) {
+		WhileStatementCounter ifElse = whileStack.pop();
+		
+		Code.loadConst(1);
+		Code.putFalseJump(Code.eq, 0);
+		ifElse.elseStatementBegin = Code.pc;
+		
+		whileStack.push(ifElse);
+	}
 	
 	
+	public void visit(WhileStatement whileStatement) {
+		WhileStatementCounter ifElse = whileStack.pop();
+		Code.putJump(ifElse.ifStatementBegin);
+		Code.fixup(ifElse.elseStatementBegin - 2);
+		for(Integer breakStmt : ifElse.breakFixups) {
+			Code.fixup(breakStmt);
+		}
+		//ifElseStack.push(ifElse);
+	}
 	
 	
+	public void visit(While whileBegin) {
+		WhileStatementCounter ifElse = new WhileStatementCounter();
+		//ifElse.ifStatementBegin = 0;
+		ifElse.breakFixups = new ArrayList<>();
+		ifElse.elseStatementBegin = 0;
+		ifElse.ifStatementBegin = Code.pc;
+		whileStack.push(ifElse);
+	}
+	
+	public void visit(BreakStatement breakStmt) {
+		WhileStatementCounter ifElse = whileStack.pop();
+		Code.putJump(0);
+		ifElse.breakFixups.add(Code.pc - 2);
+		whileStack.push(ifElse);
+	}
+	
+	public void visit(ContinueStatement continueStmt) {
+		WhileStatementCounter ifElse = whileStack.pop();
+		Code.putJump(ifElse.ifStatementBegin);
+		whileStack.push(ifElse);
+	}
+	
+
+	
+	public void visit(Foreach foreach) {
+		WhileStatementCounter ifElse = new WhileStatementCounter();
+		Obj foreachIterator = ((ForeachStatement)foreach.getParent()).obj;
+		Code.loadConst(0);
+		ifElse.breakFixups = new ArrayList<>();
+		ifElse.elseStatementBegin = 0;
+		ifElse.ifStatementBegin = Code.pc;
+		Code.put(Code.dup);
+		Code.load(((ForeachStatement)(foreach.getParent())).getDesignator().obj);
+		Code.put(Code.arraylength);
+		Code.putFalseJump(Code.lt, 0);
+		ifElse.elseStatementBegin = Code.pc;
+		Code.put(Code.dup);
+		Code.load(((ForeachStatement)(foreach.getParent())).getDesignator().obj);
+		Code.put(Code.dup_x1);
+		Code.put(Code.pop);
+		Code.put(Code.aload);
+		Code.store(foreachIterator);
+		whileStack.push(ifElse);
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void visit(ForeachStatement foreachStmt) {
+		WhileStatementCounter ifElse = whileStack.pop();
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.putJump(ifElse.ifStatementBegin);
+		Code.fixup(ifElse.elseStatementBegin - 2);
+		Code.put(Code.pop);
+		
+	}
 	
 	
 	

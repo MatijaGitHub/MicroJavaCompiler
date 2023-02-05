@@ -1,0 +1,145 @@
+INFO  17:38:21,920 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  17:38:21,953 - #2 program
+INFO  17:38:21,953 - #49 run_test
+INFO  17:38:21,953 - #49 int
+INFO  17:38:21,954 - #49 arr
+INFO  17:38:21,955 - #45 [
+INFO  17:38:21,955 - #46 ]
+INFO  17:38:21,955 - #37 ;
+INFO  17:38:21,955 - #49 int
+INFO  17:38:21,956 - #49 c
+INFO  17:38:21,956 - #37 ;
+INFO  17:38:21,957 - #49 char
+INFO  17:38:21,957 - #49 n
+INFO  17:38:21,957 - #37 ;
+INFO  17:38:21,957 - #43 {
+INFO  17:38:21,957 - #15 void
+INFO  17:38:21,957 - #49 main
+INFO  17:38:21,958 - #41 (
+INFO  17:38:21,958 - #42 )
+INFO  17:38:21,958 - #49 int
+INFO  17:38:21,959 - #49 x
+INFO  17:38:21,959 - #39 ,
+INFO  17:38:21,959 - #49 y
+INFO  17:38:21,959 - #37 ;
+INFO  17:38:21,959 - #43 {
+INFO  17:38:21,959 - #49 arr
+INFO  17:38:21,960 - #40 .
+INFO  17:38:21,960 - #19 foreach
+INFO  17:38:21,960 - #41 (
+INFO  17:38:21,960 - #49 c
+INFO  17:38:21,960 - #22 =>
+INFO  17:38:21,960 - #43 {
+INFO  17:38:21,960 - #44 }
+INFO  17:38:21,961 - #42 )
+INFO  17:38:21,961 - #37 ;
+INFO  17:38:21,961 - #44 }
+INFO  17:38:21,961 - #44 }
+INFO  17:38:21,962 - Program(
+  ProgName(
+   run_test
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      DeclVar(
+        NoDecl(
+        ) [NoDecl]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             arr
+              BracketsC(
+              ) [BracketsC]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [VarDecl]
+      ) [DeclVar]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           c
+            NoBrackets(
+            ) [NoBrackets]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+      EndingVarDeclListC(
+        EndingVarDeclList(
+         n
+          NoBrackets(
+          ) [NoBrackets]
+        ) [EndingVarDeclList]
+      ) [EndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      VarDeclarationsC(
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          NonEndingVarDeclListC(
+            NonEndingVarDeclList(
+             x
+              NoBrackets(
+              ) [NoBrackets]
+            ) [NonEndingVarDeclList]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               y
+                NoBrackets(
+                ) [NoBrackets]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [NonEndingVarDeclListC]
+        ) [VarDecl]
+      ) [VarDeclarationsC]
+      StatementsC(
+        NoStatements(
+        ) [NoStatements]
+        ForeachStatement(
+          DesignatorIdent(
+           arr
+          ) [DesignatorIdent]
+          Foreach(
+          ) [Foreach]
+         c
+          MultipleStatements(
+            NoStatements(
+            ) [NoStatements]
+          ) [MultipleStatements]
+        ) [ForeachStatement]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  17:38:21,963 - ===================================
+INFO  17:38:21,971 - Info na liniji 2: Inserted arr variable!
+INFO  17:38:21,971 - Info na liniji 3: Inserted c variable!
+INFO  17:38:21,971 - Info na liniji 4: Inserted n variable!
+INFO  17:38:21,971 - Info na liniji 7: Inserted main method!
+INFO  17:38:21,971 - Info na liniji 8: Inserted x variable!
+INFO  17:38:21,971 - Info na liniji 8: Inserted y variable!

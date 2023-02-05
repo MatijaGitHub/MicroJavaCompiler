@@ -72,7 +72,6 @@ nonterminal ClassDecl ClassDecl;
 nonterminal MethodDecl MethodDecl;
 nonterminal ConstructorDecl ConstructorDecl;
 nonterminal FormPars FormPars;
-nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Label Label;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor;
@@ -121,8 +120,12 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
 nonterminal While While;
 nonterminal Foreach Foreach;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition, OrTerms, AndTerms;
-
-
+nonterminal EndIfStatement EndIfStatement;
+nonterminal EndElseStatement EndElseStatement;
+nonterminal IfStart IfStart;
+nonterminal BeginElseStatement BeginElseStatement;
+nonterminal BeginWhile BeginWhile;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
 precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p Decl:D1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
@@ -261,9 +264,9 @@ EndingTypeIdentList ::= (EndingTypeIdentList) Type:T1 IDENT:identName Brackets:B
 
 Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStatementType(D1); RESULT.setLine(D1left); :}
 				|
- 				(IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ElseStatement:E3 {: RESULT=new IfStatement(C1, S2, E3); RESULT.setLine(C1left); :}
+ 				(IfStatement) IfStart:I1 LPAREN Condition:C2 EndIfStatement:E3 RPAREN Statement:S4 ElseStatement:E5 {: RESULT=new IfStatement(I1, C2, E3, S4, E5); RESULT.setLine(I1left); :}
  				|
- 				(WhileStatement) While:W1 LPAREN Condition:C2 RPAREN Statement:S3 {: RESULT=new WhileStatement(W1, C2, S3); RESULT.setLine(W1left); :}
+ 				(WhileStatement) While:W1 LPAREN Condition:C2 RPAREN BeginWhile:B3 Statement:S4 {: RESULT=new WhileStatement(W1, C2, B3, S4); RESULT.setLine(W1left); :}
  				|
  				(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 			  	|
@@ -279,7 +282,14 @@ Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 SEMI {: RESULT=n
 			  	|
 			  	(MultipleStatements) LBRACE Statements:S1 RBRACE {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
 			  	;
-			  
+
+
+
+
+
+BeginWhile ::= (BeginWhile) {: RESULT=new BeginWhile(); :} ;
+
+IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :};		  
 			  
 While ::= (While) WHILE {: RESULT=new While(); :};			  
 
@@ -292,11 +302,21 @@ Expression ::= (ExpressionC) Expr:E1 {: RESULT=new ExpressionC(E1); RESULT.setLi
 			   ;	
 	
 		  
-ElseStatement ::= (ElseStatementC) ELSE Statement:S1 {: RESULT=new ElseStatementC(S1); RESULT.setLine(S1left); :}
+ElseStatement ::= (ElseStatementC) BeginElseStatement:B1 Statement:S2 EndElseStatement:E3 {: RESULT=new ElseStatementC(B1, S2, E3); RESULT.setLine(B1left); :}
 				  |
 				  (NoElseStatement) {: RESULT=new NoElseStatement(); :}
 				  ;	  
-			  
+
+BeginElseStatement ::= (BeginElseStatement) ELSE {: RESULT=new BeginElseStatement(); :};
+
+EndIfStatement ::= (EndIfStatement) {: RESULT=new EndIfStatement(); :}
+					;
+	
+EndElseStatement ::= (EndElseStatement) {: RESULT=new EndElseStatement(); :} 
+					;
+					
+					
+							  
 NumberConst ::=	(NumberConstC) COMMA NUMBER:len {: RESULT=new NumberConstC(len); RESULT.setLine(lenleft); :}
 				|
 				(NoNumberConst) {: RESULT=new NoNumberConst(); :}

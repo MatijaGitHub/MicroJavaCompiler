@@ -1,0 +1,1125 @@
+INFO  16:48:29,377 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  16:48:29,411 - #2 program
+INFO  16:48:29,411 - #49 run_test
+INFO  16:48:29,411 - #49 int
+INFO  16:48:29,412 - #49 arr
+INFO  16:48:29,412 - #45 [
+INFO  16:48:29,412 - #46 ]
+INFO  16:48:29,412 - #37 ;
+INFO  16:48:29,413 - #49 int
+INFO  16:48:29,414 - #49 c
+INFO  16:48:29,414 - #37 ;
+INFO  16:48:29,415 - #43 {
+INFO  16:48:29,415 - #15 void
+INFO  16:48:29,415 - #49 main
+INFO  16:48:29,416 - #41 (
+INFO  16:48:29,416 - #42 )
+INFO  16:48:29,416 - #49 int
+INFO  16:48:29,417 - #49 x
+INFO  16:48:29,417 - #39 ,
+INFO  16:48:29,417 - #49 y
+INFO  16:48:29,417 - #37 ;
+INFO  16:48:29,417 - #43 {
+INFO  16:48:29,418 - #49 x
+INFO  16:48:29,418 - #36 =
+INFO  16:48:29,418 - #47 0
+INFO  16:48:29,419 - #37 ;
+INFO  16:48:29,419 - #49 y
+INFO  16:48:29,420 - #36 =
+INFO  16:48:29,420 - #47 0
+INFO  16:48:29,420 - #37 ;
+INFO  16:48:29,420 - #10 while
+INFO  16:48:29,420 - #41 (
+INFO  16:48:29,420 - #49 x
+INFO  16:48:29,420 - #32 <
+INFO  16:48:29,421 - #47 6
+INFO  16:48:29,421 - #42 )
+INFO  16:48:29,422 - #43 {
+INFO  16:48:29,423 - #12 print
+INFO  16:48:29,423 - #41 (
+INFO  16:48:29,423 - #50 x
+INFO  16:48:29,423 - #42 )
+INFO  16:48:29,423 - #37 ;
+INFO  16:48:29,423 - #12 print
+INFO  16:48:29,424 - #41 (
+INFO  16:48:29,424 - #50 =
+INFO  16:48:29,424 - #42 )
+INFO  16:48:29,424 - #37 ;
+INFO  16:48:29,424 - #12 print
+INFO  16:48:29,424 - #41 (
+INFO  16:48:29,424 - #49 x
+INFO  16:48:29,424 - #42 )
+INFO  16:48:29,424 - #37 ;
+INFO  16:48:29,424 - #12 print
+INFO  16:48:29,424 - #41 (
+INFO  16:48:29,424 - #50  
+INFO  16:48:29,424 - #42 )
+INFO  16:48:29,424 - #37 ;
+INFO  16:48:29,424 - #49 x
+INFO  16:48:29,424 - #20 ++
+INFO  16:48:29,424 - #37 ;
+INFO  16:48:29,425 - #10 while
+INFO  16:48:29,425 - #41 (
+INFO  16:48:29,425 - #49 y
+INFO  16:48:29,425 - #32 <
+INFO  16:48:29,425 - #47 7
+INFO  16:48:29,425 - #42 )
+INFO  16:48:29,425 - #43 {
+INFO  16:48:29,425 - #8 if
+INFO  16:48:29,425 - #41 (
+INFO  16:48:29,426 - #49 y
+INFO  16:48:29,426 - #28 ==
+INFO  16:48:29,427 - #47 3
+INFO  16:48:29,427 - #42 )
+INFO  16:48:29,428 - #43 {
+INFO  16:48:29,428 - #12 print
+INFO  16:48:29,428 - #41 (
+INFO  16:48:29,428 - #50 y
+INFO  16:48:29,428 - #42 )
+INFO  16:48:29,428 - #37 ;
+INFO  16:48:29,428 - #12 print
+INFO  16:48:29,428 - #41 (
+INFO  16:48:29,428 - #50 =
+INFO  16:48:29,428 - #42 )
+INFO  16:48:29,428 - #37 ;
+INFO  16:48:29,428 - #12 print
+INFO  16:48:29,428 - #41 (
+INFO  16:48:29,428 - #49 y
+INFO  16:48:29,428 - #42 )
+INFO  16:48:29,428 - #37 ;
+INFO  16:48:29,428 - #12 print
+INFO  16:48:29,429 - #41 (
+INFO  16:48:29,429 - #50  
+INFO  16:48:29,429 - #42 )
+INFO  16:48:29,429 - #37 ;
+INFO  16:48:29,429 - #44 }
+INFO  16:48:29,429 - #6 else
+INFO  16:48:29,429 - #43 {
+INFO  16:48:29,429 - #12 print
+INFO  16:48:29,429 - #41 (
+INFO  16:48:29,429 - #50 y
+INFO  16:48:29,430 - #42 )
+INFO  16:48:29,430 - #37 ;
+INFO  16:48:29,430 - #12 print
+INFO  16:48:29,430 - #41 (
+INFO  16:48:29,430 - #50 =
+INFO  16:48:29,430 - #42 )
+INFO  16:48:29,430 - #37 ;
+INFO  16:48:29,430 - #12 print
+INFO  16:48:29,430 - #41 (
+INFO  16:48:29,430 - #49 y
+INFO  16:48:29,430 - #23 +
+INFO  16:48:29,430 - #47 2
+INFO  16:48:29,431 - #42 )
+INFO  16:48:29,431 - #37 ;
+INFO  16:48:29,431 - #12 print
+INFO  16:48:29,431 - #41 (
+INFO  16:48:29,431 - #50  
+INFO  16:48:29,431 - #42 )
+INFO  16:48:29,431 - #37 ;
+INFO  16:48:29,431 - #44 }
+INFO  16:48:29,431 - #49 y
+INFO  16:48:29,432 - #20 ++
+INFO  16:48:29,432 - #37 ;
+INFO  16:48:29,432 - #44 }
+INFO  16:48:29,432 - #49 y
+INFO  16:48:29,433 - #36 =
+INFO  16:48:29,433 - #47 0
+INFO  16:48:29,433 - #37 ;
+INFO  16:48:29,433 - #12 print
+INFO  16:48:29,433 - #41 (
+INFO  16:48:29,433 - #49 eol
+INFO  16:48:29,433 - #42 )
+INFO  16:48:29,433 - #37 ;
+INFO  16:48:29,433 - #44 }
+INFO  16:48:29,433 - #49 x
+INFO  16:48:29,433 - #36 =
+INFO  16:48:29,434 - #47 3
+INFO  16:48:29,434 - #37 ;
+INFO  16:48:29,434 - #49 y
+INFO  16:48:29,434 - #36 =
+INFO  16:48:29,434 - #47 8
+INFO  16:48:29,434 - #37 ;
+INFO  16:48:29,434 - #8 if
+INFO  16:48:29,434 - #41 (
+INFO  16:48:29,434 - #49 y
+INFO  16:48:29,434 - #30 >
+INFO  16:48:29,434 - #47 5
+INFO  16:48:29,435 - #42 )
+INFO  16:48:29,435 - #43 {
+INFO  16:48:29,435 - #8 if
+INFO  16:48:29,435 - #41 (
+INFO  16:48:29,435 - #49 x
+INFO  16:48:29,435 - #28 ==
+INFO  16:48:29,435 - #47 3
+INFO  16:48:29,435 - #42 )
+INFO  16:48:29,435 - #43 {
+INFO  16:48:29,435 - #8 if
+INFO  16:48:29,435 - #41 (
+INFO  16:48:29,435 - #49 x
+INFO  16:48:29,435 - #23 +
+INFO  16:48:29,435 - #47 3
+INFO  16:48:29,435 - #29 !=
+INFO  16:48:29,435 - #47 6
+INFO  16:48:29,435 - #42 )
+INFO  16:48:29,436 - #43 {
+INFO  16:48:29,436 - #12 print
+INFO  16:48:29,436 - #41 (
+INFO  16:48:29,436 - #50 a
+INFO  16:48:29,436 - #42 )
+INFO  16:48:29,436 - #37 ;
+INFO  16:48:29,436 - #44 }
+INFO  16:48:29,436 - #6 else
+INFO  16:48:29,436 - #43 {
+INFO  16:48:29,436 - #12 print
+INFO  16:48:29,436 - #41 (
+INFO  16:48:29,436 - #50 b
+INFO  16:48:29,436 - #42 )
+INFO  16:48:29,436 - #37 ;
+INFO  16:48:29,436 - #44 }
+INFO  16:48:29,436 - #44 }
+INFO  16:48:29,436 - #6 else
+INFO  16:48:29,436 - #43 {
+INFO  16:48:29,436 - #12 print
+INFO  16:48:29,436 - #41 (
+INFO  16:48:29,436 - #50 c
+INFO  16:48:29,436 - #42 )
+INFO  16:48:29,436 - #37 ;
+INFO  16:48:29,436 - #44 }
+INFO  16:48:29,436 - #44 }
+INFO  16:48:29,436 - #6 else
+INFO  16:48:29,436 - #43 {
+INFO  16:48:29,436 - #8 if
+INFO  16:48:29,436 - #41 (
+INFO  16:48:29,436 - #49 y
+INFO  16:48:29,437 - #28 ==
+INFO  16:48:29,437 - #47 8
+INFO  16:48:29,437 - #42 )
+INFO  16:48:29,437 - #43 {
+INFO  16:48:29,437 - #12 print
+INFO  16:48:29,437 - #41 (
+INFO  16:48:29,437 - #50 d
+INFO  16:48:29,437 - #42 )
+INFO  16:48:29,437 - #37 ;
+INFO  16:48:29,437 - #44 }
+INFO  16:48:29,437 - #44 }
+INFO  16:48:29,437 - #44 }
+INFO  16:48:29,437 - #44 }
+INFO  16:48:29,442 - Program(
+  ProgName(
+   run_test
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           arr
+            BracketsC(
+            ) [BracketsC]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      EndingVarDeclListC(
+        EndingVarDeclList(
+         c
+          NoBrackets(
+          ) [NoBrackets]
+        ) [EndingVarDeclList]
+      ) [EndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      VarDeclarationsC(
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          NonEndingVarDeclListC(
+            NonEndingVarDeclList(
+             x
+              NoBrackets(
+              ) [NoBrackets]
+            ) [NonEndingVarDeclList]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               y
+                NoBrackets(
+                ) [NoBrackets]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [NonEndingVarDeclListC]
+        ) [VarDecl]
+      ) [VarDeclarationsC]
+      StatementsC(
+        StatementsC(
+          StatementsC(
+            StatementsC(
+              StatementsC(
+                StatementsC(
+                  NoStatements(
+                  ) [NoStatements]
+                  DesignatorStatementType(
+                    DesignatorStatementOne(
+                      AssignOpExprBase(
+                        DesignatorIdent(
+                         x
+                        ) [DesignatorIdent]
+                        Assignop(
+                        ) [Assignop]
+                        PlusExpr(
+                          EndAddopTerm(
+                            Term(
+                              EndMulOp(
+                                DesignatorFactorNumber(
+                                 0
+                                ) [DesignatorFactorNumber]
+                              ) [EndMulOp]
+                            ) [Term]
+                          ) [EndAddopTerm]
+                        ) [PlusExpr]
+                      ) [AssignOpExprBase]
+                    ) [DesignatorStatementOne]
+                  ) [DesignatorStatementType]
+                ) [StatementsC]
+                DesignatorStatementType(
+                  DesignatorStatementOne(
+                    AssignOpExprBase(
+                      DesignatorIdent(
+                       y
+                      ) [DesignatorIdent]
+                      Assignop(
+                      ) [Assignop]
+                      PlusExpr(
+                        EndAddopTerm(
+                          Term(
+                            EndMulOp(
+                              DesignatorFactorNumber(
+                               0
+                              ) [DesignatorFactorNumber]
+                            ) [EndMulOp]
+                          ) [Term]
+                        ) [EndAddopTerm]
+                      ) [PlusExpr]
+                    ) [AssignOpExprBase]
+                  ) [DesignatorStatementOne]
+                ) [DesignatorStatementType]
+              ) [StatementsC]
+              WhileStatement(
+                While(
+                ) [While]
+                Condition(
+                  NoOrTerms(
+                    CondTerm(
+                      NoAndTerms(
+                        TwoCondFact(
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactor(
+                                    DesignatorIdent(
+                                     x
+                                    ) [DesignatorIdent]
+                                  ) [DesignatorFactor]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                          LowOp(
+                          ) [LowOp]
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactorNumber(
+                                   6
+                                  ) [DesignatorFactorNumber]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                        ) [TwoCondFact]
+                      ) [NoAndTerms]
+                    ) [CondTerm]
+                  ) [NoOrTerms]
+                ) [Condition]
+                BeginWhile(
+                ) [BeginWhile]
+                MultipleStatements(
+                  StatementsC(
+                    StatementsC(
+                      StatementsC(
+                        StatementsC(
+                          StatementsC(
+                            StatementsC(
+                              StatementsC(
+                                StatementsC(
+                                  NoStatements(
+                                  ) [NoStatements]
+                                  PrintStatement(
+                                    PlusExpr(
+                                      EndAddopTerm(
+                                        Term(
+                                          EndMulOp(
+                                            DesignatorFactorChar(
+                                             x
+                                            ) [DesignatorFactorChar]
+                                          ) [EndMulOp]
+                                        ) [Term]
+                                      ) [EndAddopTerm]
+                                    ) [PlusExpr]
+                                    NoNumberConst(
+                                    ) [NoNumberConst]
+                                  ) [PrintStatement]
+                                ) [StatementsC]
+                                PrintStatement(
+                                  PlusExpr(
+                                    EndAddopTerm(
+                                      Term(
+                                        EndMulOp(
+                                          DesignatorFactorChar(
+                                           =
+                                          ) [DesignatorFactorChar]
+                                        ) [EndMulOp]
+                                      ) [Term]
+                                    ) [EndAddopTerm]
+                                  ) [PlusExpr]
+                                  NoNumberConst(
+                                  ) [NoNumberConst]
+                                ) [PrintStatement]
+                              ) [StatementsC]
+                              PrintStatement(
+                                PlusExpr(
+                                  EndAddopTerm(
+                                    Term(
+                                      EndMulOp(
+                                        DesignatorFactor(
+                                          DesignatorIdent(
+                                           x
+                                          ) [DesignatorIdent]
+                                        ) [DesignatorFactor]
+                                      ) [EndMulOp]
+                                    ) [Term]
+                                  ) [EndAddopTerm]
+                                ) [PlusExpr]
+                                NoNumberConst(
+                                ) [NoNumberConst]
+                              ) [PrintStatement]
+                            ) [StatementsC]
+                            PrintStatement(
+                              PlusExpr(
+                                EndAddopTerm(
+                                  Term(
+                                    EndMulOp(
+                                      DesignatorFactorChar(
+                                        
+                                      ) [DesignatorFactorChar]
+                                    ) [EndMulOp]
+                                  ) [Term]
+                                ) [EndAddopTerm]
+                              ) [PlusExpr]
+                              NoNumberConst(
+                              ) [NoNumberConst]
+                            ) [PrintStatement]
+                          ) [StatementsC]
+                          DesignatorStatementType(
+                            DesignatorStatementOne(
+                              AssignOpExprInc(
+                                DesignatorIdent(
+                                 x
+                                ) [DesignatorIdent]
+                              ) [AssignOpExprInc]
+                            ) [DesignatorStatementOne]
+                          ) [DesignatorStatementType]
+                        ) [StatementsC]
+                        WhileStatement(
+                          While(
+                          ) [While]
+                          Condition(
+                            NoOrTerms(
+                              CondTerm(
+                                NoAndTerms(
+                                  TwoCondFact(
+                                    PlusExpr(
+                                      EndAddopTerm(
+                                        Term(
+                                          EndMulOp(
+                                            DesignatorFactor(
+                                              DesignatorIdent(
+                                               y
+                                              ) [DesignatorIdent]
+                                            ) [DesignatorFactor]
+                                          ) [EndMulOp]
+                                        ) [Term]
+                                      ) [EndAddopTerm]
+                                    ) [PlusExpr]
+                                    LowOp(
+                                    ) [LowOp]
+                                    PlusExpr(
+                                      EndAddopTerm(
+                                        Term(
+                                          EndMulOp(
+                                            DesignatorFactorNumber(
+                                             7
+                                            ) [DesignatorFactorNumber]
+                                          ) [EndMulOp]
+                                        ) [Term]
+                                      ) [EndAddopTerm]
+                                    ) [PlusExpr]
+                                  ) [TwoCondFact]
+                                ) [NoAndTerms]
+                              ) [CondTerm]
+                            ) [NoOrTerms]
+                          ) [Condition]
+                          BeginWhile(
+                          ) [BeginWhile]
+                          MultipleStatements(
+                            StatementsC(
+                              StatementsC(
+                                NoStatements(
+                                ) [NoStatements]
+                                IfStatement(
+                                  IfStart(
+                                  ) [IfStart]
+                                  Condition(
+                                    NoOrTerms(
+                                      CondTerm(
+                                        NoAndTerms(
+                                          TwoCondFact(
+                                            PlusExpr(
+                                              EndAddopTerm(
+                                                Term(
+                                                  EndMulOp(
+                                                    DesignatorFactor(
+                                                      DesignatorIdent(
+                                                       y
+                                                      ) [DesignatorIdent]
+                                                    ) [DesignatorFactor]
+                                                  ) [EndMulOp]
+                                                ) [Term]
+                                              ) [EndAddopTerm]
+                                            ) [PlusExpr]
+                                            IsEqualOp(
+                                            ) [IsEqualOp]
+                                            PlusExpr(
+                                              EndAddopTerm(
+                                                Term(
+                                                  EndMulOp(
+                                                    DesignatorFactorNumber(
+                                                     3
+                                                    ) [DesignatorFactorNumber]
+                                                  ) [EndMulOp]
+                                                ) [Term]
+                                              ) [EndAddopTerm]
+                                            ) [PlusExpr]
+                                          ) [TwoCondFact]
+                                        ) [NoAndTerms]
+                                      ) [CondTerm]
+                                    ) [NoOrTerms]
+                                  ) [Condition]
+                                  EndIfStatement(
+                                  ) [EndIfStatement]
+                                  MultipleStatements(
+                                    StatementsC(
+                                      StatementsC(
+                                        StatementsC(
+                                          StatementsC(
+                                            NoStatements(
+                                            ) [NoStatements]
+                                            PrintStatement(
+                                              PlusExpr(
+                                                EndAddopTerm(
+                                                  Term(
+                                                    EndMulOp(
+                                                      DesignatorFactorChar(
+                                                       y
+                                                      ) [DesignatorFactorChar]
+                                                    ) [EndMulOp]
+                                                  ) [Term]
+                                                ) [EndAddopTerm]
+                                              ) [PlusExpr]
+                                              NoNumberConst(
+                                              ) [NoNumberConst]
+                                            ) [PrintStatement]
+                                          ) [StatementsC]
+                                          PrintStatement(
+                                            PlusExpr(
+                                              EndAddopTerm(
+                                                Term(
+                                                  EndMulOp(
+                                                    DesignatorFactorChar(
+                                                     =
+                                                    ) [DesignatorFactorChar]
+                                                  ) [EndMulOp]
+                                                ) [Term]
+                                              ) [EndAddopTerm]
+                                            ) [PlusExpr]
+                                            NoNumberConst(
+                                            ) [NoNumberConst]
+                                          ) [PrintStatement]
+                                        ) [StatementsC]
+                                        PrintStatement(
+                                          PlusExpr(
+                                            EndAddopTerm(
+                                              Term(
+                                                EndMulOp(
+                                                  DesignatorFactor(
+                                                    DesignatorIdent(
+                                                     y
+                                                    ) [DesignatorIdent]
+                                                  ) [DesignatorFactor]
+                                                ) [EndMulOp]
+                                              ) [Term]
+                                            ) [EndAddopTerm]
+                                          ) [PlusExpr]
+                                          NoNumberConst(
+                                          ) [NoNumberConst]
+                                        ) [PrintStatement]
+                                      ) [StatementsC]
+                                      PrintStatement(
+                                        PlusExpr(
+                                          EndAddopTerm(
+                                            Term(
+                                              EndMulOp(
+                                                DesignatorFactorChar(
+                                                  
+                                                ) [DesignatorFactorChar]
+                                              ) [EndMulOp]
+                                            ) [Term]
+                                          ) [EndAddopTerm]
+                                        ) [PlusExpr]
+                                        NoNumberConst(
+                                        ) [NoNumberConst]
+                                      ) [PrintStatement]
+                                    ) [StatementsC]
+                                  ) [MultipleStatements]
+                                  ElseStatementC(
+                                    BeginElseStatement(
+                                    ) [BeginElseStatement]
+                                    MultipleStatements(
+                                      StatementsC(
+                                        StatementsC(
+                                          StatementsC(
+                                            StatementsC(
+                                              NoStatements(
+                                              ) [NoStatements]
+                                              PrintStatement(
+                                                PlusExpr(
+                                                  EndAddopTerm(
+                                                    Term(
+                                                      EndMulOp(
+                                                        DesignatorFactorChar(
+                                                         y
+                                                        ) [DesignatorFactorChar]
+                                                      ) [EndMulOp]
+                                                    ) [Term]
+                                                  ) [EndAddopTerm]
+                                                ) [PlusExpr]
+                                                NoNumberConst(
+                                                ) [NoNumberConst]
+                                              ) [PrintStatement]
+                                            ) [StatementsC]
+                                            PrintStatement(
+                                              PlusExpr(
+                                                EndAddopTerm(
+                                                  Term(
+                                                    EndMulOp(
+                                                      DesignatorFactorChar(
+                                                       =
+                                                      ) [DesignatorFactorChar]
+                                                    ) [EndMulOp]
+                                                  ) [Term]
+                                                ) [EndAddopTerm]
+                                              ) [PlusExpr]
+                                              NoNumberConst(
+                                              ) [NoNumberConst]
+                                            ) [PrintStatement]
+                                          ) [StatementsC]
+                                          PrintStatement(
+                                            PlusExpr(
+                                              NotEndAddopTerm(
+                                                EndAddopTerm(
+                                                  Term(
+                                                    EndMulOp(
+                                                      DesignatorFactor(
+                                                        DesignatorIdent(
+                                                         y
+                                                        ) [DesignatorIdent]
+                                                      ) [DesignatorFactor]
+                                                    ) [EndMulOp]
+                                                  ) [Term]
+                                                ) [EndAddopTerm]
+                                                AddOperation(
+                                                ) [AddOperation]
+                                                Term(
+                                                  EndMulOp(
+                                                    DesignatorFactorNumber(
+                                                     2
+                                                    ) [DesignatorFactorNumber]
+                                                  ) [EndMulOp]
+                                                ) [Term]
+                                              ) [NotEndAddopTerm]
+                                            ) [PlusExpr]
+                                            NoNumberConst(
+                                            ) [NoNumberConst]
+                                          ) [PrintStatement]
+                                        ) [StatementsC]
+                                        PrintStatement(
+                                          PlusExpr(
+                                            EndAddopTerm(
+                                              Term(
+                                                EndMulOp(
+                                                  DesignatorFactorChar(
+                                                    
+                                                  ) [DesignatorFactorChar]
+                                                ) [EndMulOp]
+                                              ) [Term]
+                                            ) [EndAddopTerm]
+                                          ) [PlusExpr]
+                                          NoNumberConst(
+                                          ) [NoNumberConst]
+                                        ) [PrintStatement]
+                                      ) [StatementsC]
+                                    ) [MultipleStatements]
+                                    EndElseStatement(
+                                    ) [EndElseStatement]
+                                  ) [ElseStatementC]
+                                ) [IfStatement]
+                              ) [StatementsC]
+                              DesignatorStatementType(
+                                DesignatorStatementOne(
+                                  AssignOpExprInc(
+                                    DesignatorIdent(
+                                     y
+                                    ) [DesignatorIdent]
+                                  ) [AssignOpExprInc]
+                                ) [DesignatorStatementOne]
+                              ) [DesignatorStatementType]
+                            ) [StatementsC]
+                          ) [MultipleStatements]
+                        ) [WhileStatement]
+                      ) [StatementsC]
+                      DesignatorStatementType(
+                        DesignatorStatementOne(
+                          AssignOpExprBase(
+                            DesignatorIdent(
+                             y
+                            ) [DesignatorIdent]
+                            Assignop(
+                            ) [Assignop]
+                            PlusExpr(
+                              EndAddopTerm(
+                                Term(
+                                  EndMulOp(
+                                    DesignatorFactorNumber(
+                                     0
+                                    ) [DesignatorFactorNumber]
+                                  ) [EndMulOp]
+                                ) [Term]
+                              ) [EndAddopTerm]
+                            ) [PlusExpr]
+                          ) [AssignOpExprBase]
+                        ) [DesignatorStatementOne]
+                      ) [DesignatorStatementType]
+                    ) [StatementsC]
+                    PrintStatement(
+                      PlusExpr(
+                        EndAddopTerm(
+                          Term(
+                            EndMulOp(
+                              DesignatorFactor(
+                                DesignatorIdent(
+                                 eol
+                                ) [DesignatorIdent]
+                              ) [DesignatorFactor]
+                            ) [EndMulOp]
+                          ) [Term]
+                        ) [EndAddopTerm]
+                      ) [PlusExpr]
+                      NoNumberConst(
+                      ) [NoNumberConst]
+                    ) [PrintStatement]
+                  ) [StatementsC]
+                ) [MultipleStatements]
+              ) [WhileStatement]
+            ) [StatementsC]
+            DesignatorStatementType(
+              DesignatorStatementOne(
+                AssignOpExprBase(
+                  DesignatorIdent(
+                   x
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  PlusExpr(
+                    EndAddopTerm(
+                      Term(
+                        EndMulOp(
+                          DesignatorFactorNumber(
+                           3
+                          ) [DesignatorFactorNumber]
+                        ) [EndMulOp]
+                      ) [Term]
+                    ) [EndAddopTerm]
+                  ) [PlusExpr]
+                ) [AssignOpExprBase]
+              ) [DesignatorStatementOne]
+            ) [DesignatorStatementType]
+          ) [StatementsC]
+          DesignatorStatementType(
+            DesignatorStatementOne(
+              AssignOpExprBase(
+                DesignatorIdent(
+                 y
+                ) [DesignatorIdent]
+                Assignop(
+                ) [Assignop]
+                PlusExpr(
+                  EndAddopTerm(
+                    Term(
+                      EndMulOp(
+                        DesignatorFactorNumber(
+                         8
+                        ) [DesignatorFactorNumber]
+                      ) [EndMulOp]
+                    ) [Term]
+                  ) [EndAddopTerm]
+                ) [PlusExpr]
+              ) [AssignOpExprBase]
+            ) [DesignatorStatementOne]
+          ) [DesignatorStatementType]
+        ) [StatementsC]
+        IfStatement(
+          IfStart(
+          ) [IfStart]
+          Condition(
+            NoOrTerms(
+              CondTerm(
+                NoAndTerms(
+                  TwoCondFact(
+                    PlusExpr(
+                      EndAddopTerm(
+                        Term(
+                          EndMulOp(
+                            DesignatorFactor(
+                              DesignatorIdent(
+                               y
+                              ) [DesignatorIdent]
+                            ) [DesignatorFactor]
+                          ) [EndMulOp]
+                        ) [Term]
+                      ) [EndAddopTerm]
+                    ) [PlusExpr]
+                    GrtOp(
+                    ) [GrtOp]
+                    PlusExpr(
+                      EndAddopTerm(
+                        Term(
+                          EndMulOp(
+                            DesignatorFactorNumber(
+                             5
+                            ) [DesignatorFactorNumber]
+                          ) [EndMulOp]
+                        ) [Term]
+                      ) [EndAddopTerm]
+                    ) [PlusExpr]
+                  ) [TwoCondFact]
+                ) [NoAndTerms]
+              ) [CondTerm]
+            ) [NoOrTerms]
+          ) [Condition]
+          EndIfStatement(
+          ) [EndIfStatement]
+          MultipleStatements(
+            StatementsC(
+              NoStatements(
+              ) [NoStatements]
+              IfStatement(
+                IfStart(
+                ) [IfStart]
+                Condition(
+                  NoOrTerms(
+                    CondTerm(
+                      NoAndTerms(
+                        TwoCondFact(
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactor(
+                                    DesignatorIdent(
+                                     x
+                                    ) [DesignatorIdent]
+                                  ) [DesignatorFactor]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                          IsEqualOp(
+                          ) [IsEqualOp]
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactorNumber(
+                                   3
+                                  ) [DesignatorFactorNumber]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                        ) [TwoCondFact]
+                      ) [NoAndTerms]
+                    ) [CondTerm]
+                  ) [NoOrTerms]
+                ) [Condition]
+                EndIfStatement(
+                ) [EndIfStatement]
+                MultipleStatements(
+                  StatementsC(
+                    NoStatements(
+                    ) [NoStatements]
+                    IfStatement(
+                      IfStart(
+                      ) [IfStart]
+                      Condition(
+                        NoOrTerms(
+                          CondTerm(
+                            NoAndTerms(
+                              TwoCondFact(
+                                PlusExpr(
+                                  NotEndAddopTerm(
+                                    EndAddopTerm(
+                                      Term(
+                                        EndMulOp(
+                                          DesignatorFactor(
+                                            DesignatorIdent(
+                                             x
+                                            ) [DesignatorIdent]
+                                          ) [DesignatorFactor]
+                                        ) [EndMulOp]
+                                      ) [Term]
+                                    ) [EndAddopTerm]
+                                    AddOperation(
+                                    ) [AddOperation]
+                                    Term(
+                                      EndMulOp(
+                                        DesignatorFactorNumber(
+                                         3
+                                        ) [DesignatorFactorNumber]
+                                      ) [EndMulOp]
+                                    ) [Term]
+                                  ) [NotEndAddopTerm]
+                                ) [PlusExpr]
+                                NotEqualOp(
+                                ) [NotEqualOp]
+                                PlusExpr(
+                                  EndAddopTerm(
+                                    Term(
+                                      EndMulOp(
+                                        DesignatorFactorNumber(
+                                         6
+                                        ) [DesignatorFactorNumber]
+                                      ) [EndMulOp]
+                                    ) [Term]
+                                  ) [EndAddopTerm]
+                                ) [PlusExpr]
+                              ) [TwoCondFact]
+                            ) [NoAndTerms]
+                          ) [CondTerm]
+                        ) [NoOrTerms]
+                      ) [Condition]
+                      EndIfStatement(
+                      ) [EndIfStatement]
+                      MultipleStatements(
+                        StatementsC(
+                          NoStatements(
+                          ) [NoStatements]
+                          PrintStatement(
+                            PlusExpr(
+                              EndAddopTerm(
+                                Term(
+                                  EndMulOp(
+                                    DesignatorFactorChar(
+                                     a
+                                    ) [DesignatorFactorChar]
+                                  ) [EndMulOp]
+                                ) [Term]
+                              ) [EndAddopTerm]
+                            ) [PlusExpr]
+                            NoNumberConst(
+                            ) [NoNumberConst]
+                          ) [PrintStatement]
+                        ) [StatementsC]
+                      ) [MultipleStatements]
+                      ElseStatementC(
+                        BeginElseStatement(
+                        ) [BeginElseStatement]
+                        MultipleStatements(
+                          StatementsC(
+                            NoStatements(
+                            ) [NoStatements]
+                            PrintStatement(
+                              PlusExpr(
+                                EndAddopTerm(
+                                  Term(
+                                    EndMulOp(
+                                      DesignatorFactorChar(
+                                       b
+                                      ) [DesignatorFactorChar]
+                                    ) [EndMulOp]
+                                  ) [Term]
+                                ) [EndAddopTerm]
+                              ) [PlusExpr]
+                              NoNumberConst(
+                              ) [NoNumberConst]
+                            ) [PrintStatement]
+                          ) [StatementsC]
+                        ) [MultipleStatements]
+                        EndElseStatement(
+                        ) [EndElseStatement]
+                      ) [ElseStatementC]
+                    ) [IfStatement]
+                  ) [StatementsC]
+                ) [MultipleStatements]
+                ElseStatementC(
+                  BeginElseStatement(
+                  ) [BeginElseStatement]
+                  MultipleStatements(
+                    StatementsC(
+                      NoStatements(
+                      ) [NoStatements]
+                      PrintStatement(
+                        PlusExpr(
+                          EndAddopTerm(
+                            Term(
+                              EndMulOp(
+                                DesignatorFactorChar(
+                                 c
+                                ) [DesignatorFactorChar]
+                              ) [EndMulOp]
+                            ) [Term]
+                          ) [EndAddopTerm]
+                        ) [PlusExpr]
+                        NoNumberConst(
+                        ) [NoNumberConst]
+                      ) [PrintStatement]
+                    ) [StatementsC]
+                  ) [MultipleStatements]
+                  EndElseStatement(
+                  ) [EndElseStatement]
+                ) [ElseStatementC]
+              ) [IfStatement]
+            ) [StatementsC]
+          ) [MultipleStatements]
+          ElseStatementC(
+            BeginElseStatement(
+            ) [BeginElseStatement]
+            MultipleStatements(
+              StatementsC(
+                NoStatements(
+                ) [NoStatements]
+                IfStatement(
+                  IfStart(
+                  ) [IfStart]
+                  Condition(
+                    NoOrTerms(
+                      CondTerm(
+                        NoAndTerms(
+                          TwoCondFact(
+                            PlusExpr(
+                              EndAddopTerm(
+                                Term(
+                                  EndMulOp(
+                                    DesignatorFactor(
+                                      DesignatorIdent(
+                                       y
+                                      ) [DesignatorIdent]
+                                    ) [DesignatorFactor]
+                                  ) [EndMulOp]
+                                ) [Term]
+                              ) [EndAddopTerm]
+                            ) [PlusExpr]
+                            IsEqualOp(
+                            ) [IsEqualOp]
+                            PlusExpr(
+                              EndAddopTerm(
+                                Term(
+                                  EndMulOp(
+                                    DesignatorFactorNumber(
+                                     8
+                                    ) [DesignatorFactorNumber]
+                                  ) [EndMulOp]
+                                ) [Term]
+                              ) [EndAddopTerm]
+                            ) [PlusExpr]
+                          ) [TwoCondFact]
+                        ) [NoAndTerms]
+                      ) [CondTerm]
+                    ) [NoOrTerms]
+                  ) [Condition]
+                  EndIfStatement(
+                  ) [EndIfStatement]
+                  MultipleStatements(
+                    StatementsC(
+                      NoStatements(
+                      ) [NoStatements]
+                      PrintStatement(
+                        PlusExpr(
+                          EndAddopTerm(
+                            Term(
+                              EndMulOp(
+                                DesignatorFactorChar(
+                                 d
+                                ) [DesignatorFactorChar]
+                              ) [EndMulOp]
+                            ) [Term]
+                          ) [EndAddopTerm]
+                        ) [PlusExpr]
+                        NoNumberConst(
+                        ) [NoNumberConst]
+                      ) [PrintStatement]
+                    ) [StatementsC]
+                  ) [MultipleStatements]
+                  NoElseStatement(
+                  ) [NoElseStatement]
+                ) [IfStatement]
+              ) [StatementsC]
+            ) [MultipleStatements]
+            EndElseStatement(
+            ) [EndElseStatement]
+          ) [ElseStatementC]
+        ) [IfStatement]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  16:48:29,444 - ===================================
+INFO  16:48:29,452 - Info na liniji 2: Inserted arr variable!
+INFO  16:48:29,452 - Info na liniji 3: Inserted c variable!
+INFO  16:48:29,452 - Info na liniji 6: Inserted main method!
+INFO  16:48:29,452 - Info na liniji 7: Inserted x variable!
+INFO  16:48:29,452 - Info na liniji 7: Inserted y variable!

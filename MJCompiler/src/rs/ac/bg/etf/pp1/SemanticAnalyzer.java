@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import javax.swing.text.TabExpander;
 
 import org.apache.log4j.Logger;
+
+
+
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
@@ -38,6 +41,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	private boolean arrayError = false;
 	private boolean typeError = false;
 	private Struct arrayAssignTypes = null;
+	private ArrayList<String> forEachIdentList = new ArrayList<>();
 	private boolean methodCallError = false;
 	private boolean isVarArray = false;
 	private boolean declaringMeths = false;
@@ -775,16 +779,25 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(AssignOpExprBase assignOpExprBase) {
 		if(currMethod!=null) {
 			assignOpExprBase.struct = assignOpExprBase.getExpr().struct;
+			if(forEachIdentList.contains(assignOpExprBase.getDesignator().obj.getName())) {
+				report_error("Foreach designator cannot be assigned a value!", assignOpExprBase);
+			}
 		}
 	}
 	public void visit(AssignOpExprInc assignOpExprInc) {
 		if(currMethod!=null) {
 			assignOpExprInc.struct = new Struct(Struct.Int);
+			if(forEachIdentList.contains(assignOpExprInc.getDesignator().obj.getName())) {
+				report_error("Foreach designator cannot be assigned a value!", assignOpExprInc);
+			}
 		}
 	}
 	public void visit(AssignOpExprDec assignOpExprDec) {
 		if(currMethod!=null) {
 			assignOpExprDec.struct = new Struct(Struct.Int);
+			if(forEachIdentList.contains(assignOpExprDec.getDesignator().obj.getName())) {
+				report_error("Foreach designator cannot be assigned a value!", assignOpExprDec);
+			}
 		}
 	}
 	
@@ -815,6 +828,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	public void visit(DesignatorOptC designatorOptC) {
 		if(currMethod!=null) {
+			if(forEachIdentList.contains(designatorOptC.getDesignator().obj.getName())) {
+				report_error("Foreach designator cannot be assigned a value!", designatorOptC);
+				//return;
+			}
 			Obj symbol = Tab.find(designatorOptC.getDesignator().obj.getName());
 			
 			if(!(designatorOptC.getDesignator() instanceof DesignatorExpr)) {
@@ -850,12 +867,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(ForeachStatement foreachStmt) {
 		if(currMethod!=null) {
 			nestedForEach--;
-			//logic
+			forEachIdentList.remove(forEachIdentList.size()-1);
 			if(foreachStmt.getDesignator().obj.getType().getKind() != Struct.Array) {
 				report_error("Designator for foreach statement must be an array type!", foreachStmt);
 				return;
 			}
 			Obj ident = Tab.find(foreachStmt.getIdentName());
+			foreachStmt.obj = ident;
 			if(ident.getType().getKind() != foreachStmt.getDesignator().obj.getType().getElemType().getKind()) {
 				report_error("Ident in foreach statement must match types with designator array elements!", foreachStmt);
 				return;
@@ -865,6 +883,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(Foreach foreachdecl) {
 		if(currMethod!=null) {
 			nestedForEach++;
+			forEachIdentList.add(((ForeachStatement)foreachdecl.getParent()).getIdentName());
+			
 		}
 	}
 	public void visit(BreakStatement breakStmt) {
@@ -980,9 +1000,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(FuncCall funcCall) {
 		funcCall.obj = funcCall.getDesignator().obj;
 	}
-//	public void visit(VarDeclarationsC varDecls) {
-//		varDecls.getVarDecl().
-//	}
+
+
+	
+	
+	
+	
 }
 
 
