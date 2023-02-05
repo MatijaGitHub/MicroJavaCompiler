@@ -86,6 +86,7 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr;
 nonterminal NonEndingVarDeclList, EndingVarDeclList;
 nonterminal NonEndingTypeIdentList, EndingTypeIdentList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj FuncCall;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
 nonterminal While, Foreach;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition, OrTerms, AndTerms;
@@ -265,7 +266,7 @@ ElseStatement ::= (ElseStatementC) ELSE Statement
 				  (NoElseStatement)
 				  ;	  
 			  
-NumberConst ::=	(NumberConstC) COMMA NUMBER
+NumberConst ::=	(NumberConstC) COMMA NUMBER:len
 				|
 				(NoNumberConst)
 				;				  
@@ -273,19 +274,19 @@ NumberConst ::=	(NumberConstC) COMMA NUMBER
 			  
 			  
 			  
-DesignatorStatement ::= (DesignatorStatementOne) Designator AssignOpExpr
+DesignatorStatement ::= (DesignatorStatementOne) AssignOpExpr
 						|
 						(DesignatorStatementMul) LBRACKET DesignatorOpt DesignatorList RBRACKET EQUAL Designator
 						;		  
 			  
 			  
-AssignOpExpr ::= (AssignOpExprBase) Assignop Expr
+AssignOpExpr ::= (AssignOpExprBase) Designator Assignop Expr
 				 |
-				 (AssignOpExprParen) LPAREN ActParsOpt RPAREN
+				 (AssignOpExprParen) FuncCall LPAREN ActParsOpt RPAREN
 				 |
-				 (AssignOpExprInc) INC
+				 (AssignOpExprInc) Designator INC
 				 |
-				 (AssignOpExprDec) DEC
+				 (AssignOpExprDec) Designator DEC
 				 ;	  
 			  
 			  
@@ -341,7 +342,7 @@ Expr ::= (PlusExpr) AddopTerms
 		 (MinusExpr) MINUS AddopTerms
 		 ;
 		 
-AddopTerms ::= 	(NotEndAddopTerm) Term Addop AddopTerms
+AddopTerms ::= 	(NotEndAddopTerm) AddopTerms Addop Term
 				|
 				(EndAddopTerm) Term
 				;
@@ -349,14 +350,14 @@ AddopTerms ::= 	(NotEndAddopTerm) Term Addop AddopTerms
 			  
 Term ::= (Term) MulOperations;			  
 			  
-MulOperations ::=   (BeginMulOp) Factor Mulop MulOperations
+MulOperations ::=   (BeginMulOp) MulOperations Mulop Factor
 					|
 					(EndMulOp) Factor
 					;			  
 
 Factor ::=  (DesignatorFactor) Designator
 			|
-			(DesignatorFactorAct) Designator LPAREN ActParsOpt RPAREN
+			(DesignatorFactorAct) FuncCall LPAREN ActParsOpt RPAREN
 			|
 			(DesignatorFactorNumber) NUMBER
 			|
@@ -370,6 +371,9 @@ Factor ::=  (DesignatorFactor) Designator
 			|
 			(DesignatorFactorExpr) LPAREN Expr RPAREN
 			;
+	
+FuncCall ::=(FuncCall) Designator;
+	
 				  
 Designator ::= 	(DesignatorDot) Designator DOT IDENT
 				|

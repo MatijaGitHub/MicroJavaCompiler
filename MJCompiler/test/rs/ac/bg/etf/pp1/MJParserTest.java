@@ -59,6 +59,7 @@ public class MJParserTest {
                 Code.dataSize = v.numOfVars;
                 Code.mainPc = cg.getProgStartAdr();
                 Code.write(new FileOutputStream(objFile));
+                System.out.println("Code generated!");
             }
             
             //log.info(" Print count calls = " + v.printCallCount);

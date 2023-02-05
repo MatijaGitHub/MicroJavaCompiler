@@ -409,17 +409,17 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		   if(methodCallError) {
 			   report_error("Method error!", designatorFactorAct);
 		   }
-		   Obj designator = designatorFactorAct.getDesignator().obj;
+		   Obj designator = designatorFactorAct.getFuncCall().getDesignator().obj;
 		   if(designator.getKind() != Obj.Meth) {
 			   report_error("Symbol " + designator.getName() + " is not a method!" , designatorFactorAct);
-			   designatorFactorAct.struct = designatorFactorAct.getDesignator().obj.getType();
+			   designatorFactorAct.struct = designatorFactorAct.getFuncCall().getDesignator().obj.getType();
 			   return;
 		   }
-		   int paramCnt = methodParams.get(designatorFactorAct.getDesignator().obj).size();
+		   int paramCnt = methodParams.get(designatorFactorAct.getFuncCall().getDesignator().obj).size();
 		   if(paramCnt != designatorFactorAct.getActParsOpt().obj.getLevel()) {
 			   report_error("Param count " + designatorFactorAct.getActParsOpt().obj.getLevel()+" doesnt match with method param count " +paramCnt+ "!", designatorFactorAct);
 		   }
-		   designatorFactorAct.struct = designatorFactorAct.getDesignator().obj.getType();
+		   designatorFactorAct.struct = designatorFactorAct.getFuncCall().getDesignator().obj.getType();
 		   methodCallError = false;
 	   }
    }
@@ -594,10 +594,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 		String methName = "";
 		if(node instanceof DesignatorStatementOne) {
-			methName = (((DesignatorStatementOne)(node)).getDesignator()).obj.getName();
+			methName = (((AssignOpExprParen)((DesignatorStatementOne)(node)).getAssignOpExpr()).getFuncCall().getDesignator()).obj.getName();
 		}
 		else {
-			methName = (((DesignatorFactorAct)(node)).getDesignator()).obj.getName();
+			methName = (((DesignatorFactorAct)(node)).getFuncCall().getDesignator()).obj.getName();
 		}
 		
 		return methName;
@@ -682,7 +682,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if(currMethod!=null) {
 			String designName = ((DesignatorIdent)designatorExpr.getDesignator()).getDesignName();
 			Obj designator = Tab.find(designName);
-			designatorExpr.obj = designator;
+			designatorExpr.obj = new Obj(Obj.Elem, designator.getName(), designator.getType().getElemType());
 			if(designator.getType().getKind() != Struct.Array) {
 				report_error("Symbol "+ designName + " must be of array type!", designatorExpr);
 				designatorExpr.obj.setLevel(-1);
@@ -718,10 +718,25 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			typeError = false;
 		}
 	}
+	public Designator getDesignatorType(SyntaxNode node) {
+		if(node instanceof AssignOpExprParen) {
+			return ((AssignOpExprParen) node).getFuncCall().getDesignator();
+		}
+		else if(node instanceof AssignOpExprBase) {
+			return ((AssignOpExprBase) node).getDesignator();
+		}
+		else if(node instanceof AssignOpExprInc) {
+			return ((AssignOpExprInc)node).getDesignator();
+		}
+		return ((AssignOpExprDec)node).getDesignator();
+		
+	}
 	public void visit(DesignatorStatementOne designatorStmtOne) {
 		if(currMethod!=null) {
-			Struct designatorType = designatorStmtOne.getDesignator().obj.getType();
-			if(designatorType.getKind() == Struct.Array && designatorStmtOne.getDesignator() instanceof DesignatorExpr) {
+			SyntaxNode assignOp = designatorStmtOne.getAssignOpExpr();
+			Designator designator = getDesignatorType(assignOp);
+			Struct designatorType = designator.obj.getType();
+			if(designatorType.getKind() == Struct.Array && designator instanceof DesignatorExpr) {
 				designatorType = designatorType.getElemType();
 			}
 			if(!(designatorStmtOne.getAssignOpExpr() instanceof AssignOpExprParen)) {
@@ -731,8 +746,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				else if(designatorStmtOne.getAssignOpExpr().struct.getKind() == Struct.Array && designatorStmtOne.getAssignOpExpr().struct.getElemType().getKind() != designatorType.getElemType().getKind()) {
 					typeError = true;
 				}
-				if(!(designatorStmtOne.getDesignator() instanceof DesignatorExpr)) {
-					Obj symbol = Tab.find(((DesignatorIdent)(designatorStmtOne.getDesignator())).getDesignName());
+				if(!(designator instanceof DesignatorExpr)) {
+					Obj symbol = Tab.find(((DesignatorIdent)(designator)).getDesignName());
 					if(symbol.getType().getKind() != Struct.Array && symbol.getKind() != Obj.Var) {
 						
 						report_error("Elem " + symbol.getName() + " not an array element or var type!", designatorStmtOne);
@@ -746,12 +761,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	public void visit(AssignOpExprParen assignOpExprParen) {
 		if(currMethod!=null) {
-			Obj designator = ((DesignatorStatementOne)assignOpExprParen.getParent()).getDesignator().obj;
+			Obj designator = assignOpExprParen.getFuncCall().getDesignator().obj;
 			if(designator.getKind() != Obj.Meth) {
 				report_error("Symbol " + designator.getName() + " is not a method!", assignOpExprParen);
 				return;
 			}
-			int paramCnt = methodParams.get(((DesignatorStatementOne)assignOpExprParen.getParent()).getDesignator().obj).size();
+			int paramCnt = methodParams.get(designator).size();
 			if(paramCnt != assignOpExprParen.getActParsOpt().obj.getLevel()) {
 				 report_error("Param count " + assignOpExprParen.getActParsOpt().obj.getLevel()+" doesnt match with method param count " +paramCnt+ " on method call!", assignOpExprParen);
 			}
@@ -961,6 +976,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if(currMethod!=null) {
 			noOrTerms.struct = noOrTerms.getCondTerm().struct;
 		}
+	}
+	public void visit(FuncCall funcCall) {
+		funcCall.obj = funcCall.getDesignator().obj;
 	}
 //	public void visit(VarDeclarationsC varDecls) {
 //		varDecls.getVarDecl().

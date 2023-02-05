@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2023 17:3:1
+// 4/1/2023 19:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignatorFactorAct extends Factor {
 
-    private Designator Designator;
+    private FuncCall FuncCall;
     private ActParsOpt ActParsOpt;
 
-    public DesignatorFactorAct (Designator Designator, ActParsOpt ActParsOpt) {
-        this.Designator=Designator;
-        if(Designator!=null) Designator.setParent(this);
+    public DesignatorFactorAct (FuncCall FuncCall, ActParsOpt ActParsOpt) {
+        this.FuncCall=FuncCall;
+        if(FuncCall!=null) FuncCall.setParent(this);
         this.ActParsOpt=ActParsOpt;
         if(ActParsOpt!=null) ActParsOpt.setParent(this);
     }
 
-    public Designator getDesignator() {
-        return Designator;
+    public FuncCall getFuncCall() {
+        return FuncCall;
     }
 
-    public void setDesignator(Designator Designator) {
-        this.Designator=Designator;
+    public void setFuncCall(FuncCall FuncCall) {
+        this.FuncCall=FuncCall;
     }
 
     public ActParsOpt getActParsOpt() {
@@ -38,18 +38,18 @@ public class DesignatorFactorAct extends Factor {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Designator!=null) Designator.accept(visitor);
+        if(FuncCall!=null) FuncCall.accept(visitor);
         if(ActParsOpt!=null) ActParsOpt.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(FuncCall!=null) FuncCall.traverseTopDown(visitor);
         if(ActParsOpt!=null) ActParsOpt.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(FuncCall!=null) FuncCall.traverseBottomUp(visitor);
         if(ActParsOpt!=null) ActParsOpt.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class DesignatorFactorAct extends Factor {
         buffer.append(tab);
         buffer.append("DesignatorFactorAct(\n");
 
-        if(Designator!=null)
-            buffer.append(Designator.toString("  "+tab));
+        if(FuncCall!=null)
+            buffer.append(FuncCall.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

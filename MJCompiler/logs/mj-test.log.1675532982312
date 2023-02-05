@@ -1,0 +1,59 @@
+INFO  18:47:59,874 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  18:47:59,918 - #2 program
+INFO  18:47:59,918 - #49 run_test
+INFO  18:47:59,919 - #43 {
+INFO  18:47:59,919 - #15 void
+INFO  18:47:59,920 - #49 main
+INFO  18:47:59,920 - #41 (
+INFO  18:47:59,921 - #42 )
+INFO  18:47:59,921 - #43 {
+INFO  18:47:59,922 - #12 print
+INFO  18:47:59,922 - #41 (
+INFO  18:47:59,922 - #47 2
+INFO  18:47:59,922 - #42 )
+INFO  18:47:59,924 - #37 ;
+INFO  18:47:59,924 - #44 }
+INFO  18:47:59,924 - #44 }
+INFO  18:47:59,925 - Program(
+  ProgName(
+   run_test
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      StatementsC(
+        NoStatements(
+        ) [NoStatements]
+        PrintStatement(
+          PlusExpr(
+            EndAddopTerm(
+              Term(
+                EndMulOp(
+                  DesignatorFactorNumber(
+                   2
+                  ) [DesignatorFactorNumber]
+                ) [EndMulOp]
+              ) [Term]
+            ) [EndAddopTerm]
+          ) [PlusExpr]
+          NoNumberConst(
+          ) [NoNumberConst]
+        ) [PrintStatement]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  18:47:59,926 - ===================================
+INFO  18:47:59,946 - Info na liniji 5: Inserted main method!

@@ -1,0 +1,179 @@
+INFO  19:27:48,005 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  19:27:48,036 - #2 program
+INFO  19:27:48,037 - #49 run_test
+INFO  19:27:48,037 - #43 {
+INFO  19:27:48,037 - #15 void
+INFO  19:27:48,038 - #49 main
+INFO  19:27:48,038 - #41 (
+INFO  19:27:48,038 - #42 )
+INFO  19:27:48,039 - #49 int
+INFO  19:27:48,039 - #49 x
+INFO  19:27:48,039 - #37 ;
+INFO  19:27:48,040 - #43 {
+INFO  19:27:48,041 - #49 x
+INFO  19:27:48,041 - #36 =
+INFO  19:27:48,041 - #47 6
+INFO  19:27:48,042 - #37 ;
+INFO  19:27:48,043 - #49 x
+INFO  19:27:48,043 - #36 =
+INFO  19:27:48,043 - #47 5
+INFO  19:27:48,043 - #37 ;
+INFO  19:27:48,043 - #12 print
+INFO  19:27:48,043 - #41 (
+INFO  19:27:48,044 - #50 a
+INFO  19:27:48,044 - #42 )
+INFO  19:27:48,044 - #37 ;
+INFO  19:27:48,044 - #12 print
+INFO  19:27:48,044 - #41 (
+INFO  19:27:48,044 - #48 false
+INFO  19:27:48,044 - #42 )
+INFO  19:27:48,044 - #37 ;
+INFO  19:27:48,044 - #12 print
+INFO  19:27:48,044 - #41 (
+INFO  19:27:48,044 - #49 x
+INFO  19:27:48,045 - #42 )
+INFO  19:27:48,045 - #37 ;
+INFO  19:27:48,045 - #44 }
+INFO  19:27:48,045 - #44 }
+INFO  19:27:48,046 - Program(
+  ProgName(
+   run_test
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      VarDeclarationsC(
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             x
+              NoBrackets(
+              ) [NoBrackets]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [VarDecl]
+      ) [VarDeclarationsC]
+      StatementsC(
+        StatementsC(
+          StatementsC(
+            StatementsC(
+              StatementsC(
+                NoStatements(
+                ) [NoStatements]
+                DesignatorStatementType(
+                  DesignatorStatementOne(
+                    AssignOpExprBase(
+                      DesignatorIdent(
+                       x
+                      ) [DesignatorIdent]
+                      Assignop(
+                      ) [Assignop]
+                      PlusExpr(
+                        EndAddopTerm(
+                          Term(
+                            EndMulOp(
+                              DesignatorFactorNumber(
+                               6
+                              ) [DesignatorFactorNumber]
+                            ) [EndMulOp]
+                          ) [Term]
+                        ) [EndAddopTerm]
+                      ) [PlusExpr]
+                    ) [AssignOpExprBase]
+                  ) [DesignatorStatementOne]
+                ) [DesignatorStatementType]
+              ) [StatementsC]
+              DesignatorStatementType(
+                DesignatorStatementOne(
+                  AssignOpExprBase(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                    Assignop(
+                    ) [Assignop]
+                    PlusExpr(
+                      EndAddopTerm(
+                        Term(
+                          EndMulOp(
+                            DesignatorFactorNumber(
+                             5
+                            ) [DesignatorFactorNumber]
+                          ) [EndMulOp]
+                        ) [Term]
+                      ) [EndAddopTerm]
+                    ) [PlusExpr]
+                  ) [AssignOpExprBase]
+                ) [DesignatorStatementOne]
+              ) [DesignatorStatementType]
+            ) [StatementsC]
+            PrintStatement(
+              PlusExpr(
+                EndAddopTerm(
+                  Term(
+                    EndMulOp(
+                      DesignatorFactorChar(
+                       a
+                      ) [DesignatorFactorChar]
+                    ) [EndMulOp]
+                  ) [Term]
+                ) [EndAddopTerm]
+              ) [PlusExpr]
+              NoNumberConst(
+              ) [NoNumberConst]
+            ) [PrintStatement]
+          ) [StatementsC]
+          PrintStatement(
+            PlusExpr(
+              EndAddopTerm(
+                Term(
+                  EndMulOp(
+                    DesignatorFactorBool(
+                     false
+                    ) [DesignatorFactorBool]
+                  ) [EndMulOp]
+                ) [Term]
+              ) [EndAddopTerm]
+            ) [PlusExpr]
+            NoNumberConst(
+            ) [NoNumberConst]
+          ) [PrintStatement]
+        ) [StatementsC]
+        PrintStatement(
+          PlusExpr(
+            EndAddopTerm(
+              Term(
+                EndMulOp(
+                  DesignatorFactor(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                  ) [DesignatorFactor]
+                ) [EndMulOp]
+              ) [Term]
+            ) [EndAddopTerm]
+          ) [PlusExpr]
+          NoNumberConst(
+          ) [NoNumberConst]
+        ) [PrintStatement]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  19:27:48,047 - ===================================
+INFO  19:27:48,056 - Info na liniji 5: Inserted main method!
+INFO  19:27:48,056 - Info na liniji 6: Inserted x variable!

@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2023 17:3:1
+// 4/1/2023 19:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class NumberConstC extends NumberConst {
 
-    private Integer N1;
+    private Integer len;
 
-    public NumberConstC (Integer N1) {
-        this.N1=N1;
+    public NumberConstC (Integer len) {
+        this.len=len;
     }
 
-    public Integer getN1() {
-        return N1;
+    public Integer getLen() {
+        return len;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setLen(Integer len) {
+        this.len=len;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class NumberConstC extends NumberConst {
         buffer.append(tab);
         buffer.append("NumberConstC(\n");
 
-        buffer.append(" "+tab+N1);
+        buffer.append(" "+tab+len);
         buffer.append("\n");
 
         buffer.append(tab);

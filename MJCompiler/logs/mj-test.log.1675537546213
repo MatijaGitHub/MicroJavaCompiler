@@ -1,0 +1,32 @@
+INFO  20:05:13,520 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  20:05:13,552 - #2 program
+INFO  20:05:13,552 - #49 run_test
+INFO  20:05:13,552 - #43 {
+INFO  20:05:13,553 - #49 int
+INFO  20:05:13,553 - #49 f1
+INFO  20:05:13,554 - #41 (
+INFO  20:05:13,554 - #42 )
+INFO  20:05:13,555 - #43 {
+INFO  20:05:13,555 - #14 return
+INFO  20:05:13,555 - #47 23
+INFO  20:05:13,555 - #37 ;
+INFO  20:05:13,556 - #44 }
+INFO  20:05:13,556 - #15 void
+INFO  20:05:13,557 - #49 main
+INFO  20:05:13,557 - #41 (
+INFO  20:05:13,557 - #42 )
+INFO  20:05:13,557 - #49 int
+INFO  20:05:13,557 - #49 x
+INFO  20:05:13,558 - #37 ;
+INFO  20:05:13,558 - #43 {
+INFO  20:05:13,559 - #49 x
+INFO  20:05:13,559 - #36 =
+INFO  20:05:13,559 - #47 6
+INFO  20:05:13,560 - #37 ;
+INFO  20:05:13,560 - #12 print
+INFO  20:05:13,560 - #41 (
+INFO  20:05:13,560 - #49 x
+INFO  20:05:13,560 - #20 ++
+ERROR 20:05:13,560 - 
+Sintaksna greska na liniji 12
+ERROR 20:05:13,560 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12

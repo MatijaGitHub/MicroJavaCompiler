@@ -1,0 +1,393 @@
+INFO  23:13:35,671 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  23:13:35,704 - #2 program
+INFO  23:13:35,704 - #49 run_test
+INFO  23:13:35,704 - #49 int
+INFO  23:13:35,704 - #49 arr
+INFO  23:13:35,705 - #45 [
+INFO  23:13:35,705 - #46 ]
+INFO  23:13:35,705 - #37 ;
+INFO  23:13:35,706 - #49 int
+INFO  23:13:35,706 - #49 c
+INFO  23:13:35,707 - #37 ;
+INFO  23:13:35,707 - #43 {
+INFO  23:13:35,707 - #15 void
+INFO  23:13:35,707 - #49 main
+INFO  23:13:35,708 - #41 (
+INFO  23:13:35,708 - #42 )
+INFO  23:13:35,708 - #49 int
+INFO  23:13:35,709 - #49 x
+INFO  23:13:35,709 - #39 ,
+INFO  23:13:35,709 - #49 y
+INFO  23:13:35,709 - #37 ;
+INFO  23:13:35,709 - #43 {
+INFO  23:13:35,710 - #49 arr
+INFO  23:13:35,710 - #36 =
+INFO  23:13:35,711 - #11 new
+INFO  23:13:35,711 - #49 int
+INFO  23:13:35,711 - #45 [
+INFO  23:13:35,711 - #47 23
+INFO  23:13:35,711 - #46 ]
+INFO  23:13:35,712 - #37 ;
+INFO  23:13:35,712 - #45 [
+INFO  23:13:35,712 - #49 x
+INFO  23:13:35,712 - #39 ,
+INFO  23:13:35,713 - #49 y
+INFO  23:13:35,713 - #39 ,
+INFO  23:13:35,713 - #49 x
+INFO  23:13:35,713 - #39 ,
+INFO  23:13:35,713 - #49 arr
+INFO  23:13:35,713 - #45 [
+INFO  23:13:35,713 - #47 3
+INFO  23:13:35,713 - #46 ]
+INFO  23:13:35,713 - #39 ,
+INFO  23:13:35,713 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,714 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,715 - #39 ,
+INFO  23:13:35,716 - #39 ,
+INFO  23:13:35,716 - #39 ,
+INFO  23:13:35,716 - #39 ,
+INFO  23:13:35,716 - #39 ,
+INFO  23:13:35,716 - #39 ,
+INFO  23:13:35,717 - #39 ,
+INFO  23:13:35,717 - #46 ]
+INFO  23:13:35,717 - #36 =
+INFO  23:13:35,717 - #49 arr
+INFO  23:13:35,717 - #37 ;
+INFO  23:13:35,717 - #44 }
+INFO  23:13:35,717 - #44 }
+INFO  23:13:35,720 - Program(
+  ProgName(
+   run_test
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           arr
+            BracketsC(
+            ) [BracketsC]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      EndingVarDeclListC(
+        EndingVarDeclList(
+         c
+          NoBrackets(
+          ) [NoBrackets]
+        ) [EndingVarDeclList]
+      ) [EndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      VarDeclarationsC(
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          NonEndingVarDeclListC(
+            NonEndingVarDeclList(
+             x
+              NoBrackets(
+              ) [NoBrackets]
+            ) [NonEndingVarDeclList]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               y
+                NoBrackets(
+                ) [NoBrackets]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [NonEndingVarDeclListC]
+        ) [VarDecl]
+      ) [VarDeclarationsC]
+      StatementsC(
+        StatementsC(
+          NoStatements(
+          ) [NoStatements]
+          DesignatorStatementType(
+            DesignatorStatementOne(
+              AssignOpExprBase(
+                DesignatorIdent(
+                 arr
+                ) [DesignatorIdent]
+                Assignop(
+                ) [Assignop]
+                PlusExpr(
+                  EndAddopTerm(
+                    Term(
+                      EndMulOp(
+                        DesignatorFactorNewExpr(
+                          Type(
+                           int
+                          ) [Type]
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactorNumber(
+                                   23
+                                  ) [DesignatorFactorNumber]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                        ) [DesignatorFactorNewExpr]
+                      ) [EndMulOp]
+                    ) [Term]
+                  ) [EndAddopTerm]
+                ) [PlusExpr]
+              ) [AssignOpExprBase]
+            ) [DesignatorStatementOne]
+          ) [DesignatorStatementType]
+        ) [StatementsC]
+        DesignatorStatementType(
+          DesignatorStatementMul(
+            DesignatorOptC(
+              DesignatorIdent(
+               x
+              ) [DesignatorIdent]
+            ) [DesignatorOptC]
+            DesignatorListC(
+              DesignatorListC(
+                DesignatorListC(
+                  DesignatorListC(
+                    DesignatorListC(
+                      DesignatorListC(
+                        DesignatorListC(
+                          DesignatorListC(
+                            DesignatorListC(
+                              DesignatorListC(
+                                DesignatorListC(
+                                  DesignatorListC(
+                                    DesignatorListC(
+                                      DesignatorListC(
+                                        DesignatorListC(
+                                          DesignatorListC(
+                                            DesignatorListC(
+                                              DesignatorListC(
+                                                DesignatorListC(
+                                                  DesignatorListC(
+                                                    DesignatorListC(
+                                                      DesignatorListC(
+                                                        DesignatorListC(
+                                                          DesignatorListC(
+                                                            DesignatorListC(
+                                                              DesignatorListC(
+                                                                DesignatorListC(
+                                                                  DesignatorListC(
+                                                                    DesignatorListC(
+                                                                      DesignatorListC(
+                                                                        DesignatorListC(
+                                                                          DesignatorListC(
+                                                                            DesignatorListC(
+                                                                              DesignatorListC(
+                                                                                DesignatorListC(
+                                                                                  DesignatorListC(
+                                                                                    DesignatorListC(
+                                                                                      DesignatorListC(
+                                                                                        DesignatorListC(
+                                                                                          NoDesignatorList(
+                                                                                          ) [NoDesignatorList]
+                                                                                          DesignatorOptC(
+                                                                                            DesignatorIdent(
+                                                                                             y
+                                                                                            ) [DesignatorIdent]
+                                                                                          ) [DesignatorOptC]
+                                                                                        ) [DesignatorListC]
+                                                                                        DesignatorOptC(
+                                                                                          DesignatorIdent(
+                                                                                           x
+                                                                                          ) [DesignatorIdent]
+                                                                                        ) [DesignatorOptC]
+                                                                                      ) [DesignatorListC]
+                                                                                      DesignatorOptC(
+                                                                                        DesignatorExpr(
+                                                                                          DesignatorIdent(
+                                                                                           arr
+                                                                                          ) [DesignatorIdent]
+                                                                                          PlusExpr(
+                                                                                            EndAddopTerm(
+                                                                                              Term(
+                                                                                                EndMulOp(
+                                                                                                  DesignatorFactorNumber(
+                                                                                                   3
+                                                                                                  ) [DesignatorFactorNumber]
+                                                                                                ) [EndMulOp]
+                                                                                              ) [Term]
+                                                                                            ) [EndAddopTerm]
+                                                                                          ) [PlusExpr]
+                                                                                        ) [DesignatorExpr]
+                                                                                      ) [DesignatorOptC]
+                                                                                    ) [DesignatorListC]
+                                                                                    NoDesignatorOpt(
+                                                                                    ) [NoDesignatorOpt]
+                                                                                  ) [DesignatorListC]
+                                                                                  NoDesignatorOpt(
+                                                                                  ) [NoDesignatorOpt]
+                                                                                ) [DesignatorListC]
+                                                                                NoDesignatorOpt(
+                                                                                ) [NoDesignatorOpt]
+                                                                              ) [DesignatorListC]
+                                                                              NoDesignatorOpt(
+                                                                              ) [NoDesignatorOpt]
+                                                                            ) [DesignatorListC]
+                                                                            NoDesignatorOpt(
+                                                                            ) [NoDesignatorOpt]
+                                                                          ) [DesignatorListC]
+                                                                          NoDesignatorOpt(
+                                                                          ) [NoDesignatorOpt]
+                                                                        ) [DesignatorListC]
+                                                                        NoDesignatorOpt(
+                                                                        ) [NoDesignatorOpt]
+                                                                      ) [DesignatorListC]
+                                                                      NoDesignatorOpt(
+                                                                      ) [NoDesignatorOpt]
+                                                                    ) [DesignatorListC]
+                                                                    NoDesignatorOpt(
+                                                                    ) [NoDesignatorOpt]
+                                                                  ) [DesignatorListC]
+                                                                  NoDesignatorOpt(
+                                                                  ) [NoDesignatorOpt]
+                                                                ) [DesignatorListC]
+                                                                NoDesignatorOpt(
+                                                                ) [NoDesignatorOpt]
+                                                              ) [DesignatorListC]
+                                                              NoDesignatorOpt(
+                                                              ) [NoDesignatorOpt]
+                                                            ) [DesignatorListC]
+                                                            NoDesignatorOpt(
+                                                            ) [NoDesignatorOpt]
+                                                          ) [DesignatorListC]
+                                                          NoDesignatorOpt(
+                                                          ) [NoDesignatorOpt]
+                                                        ) [DesignatorListC]
+                                                        NoDesignatorOpt(
+                                                        ) [NoDesignatorOpt]
+                                                      ) [DesignatorListC]
+                                                      NoDesignatorOpt(
+                                                      ) [NoDesignatorOpt]
+                                                    ) [DesignatorListC]
+                                                    NoDesignatorOpt(
+                                                    ) [NoDesignatorOpt]
+                                                  ) [DesignatorListC]
+                                                  NoDesignatorOpt(
+                                                  ) [NoDesignatorOpt]
+                                                ) [DesignatorListC]
+                                                NoDesignatorOpt(
+                                                ) [NoDesignatorOpt]
+                                              ) [DesignatorListC]
+                                              NoDesignatorOpt(
+                                              ) [NoDesignatorOpt]
+                                            ) [DesignatorListC]
+                                            NoDesignatorOpt(
+                                            ) [NoDesignatorOpt]
+                                          ) [DesignatorListC]
+                                          NoDesignatorOpt(
+                                          ) [NoDesignatorOpt]
+                                        ) [DesignatorListC]
+                                        NoDesignatorOpt(
+                                        ) [NoDesignatorOpt]
+                                      ) [DesignatorListC]
+                                      NoDesignatorOpt(
+                                      ) [NoDesignatorOpt]
+                                    ) [DesignatorListC]
+                                    NoDesignatorOpt(
+                                    ) [NoDesignatorOpt]
+                                  ) [DesignatorListC]
+                                  NoDesignatorOpt(
+                                  ) [NoDesignatorOpt]
+                                ) [DesignatorListC]
+                                NoDesignatorOpt(
+                                ) [NoDesignatorOpt]
+                              ) [DesignatorListC]
+                              NoDesignatorOpt(
+                              ) [NoDesignatorOpt]
+                            ) [DesignatorListC]
+                            NoDesignatorOpt(
+                            ) [NoDesignatorOpt]
+                          ) [DesignatorListC]
+                          NoDesignatorOpt(
+                          ) [NoDesignatorOpt]
+                        ) [DesignatorListC]
+                        NoDesignatorOpt(
+                        ) [NoDesignatorOpt]
+                      ) [DesignatorListC]
+                      NoDesignatorOpt(
+                      ) [NoDesignatorOpt]
+                    ) [DesignatorListC]
+                    NoDesignatorOpt(
+                    ) [NoDesignatorOpt]
+                  ) [DesignatorListC]
+                  NoDesignatorOpt(
+                  ) [NoDesignatorOpt]
+                ) [DesignatorListC]
+                NoDesignatorOpt(
+                ) [NoDesignatorOpt]
+              ) [DesignatorListC]
+              NoDesignatorOpt(
+              ) [NoDesignatorOpt]
+            ) [DesignatorListC]
+            DesignatorIdent(
+             arr
+            ) [DesignatorIdent]
+          ) [DesignatorStatementMul]
+        ) [DesignatorStatementType]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  23:13:35,721 - ===================================
+INFO  23:13:35,729 - Info na liniji 2: Inserted arr variable!
+INFO  23:13:35,730 - Info na liniji 3: Inserted c variable!
+INFO  23:13:35,730 - Info na liniji 6: Inserted main method!
+INFO  23:13:35,730 - Info na liniji 7: Inserted x variable!
+INFO  23:13:35,730 - Info na liniji 7: Inserted y variable!

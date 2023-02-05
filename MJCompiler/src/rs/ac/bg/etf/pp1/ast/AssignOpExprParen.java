@@ -1,17 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2023 17:3:1
+// 4/1/2023 19:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class AssignOpExprParen extends AssignOpExpr {
 
+    private FuncCall FuncCall;
     private ActParsOpt ActParsOpt;
 
-    public AssignOpExprParen (ActParsOpt ActParsOpt) {
+    public AssignOpExprParen (FuncCall FuncCall, ActParsOpt ActParsOpt) {
+        this.FuncCall=FuncCall;
+        if(FuncCall!=null) FuncCall.setParent(this);
         this.ActParsOpt=ActParsOpt;
         if(ActParsOpt!=null) ActParsOpt.setParent(this);
+    }
+
+    public FuncCall getFuncCall() {
+        return FuncCall;
+    }
+
+    public void setFuncCall(FuncCall FuncCall) {
+        this.FuncCall=FuncCall;
     }
 
     public ActParsOpt getActParsOpt() {
@@ -27,15 +38,18 @@ public class AssignOpExprParen extends AssignOpExpr {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(FuncCall!=null) FuncCall.accept(visitor);
         if(ActParsOpt!=null) ActParsOpt.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(FuncCall!=null) FuncCall.traverseTopDown(visitor);
         if(ActParsOpt!=null) ActParsOpt.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(FuncCall!=null) FuncCall.traverseBottomUp(visitor);
         if(ActParsOpt!=null) ActParsOpt.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -44,6 +58,12 @@ public class AssignOpExprParen extends AssignOpExpr {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("AssignOpExprParen(\n");
+
+        if(FuncCall!=null)
+            buffer.append(FuncCall.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(ActParsOpt!=null)
             buffer.append(ActParsOpt.toString("  "+tab));

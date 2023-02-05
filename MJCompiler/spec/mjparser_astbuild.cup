@@ -116,6 +116,7 @@ nonterminal EndingVarDeclList EndingVarDeclList;
 nonterminal NonEndingTypeIdentList NonEndingTypeIdentList;
 nonterminal EndingTypeIdentList EndingTypeIdentList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj FuncCall;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct AssignOpExpr;
 nonterminal While While;
 nonterminal Foreach Foreach;
@@ -296,7 +297,7 @@ ElseStatement ::= (ElseStatementC) ELSE Statement:S1 {: RESULT=new ElseStatement
 				  (NoElseStatement) {: RESULT=new NoElseStatement(); :}
 				  ;	  
 			  
-NumberConst ::=	(NumberConstC) COMMA NUMBER:N1 {: RESULT=new NumberConstC(N1); RESULT.setLine(N1left); :}
+NumberConst ::=	(NumberConstC) COMMA NUMBER:len {: RESULT=new NumberConstC(len); RESULT.setLine(lenleft); :}
 				|
 				(NoNumberConst) {: RESULT=new NoNumberConst(); :}
 				;				  
@@ -304,19 +305,19 @@ NumberConst ::=	(NumberConstC) COMMA NUMBER:N1 {: RESULT=new NumberConstC(N1); R
 			  
 			  
 			  
-DesignatorStatement ::= (DesignatorStatementOne) Designator:D1 AssignOpExpr:A2 {: RESULT=new DesignatorStatementOne(D1, A2); RESULT.setLine(D1left); :}
+DesignatorStatement ::= (DesignatorStatementOne) AssignOpExpr:A1 {: RESULT=new DesignatorStatementOne(A1); RESULT.setLine(A1left); :}
 						|
 						(DesignatorStatementMul) LBRACKET DesignatorOpt:D1 DesignatorList:D2 RBRACKET EQUAL Designator:D3 {: RESULT=new DesignatorStatementMul(D1, D2, D3); RESULT.setLine(D1left); :}
 						;		  
 			  
 			  
-AssignOpExpr ::= (AssignOpExprBase) Assignop:A1 Expr:E2 {: RESULT=new AssignOpExprBase(A1, E2); RESULT.setLine(A1left); :}
+AssignOpExpr ::= (AssignOpExprBase) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new AssignOpExprBase(D1, A2, E3); RESULT.setLine(D1left); :}
 				 |
-				 (AssignOpExprParen) LPAREN ActParsOpt:A1 RPAREN {: RESULT=new AssignOpExprParen(A1); RESULT.setLine(A1left); :}
+				 (AssignOpExprParen) FuncCall:F1 LPAREN ActParsOpt:A2 RPAREN {: RESULT=new AssignOpExprParen(F1, A2); RESULT.setLine(F1left); :}
 				 |
-				 (AssignOpExprInc) INC {: RESULT=new AssignOpExprInc(); :}
+				 (AssignOpExprInc) Designator:D1 INC {: RESULT=new AssignOpExprInc(D1); RESULT.setLine(D1left); :}
 				 |
-				 (AssignOpExprDec) DEC {: RESULT=new AssignOpExprDec(); :}
+				 (AssignOpExprDec) Designator:D1 DEC {: RESULT=new AssignOpExprDec(D1); RESULT.setLine(D1left); :}
 				 ;	  
 			  
 			  
@@ -372,7 +373,7 @@ Expr ::= (PlusExpr) AddopTerms:A1 {: RESULT=new PlusExpr(A1); RESULT.setLine(A1l
 		 (MinusExpr) MINUS AddopTerms:A1 {: RESULT=new MinusExpr(A1); RESULT.setLine(A1left); :}
 		 ;
 		 
-AddopTerms ::= 	(NotEndAddopTerm) Term:T1 Addop:A2 AddopTerms:A3 {: RESULT=new NotEndAddopTerm(T1, A2, A3); RESULT.setLine(T1left); :}
+AddopTerms ::= 	(NotEndAddopTerm) AddopTerms:A1 Addop:A2 Term:T3 {: RESULT=new NotEndAddopTerm(A1, A2, T3); RESULT.setLine(A1left); :}
 				|
 				(EndAddopTerm) Term:T1 {: RESULT=new EndAddopTerm(T1); RESULT.setLine(T1left); :}
 				;
@@ -380,14 +381,14 @@ AddopTerms ::= 	(NotEndAddopTerm) Term:T1 Addop:A2 AddopTerms:A3 {: RESULT=new N
 			  
 Term ::= (Term) MulOperations:M1 {: RESULT=new Term(M1); RESULT.setLine(M1left); :};			  
 			  
-MulOperations ::=   (BeginMulOp) Factor:F1 Mulop:M2 MulOperations:M3 {: RESULT=new BeginMulOp(F1, M2, M3); RESULT.setLine(F1left); :}
+MulOperations ::=   (BeginMulOp) MulOperations:M1 Mulop:M2 Factor:F3 {: RESULT=new BeginMulOp(M1, M2, F3); RESULT.setLine(M1left); :}
 					|
 					(EndMulOp) Factor:F1 {: RESULT=new EndMulOp(F1); RESULT.setLine(F1left); :}
 					;			  
 
 Factor ::=  (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
 			|
-			(DesignatorFactorAct) Designator:D1 LPAREN ActParsOpt:A2 RPAREN {: RESULT=new DesignatorFactorAct(D1, A2); RESULT.setLine(D1left); :}
+			(DesignatorFactorAct) FuncCall:F1 LPAREN ActParsOpt:A2 RPAREN {: RESULT=new DesignatorFactorAct(F1, A2); RESULT.setLine(F1left); :}
 			|
 			(DesignatorFactorNumber) NUMBER:N1 {: RESULT=new DesignatorFactorNumber(N1); RESULT.setLine(N1left); :}
 			|
@@ -401,6 +402,9 @@ Factor ::=  (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1);
 			|
 			(DesignatorFactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new DesignatorFactorExpr(E1); RESULT.setLine(E1left); :}
 			;
+	
+FuncCall ::=(FuncCall) Designator:D1 {: RESULT=new FuncCall(D1); RESULT.setLine(D1left); :};
+	
 				  
 Designator ::= 	(DesignatorDot) Designator:D1 DOT IDENT:I2 {: RESULT=new DesignatorDot(D1, I2); RESULT.setLine(D1left); :}
 				|

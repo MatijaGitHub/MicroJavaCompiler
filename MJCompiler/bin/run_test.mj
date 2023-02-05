@@ -1,11 +1,22 @@
 program run_test
-
-
+int arr[];
+int c;
 {
-	void main()
-	{
-	
-	
-	
-	}
+
+    void main()
+    int x,y;
+    {
+    	arr = new int[2];
+    	arr[0] = 3;
+    	arr[1] = 6;
+    	[x,y] = arr;
+    	print(x);
+    	print(y);
+    	print(arr[0]);
+
+  
+    	if(true || true){}
+    	
+    }
+    int f1(){}
 }
