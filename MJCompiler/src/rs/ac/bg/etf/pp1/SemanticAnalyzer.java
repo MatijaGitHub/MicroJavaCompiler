@@ -91,7 +91,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public String getType(Struct s) {
-
+		if(s == null) return "null";
 		switch (s.getKind()) {
 			case Struct.None: return "none";
 			case Struct.Int: return "int";
@@ -107,6 +107,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
     public void visit(ProgName progName) {
+    	if(Tab.find(progName.getProgName())!=Tab.noObj) {
+    		report_error("Program name already defined!", progName);
+    	}
     	progName.obj = Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
     	Tab.openScope();
     }
@@ -371,7 +374,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			   report_error("return type is void!", returnStmt);
 
 		   }
-		   if((currMethod.getType().getKind() != Struct.None)&&(currMethod.getType().getKind() != returnExprType.getKind())) {
+		   if(returnExprType == null ||(currMethod.getType().getKind() != Struct.None)&&(currMethod.getType().getKind() != returnExprType.getKind())) {
 			   if(!exprTypeError) {
 				   report_error("return expression type " + getType(returnExprType) +  " does not match return type "+ getType(currMethod.getType()) +" !", returnStmt);
 				   
@@ -557,7 +560,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if(currMethod!=null) {
 			numOfTerms++;
 			numOfFactors = 0;
-			if(exprTermType.getKind() == Struct.None) {
+			if(exprTermType == null || exprTermType.getKind() == Struct.None) {
 				report_error("Expr error!", plusExpr);
 			}
 			plusExpr.struct = exprTermType;

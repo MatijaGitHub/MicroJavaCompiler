@@ -1,0 +1,20 @@
+program p
+
+const int a a = 3, b = 5;//Syntax error with defining global vars
+const int c = 3, d d  = 5;//Syntax error with defining global vars
+
+{
+
+	int f1(int a a, int b){//Syntax error with declaring meth params
+		return 1;
+	}
+	int f2(int a, int b b){//Syntax error with declaring meth params
+		return 1;
+	}
+	void main(){
+		b = 3 3;//Syntax error with assigning val
+		if(c == = b || c!=b){}//Syntax error with boolean condition
+	}
+
+
+}

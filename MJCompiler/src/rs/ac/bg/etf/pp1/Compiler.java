@@ -31,7 +31,7 @@ public class Compiler {
     }
 	public static void main(String[] args) throws Exception {
 	        
-	        Logger log = Logger.getLogger(MJParserTest.class);
+	        Logger log = Logger.getLogger(Compiler.class);
 	        if(args.length < 2) {
 	        	log.error("Too few program arguments!");
 	        	return;

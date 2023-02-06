@@ -1,0 +1,53 @@
+program int //Program already defined error
+
+int arr;
+const int a = 'b'; //Type mismatch error!
+arc e; //Ident is not a valid type error!
+int y,y; //Multiple definitions of same variable in same scope
+int arr2[];
+char es;
+{
+	
+	int f0(){ //Method with return type of non void has no return statement error
+	
+	}
+	int f2(){return;} //Method must be of type void
+	char f3(){return 3;} //Return type doesnt match method return type error
+	int f4(char a){return 1;}
+	int f1(){
+		x = 5; // Var x not declared error
+		chr(true); //Argument type mismatch error
+		ord(2); //Argument type mismatch error
+		len('a'); //Argument type mismatch error
+		f0();
+		f0 = 5; // Designator must be array elem or variable error
+		arr = 'a'; //Type mismatch error!
+		arr(); //Designator is not a method error!
+		[f0,f1,,] = arr2; //Designators not array elems or variables error
+		[,,,,] = arr; //Right side arg must be an array error
+		[es,,arr] = arr2;//Designator types dont match with array type error
+		break; //No surrounding while or foreach 
+		continue; //No surrounding while or foreach 
+		read(f0);//Designator must be array elem or var error
+		print(f0);//Print expr must be of int, char, bool type error
+		if(1){}//Condition must be of bool type error
+		while('a'){}//Condition must be of bool type error
+		es.foreach(es=>{});//Designator for foreach statement must be an array type error
+		arr2.foreach(es=>{});//Ident in foreach statement must match types with designator array elements error
+		f4(1);//Type mismatch error
+		f4(1,2);//Number of arguments error
+		arr = -es;//Right side argument must be int type
+		arr = arr + es;//Operators must be compatable and int type error
+		arr = arr*es;//Operators must be compatable and int type error
+		arr = arr()*3; //Designator must be a method
+		arr2 = new int['a']; //Expr must be of int type error
+		arr = arr2['a'];//Expr must be of int type error
+		arr = arr[2];//Designator must be of array type error
+		
+		
+		
+	}
+	
+}
+
+//No main method error

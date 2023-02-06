@@ -454,6 +454,9 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.putJump(ifElse.ifStatementBegin);
 		Code.fixup(ifElse.elseStatementBegin - 2);
 		Code.put(Code.pop);
+		for(Integer breakStmt : ifElse.breakFixups) {
+			Code.fixup(breakStmt);
+		}
 		
 	}
 	
