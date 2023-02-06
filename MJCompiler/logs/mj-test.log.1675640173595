@@ -1,0 +1,380 @@
+INFO  00:35:29,876 - Compiling source file: C:\Users\Matija Milosevic\Desktop\pp1lab.templateAST\workspace\MJCompiler\test\run_test.mj
+INFO  00:35:29,910 - #2 program
+INFO  00:35:29,911 - #49 test302
+INFO  00:35:29,911 - #7 const
+INFO  00:35:29,911 - #49 it
+INFO  00:35:29,911 - #49 jedan
+INFO  00:35:29,912 - #36 =
+INFO  00:35:29,912 - #47 1
+INFO  00:35:29,912 - #37 ;
+INFO  00:35:29,912 - #49 int
+INFO  00:35:29,912 - #49 i
+INFO  00:35:29,913 - #37 ;
+INFO  00:35:29,913 - #49 bool
+INFO  00:35:29,914 - #49 ibool
+INFO  00:35:29,914 - #37 ;
+INFO  00:35:29,914 - #49 int
+INFO  00:35:29,914 - #49 niz2
+INFO  00:35:29,914 - #37 ;
+INFO  00:35:29,915 - #49 int
+INFO  00:35:29,915 - #49 niz
+INFO  00:35:29,915 - #45 [
+INFO  00:35:29,915 - #46 ]
+INFO  00:35:29,915 - #37 ;
+INFO  00:35:29,915 - #49 int
+INFO  00:35:29,916 - #49 a
+INFO  00:35:29,916 - #39 ,
+INFO  00:35:29,916 - #49 curr
+INFO  00:35:29,916 - #37 ;
+INFO  00:35:29,916 - #43 {
+INFO  00:35:29,916 - #49 int
+INFO  00:35:29,917 - #49 f1
+INFO  00:35:29,917 - #41 (
+INFO  00:35:29,918 - #42 )
+INFO  00:35:29,918 - #43 {
+INFO  00:35:29,919 - #12 print
+INFO  00:35:29,919 - #41 (
+INFO  00:35:29,919 - #50 a
+INFO  00:35:29,919 - #42 )
+INFO  00:35:29,920 - #37 ;
+INFO  00:35:29,920 - #14 return
+INFO  00:35:29,921 - #47 5
+INFO  00:35:29,921 - #37 ;
+INFO  00:35:29,921 - #44 }
+INFO  00:35:29,921 - #49 int
+INFO  00:35:29,922 - #49 f2
+INFO  00:35:29,922 - #41 (
+INFO  00:35:29,922 - #42 )
+INFO  00:35:29,922 - #43 {
+INFO  00:35:29,922 - #12 print
+INFO  00:35:29,922 - #41 (
+INFO  00:35:29,922 - #50 b
+INFO  00:35:29,922 - #42 )
+INFO  00:35:29,922 - #37 ;
+INFO  00:35:29,922 - #14 return
+INFO  00:35:29,922 - #47 1
+INFO  00:35:29,922 - #37 ;
+INFO  00:35:29,923 - #44 }
+INFO  00:35:29,923 - #15 void
+INFO  00:35:29,923 - #49 main
+INFO  00:35:29,923 - #41 (
+INFO  00:35:29,923 - #42 )
+INFO  00:35:29,923 - #43 {
+INFO  00:35:29,923 - #49 f1
+INFO  00:35:29,923 - #41 (
+INFO  00:35:29,924 - #42 )
+INFO  00:35:29,925 - #37 ;
+INFO  00:35:29,925 - #49 f2
+INFO  00:35:29,925 - #41 (
+INFO  00:35:29,925 - #42 )
+INFO  00:35:29,925 - #37 ;
+INFO  00:35:29,925 - #49 a
+INFO  00:35:29,926 - #36 =
+INFO  00:35:29,926 - #49 niz
+INFO  00:35:29,927 - #45 [
+INFO  00:35:29,927 - #47 3
+INFO  00:35:29,927 - #46 ]
+INFO  00:35:29,927 - #37 ;
+INFO  00:35:29,927 - #44 }
+INFO  00:35:29,927 - #44 }
+INFO  00:35:29,929 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  DeclVar(
+    DeclVar(
+      DeclVar(
+        DeclVar(
+          DeclVar(
+            DeclConst(
+              NoDecl(
+              ) [NoDecl]
+              ConstDeclC(
+                Type(
+                 it
+                ) [Type]
+                EndingConstDeclListC1(
+                  EndingConstDeclListC(
+                   jedan
+                    ConstNumber(
+                     1
+                    ) [ConstNumber]
+                  ) [EndingConstDeclListC]
+                ) [EndingConstDeclListC1]
+              ) [ConstDeclC]
+            ) [DeclConst]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              EndingVarDeclListC(
+                EndingVarDeclList(
+                 i
+                  NoBrackets(
+                  ) [NoBrackets]
+                ) [EndingVarDeclList]
+              ) [EndingVarDeclListC]
+            ) [VarDecl]
+          ) [DeclVar]
+          VarDecl(
+            Type(
+             bool
+            ) [Type]
+            EndingVarDeclListC(
+              EndingVarDeclList(
+               ibool
+                NoBrackets(
+                ) [NoBrackets]
+              ) [EndingVarDeclList]
+            ) [EndingVarDeclListC]
+          ) [VarDecl]
+        ) [DeclVar]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          EndingVarDeclListC(
+            EndingVarDeclList(
+             niz2
+              NoBrackets(
+              ) [NoBrackets]
+            ) [EndingVarDeclList]
+          ) [EndingVarDeclListC]
+        ) [VarDecl]
+      ) [DeclVar]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           niz
+            BracketsC(
+            ) [BracketsC]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [VarDecl]
+    ) [DeclVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      NonEndingVarDeclListC(
+        NonEndingVarDeclList(
+         a
+          NoBrackets(
+          ) [NoBrackets]
+        ) [NonEndingVarDeclList]
+        EndingVarDeclListC(
+          EndingVarDeclList(
+           curr
+            NoBrackets(
+            ) [NoBrackets]
+          ) [EndingVarDeclList]
+        ) [EndingVarDeclListC]
+      ) [NonEndingVarDeclListC]
+    ) [VarDecl]
+  ) [DeclVar]
+  MethodDeclarationList(
+    MethodDeclarationList(
+      MethodDeclarationList(
+        NoMethodDecl(
+        ) [NoMethodDecl]
+        MethodDecl(
+          MethodName(
+            TypeType(
+              Type(
+               int
+              ) [Type]
+            ) [TypeType]
+           f1
+          ) [MethodName]
+          NoFormsParametars(
+          ) [NoFormsParametars]
+          NoVarDeclarations(
+          ) [NoVarDeclarations]
+          StatementsC(
+            StatementsC(
+              NoStatements(
+              ) [NoStatements]
+              PrintStatement(
+                PlusExpr(
+                  EndAddopTerm(
+                    Term(
+                      EndMulOp(
+                        DesignatorFactorChar(
+                         a
+                        ) [DesignatorFactorChar]
+                      ) [EndMulOp]
+                    ) [Term]
+                  ) [EndAddopTerm]
+                ) [PlusExpr]
+                NoNumberConst(
+                ) [NoNumberConst]
+              ) [PrintStatement]
+            ) [StatementsC]
+            ReturnStatement(
+              ExpressionC(
+                PlusExpr(
+                  EndAddopTerm(
+                    Term(
+                      EndMulOp(
+                        DesignatorFactorNumber(
+                         5
+                        ) [DesignatorFactorNumber]
+                      ) [EndMulOp]
+                    ) [Term]
+                  ) [EndAddopTerm]
+                ) [PlusExpr]
+              ) [ExpressionC]
+            ) [ReturnStatement]
+          ) [StatementsC]
+        ) [MethodDecl]
+      ) [MethodDeclarationList]
+      MethodDecl(
+        MethodName(
+          TypeType(
+            Type(
+             int
+            ) [Type]
+          ) [TypeType]
+         f2
+        ) [MethodName]
+        NoFormsParametars(
+        ) [NoFormsParametars]
+        NoVarDeclarations(
+        ) [NoVarDeclarations]
+        StatementsC(
+          StatementsC(
+            NoStatements(
+            ) [NoStatements]
+            PrintStatement(
+              PlusExpr(
+                EndAddopTerm(
+                  Term(
+                    EndMulOp(
+                      DesignatorFactorChar(
+                       b
+                      ) [DesignatorFactorChar]
+                    ) [EndMulOp]
+                  ) [Term]
+                ) [EndAddopTerm]
+              ) [PlusExpr]
+              NoNumberConst(
+              ) [NoNumberConst]
+            ) [PrintStatement]
+          ) [StatementsC]
+          ReturnStatement(
+            ExpressionC(
+              PlusExpr(
+                EndAddopTerm(
+                  Term(
+                    EndMulOp(
+                      DesignatorFactorNumber(
+                       1
+                      ) [DesignatorFactorNumber]
+                    ) [EndMulOp]
+                  ) [Term]
+                ) [EndAddopTerm]
+              ) [PlusExpr]
+            ) [ExpressionC]
+          ) [ReturnStatement]
+        ) [StatementsC]
+      ) [MethodDecl]
+    ) [MethodDeclarationList]
+    MethodDecl(
+      MethodName(
+        VoidType(
+        ) [VoidType]
+       main
+      ) [MethodName]
+      NoFormsParametars(
+      ) [NoFormsParametars]
+      NoVarDeclarations(
+      ) [NoVarDeclarations]
+      StatementsC(
+        StatementsC(
+          StatementsC(
+            NoStatements(
+            ) [NoStatements]
+            DesignatorStatementType(
+              DesignatorStatementOne(
+                AssignOpExprParen(
+                  FuncCall(
+                    DesignatorIdent(
+                     f1
+                    ) [DesignatorIdent]
+                  ) [FuncCall]
+                  NoActParsOpt(
+                  ) [NoActParsOpt]
+                ) [AssignOpExprParen]
+              ) [DesignatorStatementOne]
+            ) [DesignatorStatementType]
+          ) [StatementsC]
+          DesignatorStatementType(
+            DesignatorStatementOne(
+              AssignOpExprParen(
+                FuncCall(
+                  DesignatorIdent(
+                   f2
+                  ) [DesignatorIdent]
+                ) [FuncCall]
+                NoActParsOpt(
+                ) [NoActParsOpt]
+              ) [AssignOpExprParen]
+            ) [DesignatorStatementOne]
+          ) [DesignatorStatementType]
+        ) [StatementsC]
+        DesignatorStatementType(
+          DesignatorStatementOne(
+            AssignOpExprBase(
+              DesignatorIdent(
+               a
+              ) [DesignatorIdent]
+              Assignop(
+              ) [Assignop]
+              PlusExpr(
+                EndAddopTerm(
+                  Term(
+                    EndMulOp(
+                      DesignatorFactor(
+                        DesignatorExpr(
+                          DesignatorIdent(
+                           niz
+                          ) [DesignatorIdent]
+                          PlusExpr(
+                            EndAddopTerm(
+                              Term(
+                                EndMulOp(
+                                  DesignatorFactorNumber(
+                                   3
+                                  ) [DesignatorFactorNumber]
+                                ) [EndMulOp]
+                              ) [Term]
+                            ) [EndAddopTerm]
+                          ) [PlusExpr]
+                        ) [DesignatorExpr]
+                      ) [DesignatorFactor]
+                    ) [EndMulOp]
+                  ) [Term]
+                ) [EndAddopTerm]
+              ) [PlusExpr]
+            ) [AssignOpExprBase]
+          ) [DesignatorStatementOne]
+        ) [DesignatorStatementType]
+      ) [StatementsC]
+    ) [MethodDecl]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  00:35:29,929 - ===================================
+ERROR 00:35:29,937 - Greska na liniji 5: Tip it nije pronadjen u tabeli simbola!
+ERROR 00:35:29,937 - Greska na liniji 5: Deklarisani tip konstante 'none' nije isti kao tip vrednosti koja se dodeljuje 'int'!
+INFO  00:35:29,937 - Info na liniji 7: Inserted i variable!
+INFO  00:35:29,937 - Info na liniji 8: Inserted ibool variable!
+INFO  00:35:29,937 - Info na liniji 10: Inserted niz2 variable!
+INFO  00:35:29,937 - Info na liniji 12: Inserted niz variable!
+INFO  00:35:29,937 - Info na liniji 13: Inserted a variable!
+INFO  00:35:29,937 - Info na liniji 13: Inserted curr variable!
+INFO  00:35:29,937 - Info na liniji 17: Inserted f1 method!
+INFO  00:35:29,937 - Info na liniji 22: Inserted f2 method!
+INFO  00:35:29,938 - Info na liniji 28: Inserted main method!

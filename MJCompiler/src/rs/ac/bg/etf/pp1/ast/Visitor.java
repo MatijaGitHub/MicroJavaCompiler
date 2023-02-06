@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2023 18:32:34
+// 6/1/2023 1:50:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,6 +13,7 @@ public interface Visitor {
     public void visit(ActParsOpt ActParsOpt);
     public void visit(MethodDeclarations MethodDeclarations);
     public void visit(ConstructorDeclarations ConstructorDeclarations);
+    public void visit(AssignOpEqual AssignOpEqual);
     public void visit(DesignatorOpt DesignatorOpt);
     public void visit(Addop Addop);
     public void visit(NumberConst NumberConst);
@@ -22,11 +23,14 @@ public interface Visitor {
     public void visit(Designator Designator);
     public void visit(TypeIdentList TypeIdentList);
     public void visit(AndTerms AndTerms);
+    public void visit(Condition Condition);
     public void visit(Statements Statements);
+    public void visit(NonEndingTypeIdentList NonEndingTypeIdentList);
     public void visit(AddopTerms AddopTerms);
     public void visit(ConstDeclList ConstDeclList);
     public void visit(OrTerms OrTerms);
     public void visit(NonEndingConstDeclList NonEndingConstDeclList);
+    public void visit(EndingTypeIdentList EndingTypeIdentList);
     public void visit(ElseStatement ElseStatement);
     public void visit(Brackets Brackets);
     public void visit(ExprList ExprList);
@@ -88,7 +92,8 @@ public interface Visitor {
     public void visit(CondTerm CondTerm);
     public void visit(NoOrTerms NoOrTerms);
     public void visit(OrTermsC OrTermsC);
-    public void visit(Condition Condition);
+    public void visit(ConditionError ConditionError);
+    public void visit(ConditionNoError ConditionNoError);
     public void visit(NoExprList NoExprList);
     public void visit(ExprListC ExprListC);
     public void visit(ActPars ActPars);
@@ -98,6 +103,8 @@ public interface Visitor {
     public void visit(DesignatorOptC DesignatorOptC);
     public void visit(NoActParsOpt NoActParsOpt);
     public void visit(ActParsOptC ActParsOptC);
+    public void visit(AssignOpEqualError AssignOpEqualError);
+    public void visit(AssignOpEqualNoError AssignOpEqualNoError);
     public void visit(AssignOpExprDec AssignOpExprDec);
     public void visit(AssignOpExprInc AssignOpExprInc);
     public void visit(AssignOpExprParen AssignOpExprParen);
@@ -127,8 +134,10 @@ public interface Visitor {
     public void visit(WhileStatement WhileStatement);
     public void visit(IfStatement IfStatement);
     public void visit(DesignatorStatementType DesignatorStatementType);
-    public void visit(EndingTypeIdentList EndingTypeIdentList);
-    public void visit(NonEndingTypeIdentList NonEndingTypeIdentList);
+    public void visit(EndingTypeIdentListError EndingTypeIdentListError);
+    public void visit(EndingTypeIdentListNoError EndingTypeIdentListNoError);
+    public void visit(NonEndingTypeIdentListError NonEndingTypeIdentListError);
+    public void visit(NonEndingTypeIdentListNoError NonEndingTypeIdentListNoError);
     public void visit(EndingTypeIdentListC EndingTypeIdentListC);
     public void visit(NonEndingTypeIdentListC NonEndingTypeIdentListC);
     public void visit(FormPars FormPars);

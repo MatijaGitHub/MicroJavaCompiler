@@ -93,6 +93,8 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition
 nonterminal EndIfStatement, EndElseStatement;
 nonterminal IfStart, BeginElseStatement, BeginWhile;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
+nonterminal AssignOpEqual;
+
 precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p Decl LBRACE MethodDeclList RBRACE
@@ -190,7 +192,7 @@ MethodDeclarations	::= (MethodDeclarationsC)  MethodDecl MethodDeclarations
 						|
 						(NoMethodDeclarations)
 						;
-MethodDecl ::= (MethodDecl) MethodName:m LPAREN FormsParametars RPAREN VarDeclarations LBRACE Statements RBRACE;
+MethodDecl ::= (MethodDecl) MethodName:m LPAREN FormsParametars  VarDeclarations LBRACE Statements RBRACE;
 
 MethodName ::= (MethodName) TypeOrVoid IDENT:methName;
 
@@ -202,7 +204,7 @@ TypeOrVoid ::=  (TypeType)Type
 
 FormsParametars ::= (FormsParametarsC) FormPars
 					|
-					(NoFormsParametars)
+					(NoFormsParametars) RPAREN
 					;
 
 Statements ::= (StatementsC) Statements Statement
@@ -224,16 +226,24 @@ TypeIdentList ::= (NonEndingTypeIdentListC) NonEndingTypeIdentList TypeIdentList
 				  (EndingTypeIdentListC) EndingTypeIdentList
 				  ;
 				  
-NonEndingTypeIdentList ::= (NonEndingTypeIdentList) Type IDENT:identName Brackets COMMA;
+NonEndingTypeIdentList ::= (NonEndingTypeIdentListNoError) Type IDENT:identName Brackets COMMA
+							|
+							(NonEndingTypeIdentListError) error COMMA:l
+							{: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
+							;
 
-EndingTypeIdentList ::= (EndingTypeIdentList) Type IDENT:identName Brackets;
+EndingTypeIdentList ::= (EndingTypeIdentListNoError) Type IDENT:identName Brackets RPAREN
+						|
+						(EndingTypeIdentListError) error RPAREN:l
+						{: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :}
+						;
 
 
-Statement ::= 	(DesignatorStatementType) DesignatorStatement SEMI
+Statement ::= 	(DesignatorStatementType) DesignatorStatement 
 				|
- 				(IfStatement) IfStart LPAREN Condition EndIfStatement RPAREN Statement ElseStatement
+ 				(IfStatement) IfStart LPAREN Condition EndIfStatement Statement ElseStatement
  				|
- 				(WhileStatement) While LPAREN Condition RPAREN BeginWhile Statement
+ 				(WhileStatement) While LPAREN Condition BeginWhile Statement
  				|
  				(BreakStatement) BREAK SEMI
 			  	|
@@ -294,19 +304,25 @@ NumberConst ::=	(NumberConstC) COMMA NUMBER:len
 			  
 DesignatorStatement ::= (DesignatorStatementOne) AssignOpExpr
 						|
-						(DesignatorStatementMul) LBRACKET DesignatorOpt DesignatorList RBRACKET EQUAL Designator
+						(DesignatorStatementMul) LBRACKET DesignatorOpt DesignatorList RBRACKET EQUAL Designator SEMI
 						;		  
 			  
 			  
-AssignOpExpr ::= (AssignOpExprBase) Designator Assignop Expr
+AssignOpExpr ::= (AssignOpExprBase) AssignOpEqual
 				 |
-				 (AssignOpExprParen) FuncCall LPAREN ActParsOpt RPAREN
+				 (AssignOpExprParen) FuncCall LPAREN ActParsOpt RPAREN SEMI
 				 |
-				 (AssignOpExprInc) Designator INC
+				 (AssignOpExprInc) Designator INC SEMI
 				 |
-				 (AssignOpExprDec) Designator DEC
+				 (AssignOpExprDec) Designator DEC SEMI
 				 ;	  
-			  
+	
+	
+AssignOpEqual ::= 	(AssignOpEqualNoError) Designator Assignop Expr SEMI	
+					|
+					(AssignOpEqualError) error SEMI:l
+					{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :}
+					; 
 			  
 ActParsOpt ::=  (ActParsOptC) ActPars
 				|
@@ -336,7 +352,11 @@ ExprList ::=    (ExprListC) Expr COMMA ExprList
 			  	;
 			  
 			  
-Condition ::= (Condition) OrTerms;
+Condition ::= 	(ConditionNoError) OrTerms RPAREN
+				|
+				(ConditionError) error RPAREN:l
+				{: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :}
+				;
 
 OrTerms ::= (OrTermsC) OrTerms OR CondTerm
 			|

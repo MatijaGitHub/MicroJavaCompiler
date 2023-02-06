@@ -126,6 +126,8 @@ nonterminal IfStart IfStart;
 nonterminal BeginElseStatement BeginElseStatement;
 nonterminal BeginWhile BeginWhile;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
+nonterminal AssignOpEqual AssignOpEqual;
+
 precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p Decl:D1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
@@ -223,7 +225,7 @@ MethodDeclarations	::= (MethodDeclarationsC)  MethodDecl:M1 MethodDeclarations:M
 						|
 						(NoMethodDeclarations) {: RESULT=new NoMethodDeclarations(); :}
 						;
-MethodDecl ::= (MethodDecl) MethodName:m LPAREN FormsParametars:F1 RPAREN VarDeclarations:V2 LBRACE Statements:S3 RBRACE {: RESULT=new MethodDecl(m, F1, V2, S3); RESULT.setLine(mleft); :};
+MethodDecl ::= (MethodDecl) MethodName:m LPAREN FormsParametars:F1  VarDeclarations:V2 LBRACE Statements:S3 RBRACE {: RESULT=new MethodDecl(m, F1, V2, S3); RESULT.setLine(mleft); :};
 
 MethodName ::= (MethodName) TypeOrVoid:T1 IDENT:methName {: RESULT=new MethodName(T1, methName); RESULT.setLine(T1left); :};
 
@@ -235,7 +237,7 @@ TypeOrVoid ::=  (TypeType)Type:T1 {: RESULT=new TypeType(T1); RESULT.setLine(T1l
 
 FormsParametars ::= (FormsParametarsC) FormPars:F1 {: RESULT=new FormsParametarsC(F1); RESULT.setLine(F1left); :}
 					|
-					(NoFormsParametars) {: RESULT=new NoFormsParametars(); :}
+					(NoFormsParametars) RPAREN {: RESULT=new NoFormsParametars(); :}
 					;
 
 Statements ::= (StatementsC) Statements:S1 Statement:S2 {: RESULT=new StatementsC(S1, S2); RESULT.setLine(S1left); :}
@@ -257,16 +259,24 @@ TypeIdentList ::= (NonEndingTypeIdentListC) NonEndingTypeIdentList:N1 TypeIdentL
 				  (EndingTypeIdentListC) EndingTypeIdentList:E1 {: RESULT=new EndingTypeIdentListC(E1); RESULT.setLine(E1left); :}
 				  ;
 				  
-NonEndingTypeIdentList ::= (NonEndingTypeIdentList) Type:T1 IDENT:identName Brackets:B2 COMMA {: RESULT=new NonEndingTypeIdentList(T1, identName, B2); RESULT.setLine(T1left); :};
+NonEndingTypeIdentList ::= (NonEndingTypeIdentListNoError) Type:T1 IDENT:identName Brackets:B2 COMMA {: RESULT=new NonEndingTypeIdentListNoError(T1, identName, B2); RESULT.setLine(T1left); :}
+							|
+							(NonEndingTypeIdentListError) error COMMA:l
+							{: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} {: RESULT=new NonEndingTypeIdentListError(); :}
+							;
 
-EndingTypeIdentList ::= (EndingTypeIdentList) Type:T1 IDENT:identName Brackets:B2 {: RESULT=new EndingTypeIdentList(T1, identName, B2); RESULT.setLine(T1left); :};
+EndingTypeIdentList ::= (EndingTypeIdentListNoError) Type:T1 IDENT:identName Brackets:B2 RPAREN {: RESULT=new EndingTypeIdentListNoError(T1, identName, B2); RESULT.setLine(T1left); :}
+						|
+						(EndingTypeIdentListError) error RPAREN:l
+						{: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :} {: RESULT=new EndingTypeIdentListError(); :}
+						;
 
 
-Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStatementType(D1); RESULT.setLine(D1left); :}
+Statement ::= 	(DesignatorStatementType) DesignatorStatement:D1 {: RESULT=new DesignatorStatementType(D1); RESULT.setLine(D1left); :} 
 				|
- 				(IfStatement) IfStart:I1 LPAREN Condition:C2 EndIfStatement:E3 RPAREN Statement:S4 ElseStatement:E5 {: RESULT=new IfStatement(I1, C2, E3, S4, E5); RESULT.setLine(I1left); :}
+ 				(IfStatement) IfStart:I1 LPAREN Condition:C2 EndIfStatement:E3 Statement:S4 ElseStatement:E5 {: RESULT=new IfStatement(I1, C2, E3, S4, E5); RESULT.setLine(I1left); :}
  				|
- 				(WhileStatement) While:W1 LPAREN Condition:C2 RPAREN BeginWhile:B3 Statement:S4 {: RESULT=new WhileStatement(W1, C2, B3, S4); RESULT.setLine(W1left); :}
+ 				(WhileStatement) While:W1 LPAREN Condition:C2 BeginWhile:B3 Statement:S4 {: RESULT=new WhileStatement(W1, C2, B3, S4); RESULT.setLine(W1left); :}
  				|
  				(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 			  	|
@@ -327,19 +337,25 @@ NumberConst ::=	(NumberConstC) COMMA NUMBER:len {: RESULT=new NumberConstC(len);
 			  
 DesignatorStatement ::= (DesignatorStatementOne) AssignOpExpr:A1 {: RESULT=new DesignatorStatementOne(A1); RESULT.setLine(A1left); :}
 						|
-						(DesignatorStatementMul) LBRACKET DesignatorOpt:D1 DesignatorList:D2 RBRACKET EQUAL Designator:D3 {: RESULT=new DesignatorStatementMul(D1, D2, D3); RESULT.setLine(D1left); :}
+						(DesignatorStatementMul) LBRACKET DesignatorOpt:D1 DesignatorList:D2 RBRACKET EQUAL Designator:D3 SEMI {: RESULT=new DesignatorStatementMul(D1, D2, D3); RESULT.setLine(D1left); :}
 						;		  
 			  
 			  
-AssignOpExpr ::= (AssignOpExprBase) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new AssignOpExprBase(D1, A2, E3); RESULT.setLine(D1left); :}
+AssignOpExpr ::= (AssignOpExprBase) AssignOpEqual:A1 {: RESULT=new AssignOpExprBase(A1); RESULT.setLine(A1left); :}
 				 |
-				 (AssignOpExprParen) FuncCall:F1 LPAREN ActParsOpt:A2 RPAREN {: RESULT=new AssignOpExprParen(F1, A2); RESULT.setLine(F1left); :}
+				 (AssignOpExprParen) FuncCall:F1 LPAREN ActParsOpt:A2 RPAREN SEMI {: RESULT=new AssignOpExprParen(F1, A2); RESULT.setLine(F1left); :}
 				 |
-				 (AssignOpExprInc) Designator:D1 INC {: RESULT=new AssignOpExprInc(D1); RESULT.setLine(D1left); :}
+				 (AssignOpExprInc) Designator:D1 INC SEMI {: RESULT=new AssignOpExprInc(D1); RESULT.setLine(D1left); :}
 				 |
-				 (AssignOpExprDec) Designator:D1 DEC {: RESULT=new AssignOpExprDec(D1); RESULT.setLine(D1left); :}
+				 (AssignOpExprDec) Designator:D1 DEC SEMI {: RESULT=new AssignOpExprDec(D1); RESULT.setLine(D1left); :}
 				 ;	  
-			  
+	
+	
+AssignOpEqual ::= 	(AssignOpEqualNoError) Designator:D1 Assignop:A2 Expr:E3 SEMI {: RESULT=new AssignOpEqualNoError(D1, A2, E3); RESULT.setLine(D1left); :}	
+					|
+					(AssignOpEqualError) error SEMI:l
+					{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new AssignOpEqualError(); :}
+					; 
 			  
 ActParsOpt ::=  (ActParsOptC) ActPars:A1 {: RESULT=new ActParsOptC(A1); RESULT.setLine(A1left); :}
 				|
@@ -369,7 +385,11 @@ ExprList ::=    (ExprListC) Expr:E1 COMMA ExprList:E2 {: RESULT=new ExprListC(E1
 			  	;
 			  
 			  
-Condition ::= (Condition) OrTerms:O1 {: RESULT=new Condition(O1); RESULT.setLine(O1left); :};
+Condition ::= 	(ConditionNoError) OrTerms:O1 RPAREN {: RESULT=new ConditionNoError(O1); RESULT.setLine(O1left); :}
+				|
+				(ConditionError) error RPAREN:l
+				{: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :} {: RESULT=new ConditionError(); :}
+				;
 
 OrTerms ::= (OrTermsC) OrTerms:O1 OR CondTerm:C2 {: RESULT=new OrTermsC(O1, C2); RESULT.setLine(O1left); :}
 			|

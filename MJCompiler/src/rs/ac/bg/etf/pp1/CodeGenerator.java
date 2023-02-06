@@ -25,6 +25,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		public ArrayList<Integer> breakFixups;
 	}
 	private int mainStart;
+	private boolean returnPresent = false; 
 	private Stack<Obj> functionCalls = new Stack<>();
 	private Stack<IfElseStatementCounter> ifElseStack = new Stack<>();
 	private Stack<WhileStatementCounter> whileStack = new Stack<>();
@@ -53,12 +54,20 @@ public class CodeGenerator extends VisitorAdaptor {
 
 		
 	public void visit(MethodDecl methodDecl) {
+		if(methodDecl.getMethodName().getTypeOrVoid() instanceof TypeType) {
+			if(!returnPresent) {
+				Code.put(Code.trap);
+				Code.put(1);
+			}
+		}
+		returnPresent = false;
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
 	
 	
 	public void visit(ReturnStatement returnStmt) {
+		returnPresent = true;
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
@@ -156,7 +165,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(AssignOpExprBase assignOp) {
 		
-		Code.store(assignOp.getDesignator().obj);
+		Code.store(((AssignOpEqualNoError)assignOp.getAssignOpEqual()).getDesignator().obj);
 		
 		
 	}

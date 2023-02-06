@@ -2,7 +2,7 @@
 
 program test302
 
-const int jedan = 1;
+//const int jedan jdan , asds= 1;
 
 int i;
 bool ibool;
@@ -14,16 +14,32 @@ int a, curr;
 
 {
 	
+	int f1(int b, int a){
 	
+		print('a');
+		return 5;
+	}
+	int f2(){
 	
+
+		print('b');
+		return 1;
+	}
 	void main()
 	{
-		niz = new int[10];
-		niz[0]++;
-		niz[1]--;
-		print(niz[0]);
-		print(niz[1]);
-		
+	
+		a = ava ava ava uwu owo awa;
+		if(a == 3){
+			print('b', 3);
+		}
+		else{
+			print('k');
+			print('c', 10);
+		}
+		//a = as asd;
+		f1(1, 2);
+		f2();
+		//a = niz[3];
 	
 	}
 }

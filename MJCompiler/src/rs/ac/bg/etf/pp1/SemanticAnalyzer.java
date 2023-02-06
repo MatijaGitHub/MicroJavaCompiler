@@ -311,7 +311,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	 
 	 
    }
-   public void visit(NonEndingTypeIdentList param) {
+   public void visit(NonEndingTypeIdentListNoError param) {
 	   if(currMethod!=null) {
 		   currMethParamCnt++;
 		   String paramName = param.getIdentName();
@@ -337,7 +337,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	   
 	   
    }
-   public void visit(EndingTypeIdentList param) {
+   public void visit(EndingTypeIdentListNoError param) {
 	   if(currMethod!=null) {
 		   currMethParamCnt++;
 		   String paramName = param.getIdentName();
@@ -727,7 +727,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			return ((AssignOpExprParen) node).getFuncCall().getDesignator();
 		}
 		else if(node instanceof AssignOpExprBase) {
-			return ((AssignOpExprBase) node).getDesignator();
+			
+			return ((AssignOpEqualNoError)((AssignOpExprBase) node).getAssignOpEqual()).getDesignator();
+			
+			
 		}
 		else if(node instanceof AssignOpExprInc) {
 			return ((AssignOpExprInc)node).getDesignator();
@@ -738,28 +741,31 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(DesignatorStatementOne designatorStmtOne) {
 		if(currMethod!=null) {
 			SyntaxNode assignOp = designatorStmtOne.getAssignOpExpr();
-			Designator designator = getDesignatorType(assignOp);
-			Struct designatorType = designator.obj.getType();
-			if(designatorType.getKind() == Struct.Array && designator instanceof DesignatorExpr) {
-				designatorType = designatorType.getElemType();
-			}
-			if(!(designatorStmtOne.getAssignOpExpr() instanceof AssignOpExprParen)) {
-				if(designatorStmtOne.getAssignOpExpr().struct == null || (designatorStmtOne.getAssignOpExpr().struct.getKind()!=designatorType.getKind())) {
-					typeError = true;
+			if(!(assignOp instanceof AssignOpExprBase) || (assignOp instanceof AssignOpExprBase && ((AssignOpExprBase)assignOp).getAssignOpEqual() instanceof AssignOpEqualNoError)) {
+				Designator designator = getDesignatorType(assignOp);
+				Struct designatorType = designator.obj.getType();
+				if(designatorType.getKind() == Struct.Array && designator instanceof DesignatorExpr) {
+					designatorType = designatorType.getElemType();
 				}
-				else if(designatorStmtOne.getAssignOpExpr().struct.getKind() == Struct.Array && designatorStmtOne.getAssignOpExpr().struct.getElemType().getKind() != designatorType.getElemType().getKind()) {
-					typeError = true;
-				}
-				if(!(designator instanceof DesignatorExpr)) {
-					Obj symbol = Tab.find(((DesignatorIdent)(designator)).getDesignName());
-					if(symbol.getType().getKind() != Struct.Array && symbol.getKind() != Obj.Var) {
-						
-						report_error("Elem " + symbol.getName() + " not an array element or var type!", designatorStmtOne);
-						return;
+				if(!(designatorStmtOne.getAssignOpExpr() instanceof AssignOpExprParen)) {
+					if(designatorStmtOne.getAssignOpExpr().struct == null || (designatorStmtOne.getAssignOpExpr().struct.getKind()!=designatorType.getKind())) {
+						typeError = true;
 					}
-					
+					else if(designatorStmtOne.getAssignOpExpr().struct.getKind() == Struct.Array && designatorStmtOne.getAssignOpExpr().struct.getElemType().getKind() != designatorType.getElemType().getKind()) {
+						typeError = true;
+					}
+					if(!(designator instanceof DesignatorExpr)) {
+						Obj symbol = Tab.find(((DesignatorIdent)(designator)).getDesignName());
+						if(symbol.getType().getKind() != Struct.Array && symbol.getKind() != Obj.Var) {
+							
+							report_error("Elem " + symbol.getName() + " not an array element or var type!", designatorStmtOne);
+							return;
+						}
+						
+					}
 				}
 			}
+			
 		}
 		
 	}
@@ -777,9 +783,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 	public void visit(AssignOpExprBase assignOpExprBase) {
-		if(currMethod!=null) {
-			assignOpExprBase.struct = assignOpExprBase.getExpr().struct;
-			if(forEachIdentList.contains(assignOpExprBase.getDesignator().obj.getName())) {
+		if(currMethod!=null && assignOpExprBase.getAssignOpEqual() instanceof AssignOpEqualNoError) {
+			assignOpExprBase.struct = ((AssignOpEqualNoError)assignOpExprBase.getAssignOpEqual()).getExpr().struct;
+			if(forEachIdentList.contains(((AssignOpEqualNoError)assignOpExprBase.getAssignOpEqual()).getDesignator().obj.getName())) {
 				report_error("Foreach designator cannot be assigned a value!", assignOpExprBase);
 			}
 		}
@@ -974,7 +980,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			condTerm.struct = condTerm.getAndTerms().struct;
 		}
 	}
-	public void visit(Condition condition) {
+	public void visit(ConditionNoError condition) {
 		if(currMethod!=null) {
 			condition.struct = condition.getOrTerms().struct;
 			if(condition.struct.getKind() != Struct.Bool) {
