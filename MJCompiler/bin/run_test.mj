@@ -2,28 +2,50 @@
 
 program test302
 
-int arr[], a;
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+int niz2;
+
+int niz[];
+int a, curr;
+
 {
-    
-  
     
     void main()
     {
-       arr = new int[5];
-       arr[0] = 1;
-       arr[1] = 2; 
-       arr[2] = 3; 
-       arr[3] = 4; 
-       arr[4] = 5;  
-       arr.foreach(a=>{
-       		print(a);
-       		if(a == 4)
-       			break;
-       		if(a == 3)
-       			break;
-       
-       });
-       print(a);
+        niz = new int[5];
+        
+        niz[0] = 1;
+        niz[1] = 2;
+        niz[2] = 3;
+        niz[3] = 4;
+        niz[4] = 5;
+        
+        a = 0;
+        
+        while(a < 5){
+            
+            niz.foreach(i =>{
+                
+                if(i < 3){
+                    print(i);
+                }
+                else{
+                    
+                    //break; 
+                    continue;
+                }
+                print('x');
+                
+            });
+            
+            a++;
+            print(eol);
+        }
+        
     
     }
 }

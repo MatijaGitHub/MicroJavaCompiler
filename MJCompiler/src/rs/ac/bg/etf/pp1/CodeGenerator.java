@@ -23,6 +23,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		public Integer ifStatementBegin = 0;
 		public Integer elseStatementBegin = 0;
 		public ArrayList<Integer> breakFixups;
+		public Boolean isWhile = false;
 	}
 	private int mainStart;
 	private boolean returnPresent = false; 
@@ -403,6 +404,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(While whileBegin) {
 		WhileStatementCounter ifElse = new WhileStatementCounter();
+		ifElse.isWhile = true;
 		//ifElse.ifStatementBegin = 0;
 		ifElse.breakFixups = new ArrayList<>();
 		ifElse.elseStatementBegin = 0;
@@ -419,6 +421,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(ContinueStatement continueStmt) {
 		WhileStatementCounter ifElse = whileStack.pop();
+		if(!ifElse.isWhile) {
+			Code.loadConst(1);
+			Code.put(Code.add);
+		}
 		Code.putJump(ifElse.ifStatementBegin);
 		whileStack.push(ifElse);
 	}
@@ -432,6 +438,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		ifElse.breakFixups = new ArrayList<>();
 		ifElse.elseStatementBegin = 0;
 		ifElse.ifStatementBegin = Code.pc;
+		ifElse.isWhile = false;
 		Code.put(Code.dup);
 		Code.load(((ForeachStatement)(foreach.getParent())).getDesignator().obj);
 		Code.put(Code.arraylength);
