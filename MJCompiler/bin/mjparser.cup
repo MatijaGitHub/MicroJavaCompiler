@@ -93,7 +93,7 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct CondTerm, CondFact, Condition
 nonterminal EndIfStatement, EndElseStatement;
 nonterminal IfStart, BeginElseStatement, BeginWhile;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
-nonterminal AssignOpEqual;
+nonterminal AssignOpEqual, Minus;
 
 precedence left ELSE;
 
@@ -377,9 +377,11 @@ CondFact ::= (OneCondFact)Expr
 			  
 Expr ::= (PlusExpr) AddopTerms
 		 |
-		 (MinusExpr) MINUS AddopTerms
+		 (MinusExpr) Minus AddopTerms
 		 ;
-		 
+	
+Minus ::= (Minus) MINUS;
+	 
 AddopTerms ::= 	(NotEndAddopTerm) AddopTerms Addop Term
 				|
 				(EndAddopTerm) Term

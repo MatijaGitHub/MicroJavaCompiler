@@ -31,6 +31,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<IfElseStatementCounter> ifElseStack = new Stack<>();
 	private Stack<WhileStatementCounter> whileStack = new Stack<>();
 	private Stack<Integer> forEachStack = new Stack<>();
+	private boolean negateNextTerm = false;
 	private int indexOfArray = 0;
 	//private int itemsToStore = 0;
 	ArrayList<ObjectIndexPair> itemsToStore = new ArrayList<>();
@@ -192,7 +193,13 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.sub);
 		}
 	}
-	
+	public void visit(EndAddopTerm endAddOps) {
+		if(negateNextTerm) {
+			Code.loadConst(-1);
+			Code.put(Code.mul);
+			negateNextTerm = false;
+		}
+	}
 	public void visit(AssignOpExprInc inc) {
 		if(inc.getDesignator().obj.getKind() == Obj.Var) {
 			Code.load(inc.getDesignator().obj);
@@ -218,9 +225,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.sub);
 		Code.store(dec.getDesignator().obj);
 	}
-	public void visit(MinusExpr minus) {
-		Code.loadConst(-1);
-		Code.put(Code.mul);
+	public void visit(Minus minus) {
+		negateNextTerm = true;
 		
 	}
 	
@@ -263,7 +269,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.trap);
 		Code.put(1);
 		Code.fixup(adr);
-		for(int i = 0; i < itemsToStore.size(); i++) {
+		for(int i = itemsToStore.size() - 1; i >= 0; i--) {
 			Code.load(designatorStatementMul.getDesignator().obj);
 			Code.loadConst(itemsToStore.get(i).index);
 			Code.put(Code.aload);
